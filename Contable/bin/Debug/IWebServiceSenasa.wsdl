@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://business.WebServiceSenasa.inssjp.com/" xmlns:ns1="http://schemas.xmlsoap.org/wsdl/soap/http" name="IWebServiceSenasa" targetNamespace="http://business.WebServiceSenasa.inssjp.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://business.WebServiceSenasa.inssjp.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <xs:import namespace="http://schemas.xmlsoap.org/wsdl/" />
+      <xs:complexType name="transaccionSenasaDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="apellidoNombres" type="xs:string" />
+          <xs:element minOccurs="0" name="cod_producto" type="xs:string" />
+          <xs:element minOccurs="0" name="cuit" type="xs:string" />
+          <xs:element minOccurs="0" name="direccion" type="xs:string" />
+          <xs:element minOccurs="0" name="en_transporte" type="xs:boolean" />
+          <xs:element minOccurs="0" name="f_elaboracion" type="xs:string" />
+          <xs:element minOccurs="0" name="f_operacion" type="xs:string" />
+          <xs:element minOccurs="0" name="f_vto" type="xs:string" />
+          <xs:element minOccurs="0" name="gln_destino" type="xs:string" />
+          <xs:element minOccurs="0" name="gln_origen" type="xs:string" />
+          <xs:element minOccurs="0" name="id_evento" type="xs:long" />
+          <xs:element minOccurs="0" name="id_motivo_destruccion" type="xs:long" />
+          <xs:element minOccurs="0" name="localidad" type="xs:long" />
+          <xs:element minOccurs="0" name="motivo_devolucion" type="xs:string" />
+          <xs:element minOccurs="0" name="n_cae" type="xs:string" />
+          <xs:element minOccurs="0" name="n_cai" type="xs:string" />
+          <xs:element minOccurs="0" name="n_cantidad" type="xs:decimal" />
+          <xs:element minOccurs="0" name="n_lote" type="xs:string" />
+          <xs:element minOccurs="0" name="n_manifiesto" type="xs:string" />
+          <xs:element minOccurs="0" name="n_postal" type="xs:string" />
+          <xs:element minOccurs="0" name="n_remito" type="xs:string" />
+          <xs:element minOccurs="0" name="n_serie" type="xs:string" />
+          <xs:element minOccurs="0" name="n_vale_compra" type="xs:string" />
+          <xs:element minOccurs="0" name="numero" type="xs:long" />
+          <xs:element minOccurs="0" name="observaciones" type="xs:string" />
+          <xs:element minOccurs="0" name="provincia" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="webServiceResult">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="codigoTransaccion" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="errores" nillable="true" type="tns:webServiceError" />
+          <xs:element minOccurs="0" name="resultado" type="xs:boolean" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="webServiceError">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="c_error" type="xs:string" />
+          <xs:element minOccurs="0" name="d_error" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="resultadoTransaccionSenasaWS">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:webServiceResult">
+            <xs:sequence>
+              <xs:element minOccurs="0" maxOccurs="unbounded" name="list" nillable="true" type="tns:transaccionSenasa" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="transaccionSenasa">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="apellidoNombres" type="xs:string" />
+          <xs:element minOccurs="0" name="cantidad" type="xs:decimal" />
+          <xs:element minOccurs="0" name="cod_producto" type="xs:string" />
+          <xs:element minOccurs="0" name="cuit" type="xs:string" />
+          <xs:element minOccurs="0" name="d_agente_destino" type="xs:string" />
+          <xs:element minOccurs="0" name="d_agente_informador" type="xs:string" />
+          <xs:element minOccurs="0" name="d_agente_origen" type="xs:string" />
+          <xs:element minOccurs="0" name="d_envase" type="xs:string" />
+          <xs:element minOccurs="0" name="d_estado_transaccion" type="xs:string" />
+          <xs:element minOccurs="0" name="d_evento" type="xs:string" />
+          <xs:element minOccurs="0" name="d_motivo_destruccion" type="xs:string" />
+          <xs:element minOccurs="0" name="d_producto" type="xs:string" />
+          <xs:element minOccurs="0" name="d_tipo_transaccion" type="xs:string" />
+          <xs:element minOccurs="0" name="d_unidad" type="xs:string" />
+          <xs:element minOccurs="0" name="direccion" type="xs:string" />
+          <xs:element minOccurs="0" name="en_transporte" type="xs:string" />
+          <xs:element minOccurs="0" name="f_elaboracion" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="f_operacion" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="f_transaccion" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="f_vencimiento" type="xs:dateTime" />
+          <xs:element minOccurs="0" name="id_transaccion" type="xs:long" />
+          <xs:element minOccurs="0" name="id_transaccion_global" type="xs:long" />
+          <xs:element minOccurs="0" name="id_unidad" type="xs:string" />
+          <xs:element minOccurs="0" name="localidad" type="xs:string" />
+          <xs:element minOccurs="0" name="motivo_devolucion" type="xs:string" />
+          <xs:element minOccurs="0" name="n_cae" type="xs:string" />
+          <xs:element minOccurs="0" name="n_cai" type="xs:string" />
+          <xs:element minOccurs="0" name="n_lote" type="xs:string" />
+          <xs:element minOccurs="0" name="n_manifiesto" type="xs:string" />
+          <xs:element minOccurs="0" name="n_postal" type="xs:string" />
+          <xs:element minOccurs="0" name="n_remito" type="xs:string" />
+          <xs:element minOccurs="0" name="n_serie" type="xs:string" />
+          <xs:element minOccurs="0" name="n_vale_compra" type="xs:string" />
+          <xs:element minOccurs="0" name="numero" type="xs:long" />
+          <xs:element minOccurs="0" name="observaciones" type="xs:string" />
+          <xs:element minOccurs="0" name="provincia" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="resultadoTransaccionSenasaPaginadoWS">
+        <xs:complexContent mixed="false">
+          <xs:extension base="tns:resultadoTransaccionSenasaWS">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="cantPaginas" type="xs:long" />
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+      <xs:complexType name="confirmacionTransaccionSenasaDTO">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="f_operacion" type="xs:string" />
+          <xs:element minOccurs="0" name="n_cantidad" type="xs:decimal" />
+          <xs:element minOccurs="0" name="p_ids_transac" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="saveTransacciones" type="tns:saveTransacciones" />
+      <xs:complexType name="saveTransacciones">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="arg0" type="tns:transaccionSenasaDTO" />
+          <xs:element minOccurs="0" name="arg1" type="xs:string" />
+          <xs:element minOccurs="0" name="arg2" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="saveTransaccionesResponse" type="tns:saveTransaccionesResponse" />
+      <xs:complexType name="saveTransaccionesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:webServiceResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getTransaccionesAlertadas" type="tns:getTransaccionesAlertadas" />
+      <xs:complexType name="getTransaccionesAlertadas">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+          <xs:element minOccurs="0" name="arg1" type="xs:string" />
+          <xs:element minOccurs="0" name="arg2" type="xs:string" />
+          <xs:element minOccurs="0" name="arg3" type="xs:string" />
+          <xs:element minOccurs="0" name="arg4" type="xs:string" />
+          <xs:element minOccurs="0" name="arg5" type="xs:string" />
+          <xs:element minOccurs="0" name="arg6" type="xs:string" />
+          <xs:element minOccurs="0" name="arg7" type="xs:string" />
+          <xs:element minOccurs="0" name="arg8" type="xs:string" />
+          <xs:element minOccurs="0" name="arg9" type="xs:string" />
+          <xs:element minOccurs="0" name="arg10" type="xs:string" />
+          <xs:element minOccurs="0" name="arg11" type="xs:string" />
+          <xs:element minOccurs="0" name="arg12" type="xs:string" />
+          <xs:element minOccurs="0" name="arg13" type="xs:string" />
+          <xs:element minOccurs="0" name="arg14" type="xs:string" />
+          <xs:element minOccurs="0" name="arg15" type="xs:string" />
+          <xs:element minOccurs="0" name="arg16" type="xs:string" />
+          <xs:element minOccurs="0" name="arg17" type="xs:long" />
+          <xs:element minOccurs="0" name="arg18" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getTransaccionesAlertadasResponse" type="tns:getTransaccionesAlertadasResponse" />
+      <xs:complexType name="getTransaccionesAlertadasResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultadoTransaccionSenasaPaginadoWS" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="sendCancelaTransac" type="tns:sendCancelaTransac" />
+      <xs:complexType name="sendCancelaTransac">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:long" />
+          <xs:element minOccurs="0" name="arg1" type="xs:string" />
+          <xs:element minOccurs="0" name="arg2" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="sendCancelaTransacResponse" type="tns:sendCancelaTransacResponse" />
+      <xs:complexType name="sendCancelaTransacResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:webServiceResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="sendAlertaTransacc" type="tns:sendAlertaTransacc" />
+      <xs:complexType name="sendAlertaTransacc">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+          <xs:element minOccurs="0" name="arg1" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="arg2" type="xs:long" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="sendAlertaTransaccResponse" type="tns:sendAlertaTransaccResponse" />
+      <xs:complexType name="sendAlertaTransaccResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:webServiceResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="sendConfirmaTransacc" type="tns:sendConfirmaTransacc" />
+      <xs:complexType name="sendConfirmaTransacc">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+          <xs:element minOccurs="0" name="arg1" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="arg2" type="tns:confirmacionTransaccionSenasaDTO" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="sendConfirmaTransaccResponse" type="tns:sendConfirmaTransaccResponse" />
+      <xs:complexType name="sendConfirmaTransaccResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:webServiceResult" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getTransacciones" type="tns:getTransacciones" />
+      <xs:complexType name="getTransacciones">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:string" />
+          <xs:element minOccurs="0" name="arg1" type="xs:string" />
+          <xs:element minOccurs="0" name="arg2" type="xs:string" />
+          <xs:element minOccurs="0" name="arg3" type="xs:string" />
+          <xs:element minOccurs="0" name="arg4" type="xs:string" />
+          <xs:element minOccurs="0" name="arg5" type="xs:string" />
+          <xs:element minOccurs="0" name="arg6" type="xs:string" />
+          <xs:element minOccurs="0" name="arg7" type="xs:string" />
+          <xs:element minOccurs="0" name="arg8" type="xs:string" />
+          <xs:element minOccurs="0" name="arg9" type="xs:string" />
+          <xs:element minOccurs="0" name="arg10" type="xs:string" />
+          <xs:element minOccurs="0" name="arg11" type="xs:string" />
+          <xs:element minOccurs="0" name="arg12" type="xs:string" />
+          <xs:element minOccurs="0" name="arg13" type="xs:string" />
+          <xs:element minOccurs="0" name="arg14" type="xs:string" />
+          <xs:element minOccurs="0" name="arg15" type="xs:string" />
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="getTransaccionesResponse" type="tns:getTransaccionesResponse" />
+      <xs:complexType name="getTransaccionesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:resultadoTransaccionSenasaPaginadoWS" />
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getTransacciones">
+    <wsdl:part name="parameters" element="tns:getTransacciones" />
+  </wsdl:message>
+  <wsdl:message name="getTransaccionesResponse">
+    <wsdl:part name="parameters" element="tns:getTransaccionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendAlertaTransaccResponse">
+    <wsdl:part name="parameters" element="tns:sendAlertaTransaccResponse" />
+  </wsdl:message>
+  <wsdl:message name="saveTransaccionesResponse">
+    <wsdl:part name="parameters" element="tns:saveTransaccionesResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendCancelaTransac">
+    <wsdl:part name="parameters" element="tns:sendCancelaTransac" />
+  </wsdl:message>
+  <wsdl:message name="getTransaccionesAlertadas">
+    <wsdl:part name="parameters" element="tns:getTransaccionesAlertadas" />
+  </wsdl:message>
+  <wsdl:message name="sendAlertaTransacc">
+    <wsdl:part name="parameters" element="tns:sendAlertaTransacc" />
+  </wsdl:message>
+  <wsdl:message name="sendConfirmaTransaccResponse">
+    <wsdl:part name="parameters" element="tns:sendConfirmaTransaccResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTransaccionesAlertadasResponse">
+    <wsdl:part name="parameters" element="tns:getTransaccionesAlertadasResponse" />
+  </wsdl:message>
+  <wsdl:message name="sendConfirmaTransacc">
+    <wsdl:part name="parameters" element="tns:sendConfirmaTransacc" />
+  </wsdl:message>
+  <wsdl:message name="sendCancelaTransacResponse">
+    <wsdl:part name="parameters" element="tns:sendCancelaTransacResponse" />
+  </wsdl:message>
+  <wsdl:message name="saveTransacciones">
+    <wsdl:part name="parameters" element="tns:saveTransacciones" />
+  </wsdl:message>
+  <wsdl:portType name="IWebServiceSenasaPortType">
+    <wsdl:operation name="saveTransacciones">
+      <wsdl:input name="saveTransacciones" message="tns:saveTransacciones" />
+      <wsdl:output name="saveTransaccionesResponse" message="tns:saveTransaccionesResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getTransaccionesAlertadas">
+      <wsdl:input name="getTransaccionesAlertadas" message="tns:getTransaccionesAlertadas" />
+      <wsdl:output name="getTransaccionesAlertadasResponse" message="tns:getTransaccionesAlertadasResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sendCancelaTransac">
+      <wsdl:input name="sendCancelaTransac" message="tns:sendCancelaTransac" />
+      <wsdl:output name="sendCancelaTransacResponse" message="tns:sendCancelaTransacResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sendAlertaTransacc">
+      <wsdl:input name="sendAlertaTransacc" message="tns:sendAlertaTransacc" />
+      <wsdl:output name="sendAlertaTransaccResponse" message="tns:sendAlertaTransaccResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="sendConfirmaTransacc">
+      <wsdl:input name="sendConfirmaTransacc" message="tns:sendConfirmaTransacc" />
+      <wsdl:output name="sendConfirmaTransaccResponse" message="tns:sendConfirmaTransaccResponse" />
+    </wsdl:operation>
+    <wsdl:operation name="getTransacciones">
+      <wsdl:input name="getTransacciones" message="tns:getTransacciones" />
+      <wsdl:output name="getTransaccionesResponse" message="tns:getTransaccionesResponse" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="IWebServiceSenasaSoapBinding" type="tns:IWebServiceSenasaPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="saveTransacciones">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="saveTransacciones">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="saveTransaccionesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTransaccionesAlertadas">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getTransaccionesAlertadas">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getTransaccionesAlertadasResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendCancelaTransac">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="sendCancelaTransac">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sendCancelaTransacResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendAlertaTransacc">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="sendAlertaTransacc">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sendAlertaTransaccResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getTransacciones">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="getTransacciones">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getTransaccionesResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="sendConfirmaTransacc">
+      <soap:operation soapAction="" style="document" />
+      <wsdl:input name="sendConfirmaTransacc">
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="sendConfirmaTransaccResponse">
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IWebServiceSenasa">
+    <wsdl:port name="IWebServiceSenasaPort" binding="tns:IWebServiceSenasaSoapBinding">
+      <soap:address location="http://localhost:9050/trazaagr.WebService" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

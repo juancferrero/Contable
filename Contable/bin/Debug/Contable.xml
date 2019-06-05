@@ -1,0 +1,2691 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Contable</name>
+    </assembly>
+    <members>
+        <member name="T:Contable.Actualizaciones.frmBancos">
+            <summary>
+              Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+            </summary>
+        </member>
+        <member name="P:Contable.Actualizaciones.frmBancos.ResourceManager">
+            <summary>
+              Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+            </summary>
+        </member>
+        <member name="P:Contable.Actualizaciones.frmBancos.Culture">
+            <summary>
+              Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+              búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+            </summary>
+        </member>
+        <member name="P:Contable.Actualizaciones.frmBancos._Toolbar1_Button1_Image">
+            <summary>
+              Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Contable.Actualizaciones.frmBancos._Toolbar1_Button3_Image">
+            <summary>
+              Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Contable.Actualizaciones.frmBancos._Toolbar1_Button5_Image">
+            <summary>
+              Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Contable.Actualizaciones.frmBancos._Toolbar1_Button7_Image">
+            <summary>
+              Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Contable.Actualizaciones.frmBancos._Toolbar1_Button9_Image">
+            <summary>
+              Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Contable.Actualizaciones.frmBancos.Toolbar1_TrayLocation">
+            <summary>
+              Busca un recurso adaptado de tipo System.Drawing.Point similar a {X=17,Y=17}.
+            </summary>
+        </member>
+        <member name="T:Contable.AFIP.AFIP">
+            <summary>
+            Description of AFIP.
+            </summary>
+        </member>
+        <member name="M:Contable.AFIP.AFIP.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Contable.AFIP.AFIP.TicketAccesoAFIP">
+            <summary>
+            Obtiene un Ticket de Acceso para consumir WS
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Contable.AFIP.AFIP.UltimoComprobante(System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            Busca el Ultimo comprobante
+            </summary>
+            <param name="strToken">Paso el Token</param>
+            <param name="strFirma"> Paso la Firma</param>
+            <param name="intPtoVenta">Paso el punto de venta</param>
+            <param name="intTipoCbe">Paso el tipo de comprobante</param>
+            <returns></returns>
+        </member>
+        <member name="M:Contable.AFIP.AFIP.CotizacionDivisa(System.String,System.String,System.String)">
+            <summary>
+            Obtiene la cotizacion de la divisa solicitada. En valores de divisa no de billete
+            </summary>
+            <param name="strIdMoneda"></param>
+            <param name="strToken"></param>
+            <param name="strFirma"></param>
+            <returns>El valor de la moneda en texto</returns>
+        </member>
+        <member name="M:Contable.AFIP.AFIP.ComprobantesAutorizados(System.String,System.String,System.Int64)">
+            <summary>
+            
+            </summary>
+            <param name="strToken"></param>
+            <param name="strFirma"></param>
+            <param name="lngNumCbte"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Contable.AFIP.AFIP.FechaInversa(System.DateTime)">
+            <summary>
+            Genera la fecha con formato EEUU
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Contable.AFIP.AFIP.EnviarFacturaAFIP(VariablesPropias.VariablesPropias.vpFactura,System.String,System.String)">
+            <summary>
+            Envia una Factura a la AFIP
+            </summary>
+            <param name="Factura"></param>
+            <param name="strToken"></param>
+            <param name="strSign"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Contable.AFIP.AFIP.vpAFIPTicket">
+            <summary>
+            Esta estructura es para contener toda la informacion que nos da el ticket de la AFIP
+            </summary>
+        </member>
+        <member name="F:Contable.AFIP.AFIP.vpAFIPTicket.vpAFIPTicketToken">
+            <summary>
+            Token del ticket
+            </summary>
+        </member>
+        <member name="F:Contable.AFIP.AFIP.vpAFIPTicket.vpAFIPTicketSign">
+            <summary>
+            Firma del ticket
+            </summary>
+        </member>
+        <member name="F:Contable.AFIP.AFIP.vpAFIPTicket.vpAFIPTicketGenerationTime">
+            <summary>
+            Fehca de generacion del ticket
+            </summary>
+        </member>
+        <member name="F:Contable.AFIP.AFIP.vpAFIPTicket.vpAFIPTicketExpirationTime">
+            <summary>
+            Fecha de expiracion del ticket
+            </summary>
+        </member>
+        <member name="F:Contable.AFIP.AFIP.vpAFIPTicket.vpAFIPTicketService">
+            <summary>
+            Servicio al que accede el ticket
+            </summary>
+        </member>
+        <member name="F:Contable.AFIP.AFIP.vpAFIPTicket.vpAFIPTicketUniqueID">
+            <summary>
+            Id del ticket
+            </summary>
+        </member>
+        <member name="T:Contable.AFIP.WSAA_JCF">
+            <summary>
+            Description of WSAA_JCF.
+            </summary>
+        </member>
+        <member name="M:Contable.AFIP.WSAA_JCF.#ctor">
+            <summary>
+            Acceso al WSAA hecho por Juan C Ferrero
+            </summary>
+        </member>
+        <member name="T:Contable.AFIP.LoginTicket">
+            <summary>
+            Clase para crear objetos Login Tickets
+            </summary>
+            <remarks>
+            Ver documentacion: 
+               Especificacion Tecnica del Webservice de Autenticacion y Autorizacion
+               Version 1.0
+               Departamento de Seguridad Informatica - AFIP
+            </remarks>
+        </member>
+        <member name="M:Contable.AFIP.LoginTicket.ObtenerLoginTicketResponse(System.String,System.String,System.String,System.Security.SecureString)">
+            <summary>
+            Construye un Login Ticket obtenido del WSAA
+            </summary>
+            <param name="argServicio">Servicio al que se desea acceder</param>
+            <param name="argUrlWsaa">URL del WSAA</param>
+            <param name="argRutaCertX509Firmante">Ruta del certificado X509 (con clave privada) usado para firmar</param>
+            <param name="argPassword">Password del certificado X509 (con clave privada) usado para firmar</param>
+            <param name="argProxy">IP:port del proxy</param>
+            <param name="argProxyUser">Usuario del proxy</param>''' 
+            <param name="argProxyPassword">Password del proxy</param>
+            <param name="argVerbose">Nivel detallado de descripcion? true/false</param>
+            <remarks></remarks>
+        </member>
+        <member name="T:Contable.AFIP.CertificadosX509Lib">
+            <summary>
+            Libreria de utilidades para manejo de certificados
+            </summary>
+            <remarks></remarks>
+        </member>
+        <member name="M:Contable.AFIP.CertificadosX509Lib.FirmaBytesMensaje(System.Byte[],System.Security.Cryptography.X509Certificates.X509Certificate2)">
+            <summary>
+            Firma mensaje
+            </summary>
+            <param name="argBytesMsg">Bytes del mensaje</param>
+            <param name="argCertFirmante">Certificado usado para firmar</param>
+            <returns>Bytes del mensaje firmado</returns>
+            <remarks></remarks>
+        </member>
+        <member name="M:Contable.AFIP.CertificadosX509Lib.ObtieneCertificadoDesdeArchivo(System.String,System.Security.SecureString)">
+            <summary>
+            Lee certificado de disco
+            </summary>
+            <param name="argArchivo">Ruta del certificado a leer.</param>
+            <returns>Un objeto certificado X509</returns>
+            <remarks></remarks>
+        </member>
+        <member name="T:Contable.Cheques.frmCheqOp">
+            <summary>
+            Description of frmCheqOp.
+            </summary>
+        </member>
+        <member name="F:Contable.Cheques.frmCheqOp.components">
+            <summary>
+            Designer variable used to keep track of non-visual components.
+            </summary>
+        </member>
+        <member name="M:Contable.Cheques.frmCheqOp.Dispose(System.Boolean)">
+            <summary>
+            Disposes resources used by the form.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Contable.Cheques.frmCheqOp.InitializeComponent">
+            <summary>
+            This method is required for Windows Forms designer support.
+            Do not change the method contents inside the source code editor. The Forms designer might
+            not be able to load this method if it was changed manually.
+            </summary>
+        </member>
+        <member name="T:Contable.Configuracion.frmConfiguracion">
+            <summary>
+            Description of frmConfiguracion.
+            </summary>
+        </member>
+        <member name="F:Contable.Configuracion.frmConfiguracion.components">
+            <summary>
+            Designer variable used to keep track of non-visual components.
+            </summary>
+        </member>
+        <member name="M:Contable.Configuracion.frmConfiguracion.Dispose(System.Boolean)">
+            <summary>
+            Disposes resources used by the form.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Contable.Configuracion.frmConfiguracion.InitializeComponent">
+            <summary>
+            This method is required for Windows Forms designer support.
+            Do not change the method contents inside the source code editor. The Forms designer might
+            not be able to load this method if it was changed manually.
+            </summary>
+        </member>
+        <member name="T:Contable.Contador.Balance.frmContadorBalance">
+            <summary>
+            Description of frmContadorBalance.
+            </summary>
+        </member>
+        <member name="M:Contable.Contador.Balance.frmContadorBalance.#ctor">
+            <summary>
+            Arma el Balance de la empresa de forma provisoria
+            </summary>
+        </member>
+        <member name="M:Contable.Contador.Balance.frmContadorBalance.ConsultaPlanDeCuentas">
+            <summary>
+            Consulta el Plan de Cuentas	
+            </summary>
+            <returns>Retorna un DataTable</returns>
+        </member>
+        <member name="F:Contable.Contador.Balance.frmContadorBalance.components">
+            <summary>
+            Designer variable used to keep track of non-visual components.
+            </summary>
+        </member>
+        <member name="M:Contable.Contador.Balance.frmContadorBalance.Dispose(System.Boolean)">
+            <summary>
+            Disposes resources used by the form.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Contable.Contador.Balance.frmContadorBalance.InitializeComponent">
+            <summary>
+            This method is required for Windows Forms designer support.
+            Do not change the method contents inside the source code editor. The Forms designer might
+            not be able to load this method if it was changed manually.
+            </summary>
+        </member>
+        <member name="M:Contable.frmContadorFactConIVA.CargarDatos">
+            <summary>
+            Carga todos los datos dentro de una variable propia para manejarlos despues
+            </summary>
+            <returns>Retorna una estructura de comprobante de gastos</returns>
+        </member>
+        <member name="M:Contable.frmContadorFactConIVA.ObtenerProveedor(System.String)">
+            <summary>
+            Obtiene los datos del proveedor
+            </summary>
+            <param name="strCUIT">El CUIT como string</param>
+            <returns>Retorna una estructura del tipo proveedor</returns>
+        </member>
+        <member name="M:Contable.frmContadorFactConIVA.LimpiarTodo">
+            <summary>
+            Limpia todos los controloes para iniciar otra carga
+            </summary>
+        </member>
+        <member name="M:Contable.frmContadorFactConIVA.CargarDesdeDatos(VariablesPropias.VariablesPropias.vpComprobanteGastos)">
+            <summary>
+            Carga todos los datos dentro de una variable propia para manejarlos despues
+            </summary>
+            <returns>Retorna una estructura de comprobante de gastos</returns>
+        </member>
+        <member name="M:Contable.frmContadorFactConIVA.TxtCUITKeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Esta funcion espera que se presione la tecla "Enter" para hacer las cosas
+            </summary>		
+        </member>
+        <member name="T:Contable.Contador.IVA.frmContadorIVACompras">
+            <summary>
+              Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+            </summary>
+        </member>
+        <member name="P:Contable.Contador.IVA.frmContadorIVACompras.ResourceManager">
+            <summary>
+              Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+            </summary>
+        </member>
+        <member name="P:Contable.Contador.IVA.frmContadorIVACompras.Culture">
+            <summary>
+              Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+              búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+            </summary>
+        </member>
+        <member name="P:Contable.Contador.IVA.frmContadorIVACompras.tlbAnular_Image">
+            <summary>
+              Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Contable.Contador.IVA.frmContadorIVACompras.tlbEditar_Image">
+            <summary>
+              Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Contable.Contador.IVA.frmContadorIVACompras.tlbGuardar_Image">
+            <summary>
+              Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Contable.Contador.IVA.frmContadorIVACompras.tlbImprimir_Image">
+            <summary>
+              Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Contable.Contador.IVA.frmContadorIVACompras.tlbListar_Image">
+            <summary>
+              Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Contable.Contador.IVA.frmContadorIVACompras.tlbNuevo_Image">
+            <summary>
+              Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="T:Contable.Facturas.frmDocumentoFiscal">
+            <summary>
+            Description of frmDocumentoFiscal.
+            </summary>
+        </member>
+        <member name="M:Contable.Facturas.frmDocumentoFiscal.#ctor">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Contable.Facturas.frmDocumentoFiscal.CargarClientes">
+            <summary>
+            Esta funcion coloca los datos en cada uno de los items del recibo
+            </summary>		
+        </member>
+        <member name="M:Contable.Facturas.frmDocumentoFiscal.CargarFactura">
+            <summary>
+            Carga una Factura desde el formulario actual
+            </summary>
+            <returns>Una Variable propia vpFactura </returns>
+        </member>
+        <member name="M:Contable.Facturas.frmDocumentoFiscal.HacerCodigoBarras">
+            <summary>
+            Genera el codigo de barras
+            </summary>
+        </member>
+        <member name="M:Contable.Facturas.frmDocumentoFiscal.CargarRemito(System.Int32)">
+            <summary>
+            Carga un remito en una variable propia
+            </summary>
+            <param name="numRemito">El numero del remito a cargar</param>
+        </member>
+        <member name="M:Contable.Facturas.frmDocumentoFiscal.ObtenerTotales">
+            <summary>
+            Suma todo para obtener los totales
+            </summary>
+        </member>
+        <member name="M:Contable.Facturas.frmDocumentoFiscal.ObtenerNumCodBarras">
+            <summary>
+            Genera el codigo de barras
+            </summary>
+        </member>
+        <member name="M:Contable.Facturas.frmDocumentoFiscal.ModificarUnRemito(System.Int32)">
+            <summary>
+            Modifica un remito para cargarle la factura
+            </summary>
+            <param name="numRemito"></param>
+        </member>
+        <member name="F:Contable.Facturas.frmDocumentoFiscal.components">
+            <summary>
+            Designer variable used to keep track of non-visual components.
+            </summary>
+        </member>
+        <member name="M:Contable.Facturas.frmDocumentoFiscal.Dispose(System.Boolean)">
+            <summary>
+            Disposes resources used by the form.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Contable.Facturas.frmDocumentoFiscal.InitializeComponent">
+            <summary>
+            This method is required for Windows Forms designer support.
+            Do not change the method contents inside the source code editor. The Forms designer might
+            not be able to load this method if it was changed manually.
+            </summary>
+        </member>
+        <member name="T:Contable.Facturas.frmFactImpagas">
+            <summary>
+              Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+            </summary>
+        </member>
+        <member name="P:Contable.Facturas.frmFactImpagas.ResourceManager">
+            <summary>
+              Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+            </summary>
+        </member>
+        <member name="P:Contable.Facturas.frmFactImpagas.Culture">
+            <summary>
+              Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+              búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+            </summary>
+        </member>
+        <member name="P:Contable.Facturas.frmFactImpagas.tlActualizar_Image">
+            <summary>
+              Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Contable.Facturas.frmFactImpagas.tlImprimir_Image">
+            <summary>
+              Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+            </summary>
+        </member>
+        <member name="P:Contable.Facturas.frmFactImpagas.toolStrip1_TrayLocation">
+            <summary>
+              Busca un recurso adaptado de tipo System.Drawing.Point similar a {X=17,Y=17}.
+            </summary>
+        </member>
+        <member name="T:Contable.Interdepositos.frmInterOp">
+            <summary>
+            Description of frmInterOp.
+            </summary>
+        </member>
+        <member name="F:Contable.Interdepositos.frmInterOp.clie">
+            <summary>
+            Variable Publica que Arma un Cliente
+            </summary>
+        </member>
+        <member name="M:Contable.Interdepositos.frmInterOp.CargarClientes">
+            <summary>
+            Esta funcion coloca los datos en cada uno de los items del recibo
+            </summary>		
+        </member>
+        <member name="F:Contable.Interdepositos.frmInterOp.components">
+            <summary>
+            Designer variable used to keep track of non-visual components.
+            </summary>
+        </member>
+        <member name="M:Contable.Interdepositos.frmInterOp.Dispose(System.Boolean)">
+            <summary>
+            Disposes resources used by the form.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Contable.Interdepositos.frmInterOp.InitializeComponent">
+            <summary>
+            This method is required for Windows Forms designer support.
+            Do not change the method contents inside the source code editor. The Forms designer might
+            not be able to load this method if it was changed manually.
+            </summary>
+        </member>
+        <member name="T:Contable.MainForm">
+            <summary>
+            Description of MainForm.
+            </summary>
+        </member>
+        <member name="M:Contable.MainForm.ViajesToolStripMenuItemClick(System.Object,System.EventArgs)">
+            <summary>
+            Informar trazabilidad de SENASA
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="F:Contable.MainForm.components">
+            <summary>
+            Designer variable used to keep track of non-visual components.
+            </summary>
+        </member>
+        <member name="M:Contable.MainForm.Dispose(System.Boolean)">
+            <summary>
+            Disposes resources used by the form.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Contable.MainForm.InitializeComponent">
+            <summary>
+            This method is required for Windows Forms designer support.
+            Do not change the method contents inside the source code editor. The Forms designer might
+            not be able to load this method if it was changed manually.
+            </summary>
+        </member>
+        <member name="T:Contable.MigrarDB.MigrarDB">
+            <summary>
+            Description of MigrarDB.
+            </summary>
+        </member>
+        <member name="M:Contable.MigrarDB.MigrarDB.MigrarCheques(System.String,System.String)">
+            <summary>
+            Modifica el nombre del banco en los cheques para que luego se pueda arreglar el ID del cheque
+            </summary>
+            <param name="BancoInicio">Nombre Inicial del Banco</param>
+            <param name="BancoFin">Nombre del banco como quedara</param>
+        </member>
+        <member name="T:Contable.Modulos.Clientes">
+            <summary>
+            Description of Clientes.
+            </summary>
+        </member>
+        <member name="T:CodigoDeBarras.CodigoBarras">
+            <summary>
+            Este modulo genera los distitos tipos de codigos de barras.
+            </summary>
+        </member>
+        <member name="M:CodigoDeBarras.CodigoBarras.CodVerificador(System.String)">
+            <summary>
+            Esta funcion genera un digito verificador
+            En este programa se usa para armar el codigo de barras de los documentos fiscales
+            Se coloca al final de numero general para la formacion del codigo de barras
+            </summary>
+            <param name="Cod_Barras">String con el valor de lo que hay que poner el codigo verificador</param>
+            <returns></returns>
+        </member>
+        <member name="T:ConexionDB.ConexionAccess2007">
+             <summary>
+             Description of ConexionAccess2007.
+             Esta Clase realiza todos los movimientos con la base de datos.
+             </summary>
+            <example>
+            Codigo para usar esta clase:
+            	ConexionAccess2007.Conectar();
+            	ConexionAccess2007.Consultar("producto", "*", "id_producto");
+             dgvDatos.DataSource = ConexionAccess2007.Source;
+            	ConexionAccess2007.Desconectar();
+            </example>
+        </member>
+        <member name="M:ConexionDB.ConexionAccess2007.Conectar(System.String)">
+             <summary>
+             Esta funcion conecta con la base de datos asignada en el parametro ruta
+             </summary>
+            <remarks>
+            Conecta con la base de datos 
+            </remarks>
+        </member>
+        <member name="M:ConexionDB.ConexionAccess2007.Desconectar">
+            <summary>
+             Esta funcion desconecta la base para que no haya problemas
+            </summary>
+        </member>
+        <member name="M:ConexionDB.ConexionAccess2007.Consultar(System.String,System.String,System.String)">
+             <summary>
+             Esta funcion sobrecargada sirve para consultar la base de datos
+             </summary>
+             <param name="tabla">
+             Es la tabla a la que se pretende acceder
+             </param>
+             <param name="campos">
+             Son los campos que se pretenden ver de la tabla
+             </param>
+             <param name="orden">
+             El campo por el cual se ordenaran
+            </param>
+        </member>
+        <member name="M:ConexionDB.ConexionAccess2007.Consultar(System.String,System.String,System.String,System.String)">
+             <summary>
+             Es una funcion sobrecargada. Mejor asi
+             </summary>
+             <param name="tabla">
+             Tabla que se quiere abrir
+            </param>
+             <param name="campos">
+             Campos a ver. Si no se especifica asignar "*"
+            </param>
+             <param name="condicion">
+             Es la condicion que debe cumplirse en la apertura de la tabla
+            </param>
+             <param name="orden">
+             Con que criterio se ordenan (que campo es el criterio de orden)
+            </param>
+            <remarks>
+            Los campos fecha van entre # # si quiero que sean literales si acepto la configuracion regional van entre ''
+            </remarks>
+        </member>
+        <member name="M:ConexionDB.ConexionAccess2007.Consultar(System.String,System.String,System.String,System.String,System.String)">
+             <summary>
+             Es una funcion sobrecargada. Mejor asi
+             </summary>
+             <param name="tabla">
+             Tabla que se quiere abrir
+            </param>
+             <param name="campos">
+             Campos a ver. Si no se especifica asignar "*"
+            </param>
+             <param name="CampoBuscar">
+             En que campo busca
+            </param>
+             <param name="DatoBuscado">
+             Indica que buscar
+             </param>
+             <param name="orden">
+             Con que criterio se ordenan (que campo es el criterio de orden)
+            </param>
+            <returns>
+             Retorna una Tabla (Datatable); Una Fuente (BindingSource)
+            </returns>
+        </member>
+        <member name="M:ConexionDB.ConexionAccess2007.InsertarFila(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            Esta funcion inserta una fila en la base de datos. Usando comandos SQL
+            </summary>
+        </member>
+        <member name="M:ConexionDB.ConexionAccess2007.ModificarFila(System.String,System.String,System.String)">
+            <summary>
+            Esta funcion modifica una fila en la base de datos. Usando comandos SQL
+             Recordar que no se usa AND, en el SET, para varias modificaciones sino que se separa con ", "
+            </summary>
+        </member>
+        <member name="M:ConexionDB.ConexionAccess2007.EliminarFila(System.String,System.String,System.Boolean)">
+            <summary>
+            Esta funcion elimina una fila en la base de datos. Usando comandos SQL
+            </summary>
+        </member>
+        <member name="P:ConexionDB.ConexionAccess2007.Source">
+            <summary>
+            Esta propiedad arma un Binding Source para directamente colocar los datos obtenidos en un
+            datagridwiev
+            </summary>
+        </member>
+        <member name="P:ConexionDB.ConexionAccess2007.Table">
+            <summary>
+            Esta propiedad devuelve una tabla
+            </summary>
+        </member>
+        <member name="T:ConexionDB.OperacionesTrazabilidad">
+            <summary>
+            Clase para manejar la trazabilidad
+            </summary>
+        </member>
+        <member name="M:ConexionDB.OperacionesTrazabilidad.#ctor">
+            <summary>
+            Operaciones de trazabilidad
+            </summary>
+        </member>
+        <!-- El comentario XML con formato incorrecto se omite para el miembro "M:ConexionDB.OperacionesTrazabilidad.ModificarCajas(System.String,System.Int32,System.String)" -->
+        <member name="T:Contable.Modulos.Documentos_Fiscales">
+            <summary>
+            Description of Documentos_Fiscales.
+            </summary>
+        </member>
+        <member name="M:Contable.Modulos.Documentos_Fiscales.CargarFCA(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="intNumeroFactura"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Contable.Modulos.dtGridWtoDataTable">
+            <summary>
+            Description of dtGridWtoDataTable.
+            </summary>
+        </member>
+        <member name="T:Contable.Modulos.Escribir_XML">
+            <summary>
+            Description of Escribir_XML.
+            </summary>
+        </member>
+        <member name="M:Contable.Modulos.Escribir_XML.EscribirTicketSenasaResponse(Contable.servicios.pami.org.ar.sendConfirmaTransaccResponse)">
+            <summary>
+            Escribe un ticket en XML de la respuesta en el disco 
+            </summary>
+            <param name="pepe">sendConfirmaTransaccResponse estructura del SENASA</param>
+        </member>
+        <member name="T:Contable.Modulos.EscribirTXT">
+            <summary>
+            Esta clase permite escribir en archivos TXT.
+            Son una forma sencilla del manejo de archivos
+            Todo lo que esta aca fue copiado del MSN como ejemplos y luego modificado por Juan C Ferrero para 
+            manejar dichos archivos.
+            </summary>
+        </member>
+        <member name="M:Contable.Modulos.EscribirTXT.EscribirUnArray">
+            <summary>
+            ESP: Crea un array de tres lineas
+            
+            ENG: Create a string array that consists of three lines.
+            </summary>
+        </member>
+        <member name="M:Contable.Modulos.EscribirTXT.EscribirUnaLinea">
+            <summary>
+            ESP: Escirbe un string en el archivo de texto
+            
+            ENG:Write one string to a text file.
+            </summary>
+            <returns>
+            Archivo con un texto
+            </returns>
+        </member>
+        <!-- El comentario XML con formato incorrecto se omite para el miembro "M:Contable.Modulos.EscribirTXT.EscribirAlgunTexto" -->
+        <!-- El comentario XML con formato incorrecto se omite para el miembro "M:Contable.Modulos.EscribirTXT.EscribirAgregarTexto" -->
+        <member name="T:ImprimirEjemplo.Imprimir">
+            <summary>
+            Este modulo permite imprimir todos los documentos del programa.
+            Se espera que cada uno arme un documento y lo imprima
+            </summary>
+        </member>
+        <!-- El comentario XML con formato incorrecto se omite para el miembro "M:ImprimirEjemplo.Imprimir.Imprimir_Solicitud" -->
+        <member name="M:ImprimirEjemplo.Imprimir.Datos_Cliente(System.Object,System.Drawing.Printing.PrintPageEventArgs)">
+            <summary>
+             En esta función se define los datos a imprimir en este caso
+             los datos de nuestros clientes y la posición de los mismos en el documento
+             </summary>
+        </member>
+        <member name="M:ImprimirEjemplo.Imprimir.Imprimir_Remito(VariablesPropias.VariablesPropias.vpRemito)">
+            <summary>
+            Imprime un remito.
+            </summary>
+        </member>
+        <member name="M:ImprimirEjemplo.Imprimir.Datos_Remito(System.Object,System.Drawing.Printing.PrintPageEventArgs)">
+            <summary>
+             En este metodo se define los datos a imprimir. En este caso un remito
+             </summary>	
+        </member>
+        <member name="M:ImprimirEjemplo.Imprimir.Imprimir_Recibo(VariablesPropias.VariablesPropias.vpRecibo)">
+            <summary>
+            Imprime un remito.
+            </summary>
+        </member>
+        <member name="M:ImprimirEjemplo.Imprimir.Datos_Recibo_Apaizado(System.Object,System.Drawing.Printing.PrintPageEventArgs)">
+            <summary>
+             En este metodo se define los datos a imprimir. En este caso un recibo
+             </summary>	
+        </member>
+        <member name="M:ImprimirEjemplo.Imprimir.Datos_Recibo(System.Object,System.Drawing.Printing.PrintPageEventArgs)">
+            <summary>
+             En este metodo se define los datos a imprimir. En este caso un recibo
+             </summary>	
+        </member>
+        <member name="M:ImprimirEjemplo.Imprimir.Imprimir_Factura(VariablesPropias.VariablesPropias.vpFactura)">
+            <summary>
+            Imprime una Factura
+            </summary>
+        </member>
+        <member name="M:ImprimirEjemplo.Imprimir.Datos_Factura(System.Object,System.Drawing.Printing.PrintPageEventArgs)">
+            <summary>
+             En este metodo se define los datos a imprimir. En este caso una Factura
+             </summary>	
+        </member>
+        <member name="M:ImprimirEjemplo.Imprimir.Imprimir_ListadoDeCheques(System.Data.DataTable)">
+            <summary>
+            Imprime el listado de los cheques
+            </summary>
+        </member>
+        <member name="M:ImprimirEjemplo.Imprimir.Datos_ListadoDeCheques(System.Object,System.Drawing.Printing.PrintPageEventArgs)">
+            <summary>
+             En este metodo se define los datos a imprimir. En este caso una Factura
+             </summary>	
+        </member>
+        <member name="M:ImprimirEjemplo.Imprimir.Imprimir_ListadoDeFactCIva(System.Data.DataTable)">
+            <summary>
+            Imprime el listado de los cheques
+            </summary>
+        </member>
+        <member name="M:ImprimirEjemplo.Imprimir.Datos_ListadoDeFactCIva(System.Object,System.Drawing.Printing.PrintPageEventArgs)">
+            <summary>
+             En este metodo se define los datos a imprimir. En este caso una Factura
+             </summary>	
+        </member>
+        <member name="T:Contable.InputBox.InputBoxResult">
+            <summary>
+            Class used to store the result of an InputBox.Show message.
+            </summary>
+        </member>
+        <member name="T:Contable.InputBox.InputBox">
+            <summary>
+            Esta clase genera un InputBox inexistente en C# pero comun en VB
+            </summary>
+        </member>
+        <member name="T:Contable.Modulos.OperacionesComunes">
+            <summary>
+            Operaciones generales.
+            </summary>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.FuenteChequesEnCarteraNew">
+            <summary>
+            Obtiene los cheques en cartera para la base nueva
+            </summary>
+            <returns>Un source de cheques en cartera</returns>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.TablaChequesEnCarteraNew">
+            <summary>
+            Obtiene los cheques en cartera para la base nueva
+            </summary>
+            <returns>Tabla de cheques en caretera</returns>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.FuenteObtenerFacturasImpagas(System.DateTime)">
+            <summary>
+            Obtiene las facturas que se encuentran impagas.
+            </summary>
+            <param name="dtFechaInicio"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.Guardar(VariablesPropias.VariablesPropias.vpRemito)">
+            <summary>
+            Funcion sobrecargada de guardar con una estructura de remito
+            </summary>
+            <param name="vpRemi"></param>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.ObtenerPrecioMercaderia(System.String)">
+            <summary>
+             Obtiene el precio de la mercaderia
+             </summary>
+             <param>
+             IDMercaderia es el identificador de la mercaderia
+             </param>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.CargarElCAI(System.String)">
+            <summary>
+            Esta funcion obtiene todos los parametros del CAI dado un numero de remito
+            </summary>
+            <param name="NumRemito"> El numero del remito para obtenr un CAI</param>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.ObtenerUltimoRemito">
+            <summary>
+            Obtiene el ultimo remito hecho
+            </summary>
+            <returns>Integer con el numero del utltimo remito </returns>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.ObtenerUltimaFactura(System.Int32,System.Int32)">
+            <summary>
+            Obtiene la ultima factura hecha
+            </summary>
+            <returns>Integer con el numero de la utltima factura </returns>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.ObtenerRemitosActivos(System.String)">
+            <summary>
+            Obtiene los remitos disponibles de un cliente
+            </summary>
+            <returns>Tabla con los Remitos disponibles de un cliente </returns>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.ObtenerClieDescuento(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="IDCliente"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.ObtenerDolar">
+            <summary>
+            Obtiene el Valor del dolar
+            </summary>
+            <returns>String con el dolar</returns>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.ObtenerDolar(System.DateTime)">
+             <summary>
+             Sobrecarga que obtiene el Valor del dolar de una fecha determinada.  
+             </summary>
+            <param name = "FechaDolar">
+            La fecha del dola que se quiere obtener. Usar fecha Latina dd/MM/yyyy
+            </param>
+             <returns>String con el dolar</returns>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.GuardarDolar(System.Decimal)">
+            <summary>
+            Guarda el Valor del dolar
+            </summary>
+            <param name="dcDolar">Dolar en decimal</param>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.Guardar(VariablesPropias.VariablesPropias.vpRecibo)">
+             <summary>
+             Funcion sobrecargada depende de la variable que se le entrega es lo que hace.
+             </summary>
+            <param name = "vpReci"> Guarda un recibo</param>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.TablaChequesFacturasCIVA(System.DateTime,System.DateTime)">
+            <summary>
+            Obtiene los cheques en cartera para la base nueva
+            </summary>
+            <returns>Tabla de cheques en caretera</returns>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.Guardar(VariablesPropias.VariablesPropias.vpComprobanteGastos)">
+             <summary>
+             Funcion sobrecargada depende de la variable que se le entrega es lo que hace.
+             </summary>
+            <param name = "DatosInsertar"> Guarda un comprobante de gastos</param>		
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.Eliminar(VariablesPropias.VariablesPropias.vpComprobanteGastos)">
+            <summary>
+            Elimina un comprobante de gastos duplicado
+            </summary>
+            <param name="FactProv"></param>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.FuenteObtenerFacturasImputadas(System.DateTime,System.DateTime)">
+            <summary>
+            Obtiene una lista de las facturas hechas en determinado tiempo
+            </summary>
+            <param name="dtFechaInicio">Fecha Inicial</param>
+            <param name="dtFechaFinal">Fecha Final</param>
+            <returns></returns>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.ConvertirAMoneda(System.String)">
+            <summary>
+            
+            </summary>
+            <param name="entrada"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.ObtenerTransporte(System.String)">
+            <summary>
+            Obtiene el Transporte y lo vuelca en una estructura vpTransporte
+            </summary>
+            <param name="strId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.Guardar(VariablesPropias.VariablesPropias.vpCheque)">
+             <summary>
+             Funcion sobrecargada depende de la variable que se le entrega es lo que hace.
+             </summary>
+            <param name = "DatosInsertar"> Guarda un comprobante de gastos</param>		
+        </member>
+        <member name="M:Contable.Modulos.OperacionesComunes.Guardar(VariablesPropias.VariablesPropias.vpInterdeposito,System.Int32)">
+             <summary>
+             Funcion sobrecargada depende de la variable que se le entrega es lo que hace.
+             </summary>
+            <param name = "DatosInsertar"> Guarda un interdeposito</param>
+            <param name = "BaseDatos"> Si es 1 a la base vieja si 2 a la nueva</param>
+        </member>
+        <member name="T:Contable.Modulos.Recibos">
+            <summary>
+            Description of Recibos.
+            </summary>
+        </member>
+        <member name="M:Contable.Modulos.Recibos.ObtenerUltimoRecibo">
+            <summary>
+            Obtiene el ultimo Recibo hecho
+            </summary>
+            <returns>Int con el numero del recibo</returns>
+        </member>
+        <member name="M:Contable.Modulos.Recibos.CargarRecibo(System.Int32)">
+            <summary>
+            Sobrecarga de la funcion CargarRecibo. Con esta lo hacemos desde la base de datos en vez de desde el form.
+            </summary>
+            <param name="intNumeroRecibo">
+            Es el numero del recibo. Deberia ser el ID del recibo y ser un string.
+            Veremos como lo arreglamos en el futuro.
+            </param>
+        </member>
+        <member name="T:Contable.Modulos.Remitos">
+            <summary>
+            Description of Remitos.
+            </summary>
+        </member>
+        <member name="M:Contable.Modulos.Remitos.CargarRemito(System.Int32)">
+            <summary>
+            Sobrecarga de la funcion CargarRemito. Con esta lo hacemos desde la base de datos en vez de desde el form.
+            </summary>
+            <param name="intNumeroRemito">
+            Es el numero del remito. Deberia ser el ID del remito y ser un string. 
+            Veremos como lo arreglamos en el futuro.
+            </param>
+        </member>
+        <member name="T:Contable.Modulos.Transportes">
+            <summary>
+            Description of Transportes.
+            </summary>
+        </member>
+        <member name="F:VariablesPropias.VariablesPropias.vpMargenesRecibo.sngFactFechaX">
+            <summary>
+            Posicion de la fecha en X, para Y usar sngFactY
+            </summary>
+        </member>
+        <member name="F:VariablesPropias.VariablesPropias.vpProveedores.Id">
+            <summary>
+            Esta estructura es la de un proveedor
+            </summary>
+        </member>
+        <member name="T:VariablesPropias.VariablesPropias.vpCAIRemito">
+            <summary>
+            CAI Remito son todas las variables para cargar el Cod de Aut de Impresión de Remitos
+            </summary>
+        </member>
+        <member name="T:VariablesPropias.VariablesPropias.vpPedido">
+            <summary>
+            Forma el pedido para pasarlo al remito
+            </summary>
+        </member>
+        <member name="T:VariablesPropias.VariablesPropias.vpTrazabilidadSENASA">
+             <summary>
+             Esta estructura cuenta con los datos para armar un certificado para enviar al SENASA.
+             Es mas claro 
+            </summary>
+        </member>
+        <member name="T:Contable.Partes_de_forms_Viejos.Form1">
+            <summary>
+            Description of Form1.
+            </summary>
+        </member>
+        <member name="F:Contable.Partes_de_forms_Viejos.Form1.components">
+            <summary>
+            Designer variable used to keep track of non-visual components.
+            </summary>
+        </member>
+        <member name="M:Contable.Partes_de_forms_Viejos.Form1.Dispose(System.Boolean)">
+            <summary>
+            Disposes resources used by the form.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Contable.Partes_de_forms_Viejos.Form1.InitializeComponent">
+            <summary>
+            This method is required for Windows Forms designer support.
+            Do not change the method contents inside the source code editor. The Forms designer might
+            not be able to load this method if it was changed manually.
+            </summary>
+        </member>
+        <member name="M:Contable.frmPedidosGeneral.RefrescarGrid">
+            <summary>
+            Funcion para refrescar el grid
+            </summary>
+        </member>
+        <member name="T:Contable.Program">
+            <summary>
+            Class with program entry point.
+            </summary>
+        </member>
+        <member name="M:Contable.Program.Main(System.String[])">
+            <summary>
+            Program entry point.
+            </summary>
+        </member>
+        <member name="T:Contable.Pruebas.frmPruebas">
+            <summary>
+            Description of frmPruebas.
+            </summary>
+        </member>
+        <member name="F:Contable.Pruebas.frmPruebas.components">
+            <summary>
+            Designer variable used to keep track of non-visual components.
+            </summary>
+        </member>
+        <member name="M:Contable.Pruebas.frmPruebas.Dispose(System.Boolean)">
+            <summary>
+            Disposes resources used by the form.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Contable.Pruebas.frmPruebas.InitializeComponent">
+            <summary>
+            This method is required for Windows Forms designer support.
+            Do not change the method contents inside the source code editor. The Forms designer might
+            not be able to load this method if it was changed manually.
+            </summary>
+        </member>
+        <member name="M:Contable.frmReciboAltas.FrmReciboAltasLoad(System.Object,System.EventArgs)">
+            <summary>Cuando inicia el Form</summary>
+        </member>
+        <member name="M:Contable.frmReciboAltas.CargarClientes">
+            <summary>
+            Esta funcion coloca los datos en cada uno de los items del recibo
+            </summary>		
+        </member>
+        <member name="M:Contable.frmReciboAltas.ObtenerFacturasPendientes(System.String)">
+            <summary>
+            Obtiene las facturas pendientes del cliente
+            </summary>
+             <param name="NombreCliente">El nombre del cliente</param>
+        </member>
+        <member name="M:Contable.frmReciboAltas.ObtenerNDPendientes(System.String)">
+            <summary>
+            Obtiene las Notas de debito pendientes de un cliente.
+            </summary>
+            <param name="NombreCliente">El nombre del cliente</param>
+        </member>
+        <member name="M:Contable.frmReciboAltas.ObtenerNCPendientes(System.String)">
+            <summary>
+            Obtiene las Notas de Credito pendientes de un cliente.
+            </summary>
+            <param name="NombreCliente"></param>
+        </member>
+        <member name="M:Contable.frmReciboAltas.ObtenerInterdepPendientes(System.String)">
+            <summary>
+            Obtiene las Notas de debito pendientes de un cliente.
+            </summary>
+            <param name="NombreCliente">El nombre del cliente</param>
+        </member>
+        <member name="M:Contable.frmReciboAltas.ObtenerChequesPendientes(System.String)">
+            <summary>
+            Obtiene los cheques pendientes del cliente
+            </summary>
+             <param name="IDCliente">El nombre del cliente</param>
+        </member>
+        <member name="M:Contable.frmReciboAltas.ObtenerDeuda">
+            <summary>
+            Obtiene el valor final de la deuda del cliente
+            </summary>
+            <returns>decimal con la deuda</returns>
+        </member>
+        <member name="M:Contable.frmReciboAltas.ObtenerCredito">
+            <summary>
+            Obtiene los documentos a favor del cliente
+            </summary>
+            <returns>decimal con el credito</returns>
+        </member>
+        <member name="M:Contable.frmReciboAltas.CargarRecibo">
+            <summary>
+            Carga los datos presentados en una variable propia que tiene todos los datos en forma de estructura
+            </summary>
+        </member>
+        <member name="M:Contable.frmReciboAltas.TbImprimirClick(System.Object,System.EventArgs)">
+            <summary>
+            Imprime un recibo
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Contable.frmReciboAltas.TlbGuardarClick(System.Object,System.EventArgs)">
+            <summary>
+            Guarda un Recibo
+            </summary>
+            <param name="sender"></param>
+            <param name="e"></param>
+        </member>
+        <member name="M:Contable.frmRemitos.TlbNuevoClick(System.Object,System.EventArgs)">
+            <summary>
+             Esta funcion limpia todo el formulario y agrega un numero al valor de los remitos
+             </summary>
+        </member>
+        <member name="M:Contable.frmRemitos.TxtNumRemitoKeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+            <summary>
+            Esta funcion espera que se presione la tecla "Enter" para hacer las cosas
+            </summary>
+        </member>
+        <member name="M:Contable.frmRemitos.CargarClientesCombo">
+            <summary>
+            Carga los datos del Cliente en el ComboBox
+            </summary>
+        </member>
+        <member name="M:Contable.frmRemitos.CargarClientesRemito">
+            <summary>
+            Esta funcion coloca los datos en cada uno de los items del remito
+            Sirve para cuando pasamos datos al remito se puedan cargar facilmente	
+            </summary>		
+        </member>
+        <member name="M:Contable.frmRemitos.LimpiarRemito">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Contable.frmRemitos.CargarRemito">
+            <summary>
+            Carga los datos presentados en una variable propia que tiene todos los datos en forma de estructura
+            </summary>
+        </member>
+        <member name="M:Contable.frmRemitos.PasarARemito(VariablesPropias.VariablesPropias.vpRemito)">
+            <summary>
+            
+            </summary>
+            <param name="remi"></param>
+        </member>
+        <member name="T:Contable.Reportes.frmRepViajes">
+            <summary>
+            Description of frmRepViajes.
+            </summary>
+        </member>
+        <member name="F:Contable.Reportes.frmRepViajes.components">
+            <summary>
+            Designer variable used to keep track of non-visual components.
+            </summary>
+        </member>
+        <member name="M:Contable.Reportes.frmRepViajes.Dispose(System.Boolean)">
+            <summary>
+            Disposes resources used by the form.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Contable.Reportes.frmRepViajes.InitializeComponent">
+            <summary>
+            This method is required for Windows Forms designer support.
+            Do not change the method contents inside the source code editor. The Forms designer might
+            not be able to load this method if it was changed manually.
+            </summary>
+        </member>
+        <member name="T:Contable.SENASA.frmBaseDatosTraza">
+            <summary>
+            Description of BaseDatosTraza.
+            </summary>
+        </member>
+        <member name="F:Contable.SENASA.frmBaseDatosTraza.components">
+            <summary>
+            Designer variable used to keep track of non-visual components.
+            </summary>
+        </member>
+        <member name="M:Contable.SENASA.frmBaseDatosTraza.Dispose(System.Boolean)">
+            <summary>
+            Disposes resources used by the form.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Contable.SENASA.frmBaseDatosTraza.InitializeComponent">
+            <summary>
+            This method is required for Windows Forms designer support.
+            Do not change the method contents inside the source code editor. The Forms designer might
+            not be able to load this method if it was changed manually.
+            </summary>
+        </member>
+        <member name="T:Contable.SENASA.frmConsultaTraza">
+            <summary>
+            Description of frmConsultaTraza.
+            </summary>
+        </member>
+        <member name="F:Contable.SENASA.frmConsultaTraza.components">
+            <summary>
+            Designer variable used to keep track of non-visual components.
+            </summary>
+        </member>
+        <member name="M:Contable.SENASA.frmConsultaTraza.Dispose(System.Boolean)">
+            <summary>
+            Disposes resources used by the form.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Contable.SENASA.frmConsultaTraza.InitializeComponent">
+            <summary>
+            This method is required for Windows Forms designer support.
+            Do not change the method contents inside the source code editor. The Forms designer might
+            not be able to load this method if it was changed manually.
+            </summary>
+        </member>
+        <member name="T:Contable.SENASA.frmInformarTraza">
+            <summary>
+            Description of frmInformarTraza.
+            </summary>
+        </member>
+        <member name="M:Contable.SENASA.frmInformarTraza.CargarDatosClientes">
+            <summary>
+            Esta funcion coloca los datos en cada uno de los items del remito
+            Sirve para cuando pasamos datos al remito se puedan cargar facilmente	
+            </summary>		
+        </member>
+        <member name="F:Contable.SENASA.frmInformarTraza.components">
+            <summary>
+            Designer variable used to keep track of non-visual components.
+            </summary>
+        </member>
+        <member name="M:Contable.SENASA.frmInformarTraza.Dispose(System.Boolean)">
+            <summary>
+            Disposes resources used by the form.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Contable.SENASA.frmInformarTraza.InitializeComponent">
+            <summary>
+            This method is required for Windows Forms designer support.
+            Do not change the method contents inside the source code editor. The Forms designer might
+            not be able to load this method if it was changed manually.
+            </summary>
+        </member>
+        <member name="T:Contable.SENASA.frmIngresoTrazabilidad">
+            <summary>
+            Description of frmIngresoTrazabilidad.
+            </summary>
+        </member>
+        <member name="F:Contable.SENASA.frmIngresoTrazabilidad.components">
+            <summary>
+            Designer variable used to keep track of non-visual components.
+            </summary>
+        </member>
+        <member name="M:Contable.SENASA.frmIngresoTrazabilidad.Dispose(System.Boolean)">
+            <summary>
+            Disposes resources used by the form.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Contable.SENASA.frmIngresoTrazabilidad.InitializeComponent">
+            <summary>
+            This method is required for Windows Forms designer support.
+            Do not change the method contents inside the source code editor. The Forms designer might
+            not be able to load this method if it was changed manually.
+            </summary>
+        </member>
+        <member name="T:Contable.SENASA.Trazabilidad">
+            <summary>
+            Description of Trazabilidad.
+            </summary>
+        </member>
+        <member name="F:Contable.SENASA.Trazabilidad.components">
+            <summary>
+            Designer variable used to keep track of non-visual components.
+            </summary>
+        </member>
+        <member name="M:Contable.SENASA.Trazabilidad.Dispose(System.Boolean)">
+            <summary>
+            Disposes resources used by the form.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Contable.SENASA.Trazabilidad.InitializeComponent">
+            <summary>
+            This method is required for Windows Forms designer support.
+            Do not change the method contents inside the source code editor. The Forms designer might
+            not be able to load this method if it was changed manually.
+            </summary>
+        </member>
+        <member name="T:Contable.SENASA.frmTrazabilidadIcona">
+            <summary>
+            Description of frmTrazabilidadIcona.
+            </summary>
+        </member>
+        <member name="M:Contable.SENASA.frmTrazabilidadIcona.#ctor">
+            <summary>
+            Esta parte del programa permite ingresar los productos de otro GTIN y convertirlos a los
+            de la empresa.
+            Tiene dos formas una de forma automatica y la otra manual
+            Tambien tiene la posibilidad de configurar los tiempos y las formas de guardar los codigos. 
+            </summary>
+        </member>
+        <member name="M:Contable.SENASA.frmTrazabilidadIcona.GuardarSoloCodigoIcona(System.String)">
+            <summary>
+            Esta funcion permite guardar el codigo en la base de datos directamente
+            </summary>
+            <param name="strCodigo"></param>
+        </member>
+        <member name="F:Contable.SENASA.frmTrazabilidadIcona.components">
+            <summary>
+            Designer variable used to keep track of non-visual components.
+            </summary>
+        </member>
+        <member name="M:Contable.SENASA.frmTrazabilidadIcona.Dispose(System.Boolean)">
+            <summary>
+            Disposes resources used by the form.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:Contable.SENASA.frmTrazabilidadIcona.InitializeComponent">
+            <summary>
+            This method is required for Windows Forms designer support.
+            Do not change the method contents inside the source code editor. The Forms designer might
+            not be able to load this method if it was changed manually.
+            </summary>
+        </member>
+        <member name="T:Contable.SENASA.Opercaciones.Operaciones">
+            <summary>
+            Operaciones para realizar con el SENASA - Trazabilidad
+            </summary>
+        </member>
+        <member name="M:Contable.SENASA.Opercaciones.Operaciones.#ctor">
+            <summary>
+            ???
+            </summary>
+        </member>
+        <member name="M:Contable.SENASA.Opercaciones.Operaciones.ConsultarDatosSENASA(System.String,System.String,Contable.SENASA.Opercaciones.Operaciones.vpConsultaSENASA)">
+            <summary>
+            Esta función consulta en el SENSASA las operaciones pendientes de aprobación.
+            </summary>
+            <param name="usr">Usuario</param>
+            <param name="pass">Contraseña</param>
+            <param name="parametrosConsulta">Una estructura que posee todos los valores para poder hacer la consulta</param>
+        </member>
+        <member name="M:Contable.SENASA.Opercaciones.Operaciones.ConfirmarTransacionesSENASA(System.String,System.String,Contable.servicios.pami.org.ar.confirmacionTransaccionSenasaDTO[])">
+            <summary>
+            
+            </summary>
+            <param name="usr"></param>
+            <param name="pass"></param>
+            <param name="parametrosConfirmarDatos"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Contable.SENASA.Opercaciones.Operaciones.EnviarDatosSENASA(System.String,System.String,Contable.servicios.pami.org.ar.transaccionSenasaDTO[])">
+            <summary>
+            Envia los datos al SENASA para que pueda aprobarse una operacion.
+            </summary>
+            <param name="usr">Usuario</param>
+            <param name="pass">Contraseña</param>
+            <param name="parametros">Esto junta todos los datos del parametros para enviar al SENASA</param>
+        </member>
+        <member name="M:Contable.SENASA.Opercaciones.Operaciones.ObtenerParametros(Contable.SENASA.Opercaciones.Operaciones.vpTransaccionSENASADTO)">
+            <summary>
+            Esta funcion cumple con armar un array con los parametros para pasarlos al SENASA en un SendTransaccion.
+            </summary>
+             <param name="datosOperacion">Variable propia que trae todos los datos de una operacion</param>
+        </member>
+        <member name="M:Contable.SENASA.Opercaciones.Operaciones.valorCombo(System.String)">
+            <summary>
+            Esto convierte los nombres de las condiciones en su homologo numerico
+            </summary>
+        </member>
+        <member name="M:Contable.SENASA.Opercaciones.Operaciones.MostrarRespuesta(Contable.servicios.pami.org.ar.webServiceResult)">
+            <summary>
+            Muestra el resultado de la operacion
+            </summary>
+            <param name="wsResult">Un resultado Existoso de consumir el WS</param>
+        </member>
+        <member name="M:Contable.SENASA.Opercaciones.Operaciones.MostrarErrores(Contable.servicios.pami.org.ar.webServiceResult)">
+            <summary>
+            Muestra los codigos de Error en un mensaje al Usuario
+            </summary>
+            <param name="wsResult">Un resultado erroneo de consumir el WS</param>
+        </member>
+        <member name="F:Contable.SENASA.Opercaciones.Operaciones.vpTransaccionSENASADTO.f_vto">
+            <summary> Fecha de elaboracion</summary>
+        </member>
+        <member name="T:Contable.Modulos.OperacionesTrazabilidad">
+            <summary>
+            Description of OperacionesTrazabilidad.
+            </summary>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesTrazabilidad.Guardar(Contable.servicios.pami.org.ar.transaccionSenasa)">
+            <summary>
+            Guada en el Stock 
+            </summary>
+            <param name="datosGuardar"></param>
+        </member>
+        <member name="M:Contable.Modulos.OperacionesTrazabilidad.FuenteObtenerStockTrazabilidad">
+            <summary>
+            Arma un Source para un grid con el stock de lo que haya en la base
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Contable.SENASA.ServiceClient.SendConfirmaTransac(System.String,System.String,Contable.servicios.pami.org.ar.confirmacionTransaccionSenasaDTO[])">
+            <summary>
+            Confirma las transacciones pendientes
+            </summary>
+            <param name="usr">Usuario del sistema</param>
+            <param name="pass">Password del sistema</param>
+            <param name="transacciones">Un array de la estructura de confirma transacciones</param>
+            <returns></returns>
+        </member>
+        <member name="M:Contable.SENASA.ServiceClient.GetTransacciones(System.String,System.String,Contable.SENASA.Opercaciones.Operaciones.vpConsultaSENASA)">
+            <summary>
+            Obtiene las transacciones pendientes de aceptacion.
+            </summary>
+            <param name="usser">Usuario del sistema</param>
+            <param name="pass">Password del sistema</param>
+            <param name="consulta">Estrucutra con los datos de la consulta</param>
+            <returns>Devuelve un array con los productos no aceptrados aun</returns>
+        </member>
+        <member name="T:Contable.servicios.pami.org.ar.transaccionSenasaDTO">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.apellidoNombres">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.cod_producto">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.cuit">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.direccion">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.en_transporte">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.en_transporteSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.f_elaboracion">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.f_operacion">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.f_vto">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.gln_destino">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.gln_origen">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.id_evento">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.id_eventoSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.id_motivo_destruccion">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.id_motivo_destruccionSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.localidad">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.localidadSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.motivo_devolucion">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.n_cae">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.n_cai">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.n_cantidad">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.n_cantidadSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.n_lote">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.n_manifiesto">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.n_postal">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.n_remito">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.n_serie">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.n_vale_compra">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.numero">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.numeroSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.observaciones">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.provincia">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasaDTO.provinciaSpecified">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios.pami.org.ar.confirmacionTransaccionSenasaDTO">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.confirmacionTransaccionSenasaDTO.f_operacion">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.confirmacionTransaccionSenasaDTO.n_cantidad">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.confirmacionTransaccionSenasaDTO.n_cantidadSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.confirmacionTransaccionSenasaDTO.p_ids_transac">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.confirmacionTransaccionSenasaDTO.p_ids_transacSpecified">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios.pami.org.ar.transaccionSenasa">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.apellidoNombres">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.cantidad">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.cantidadSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.cod_producto">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.cuit">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.d_agente_destino">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.d_agente_informador">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.d_agente_origen">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.d_envase">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.d_estado_transaccion">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.d_evento">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.d_motivo_destruccion">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.d_producto">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.d_tipo_transaccion">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.d_unidad">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.direccion">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.en_transporte">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.f_elaboracion">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.f_elaboracionSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.f_operacion">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.f_operacionSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.f_transaccion">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.f_transaccionSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.f_vencimiento">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.f_vencimientoSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.id_transaccion">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.id_transaccionSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.id_transaccion_global">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.id_transaccion_globalSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.id_unidad">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.localidad">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.motivo_devolucion">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.n_cae">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.n_cai">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.n_lote">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.n_manifiesto">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.n_postal">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.n_remito">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.n_serie">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.n_vale_compra">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.numero">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.numeroSpecified">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.observaciones">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.transaccionSenasa.provincia">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios.pami.org.ar.webServiceError">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.webServiceError.c_error">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.webServiceError.d_error">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios.pami.org.ar.webServiceResult">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.webServiceResult.codigoTransaccion">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.webServiceResult.errores">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.webServiceResult.resultado">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.webServiceResult.resultadoSpecified">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios.pami.org.ar.resultadoTransaccionSenasaWS">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.resultadoTransaccionSenasaWS.list">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios.pami.org.ar.resultadoTransaccionSenasaPaginadoWS">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.resultadoTransaccionSenasaPaginadoWS.cantPaginas">
+            <comentarios/>
+        </member>
+        <member name="P:Contable.servicios.pami.org.ar.resultadoTransaccionSenasaPaginadoWS.cantPaginasSpecified">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.Service">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.#ctor">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FECAESolicitar(Contable.servicios1.afip.gov.ar.FEAuthRequest,Contable.servicios1.afip.gov.ar.FECAERequest)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFECAESolicitar(Contable.servicios1.afip.gov.ar.FEAuthRequest,Contable.servicios1.afip.gov.ar.FECAERequest,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFECAESolicitar(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FECompTotXRequest(Contable.servicios1.afip.gov.ar.FEAuthRequest)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFECompTotXRequest(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFECompTotXRequest(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FEDummy">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFEDummy(System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFEDummy(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FECompUltimoAutorizado(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.Int32,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFECompUltimoAutorizado(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.Int32,System.Int32,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFECompUltimoAutorizado(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FECompConsultar(Contable.servicios1.afip.gov.ar.FEAuthRequest,Contable.servicios1.afip.gov.ar.FECompConsultaReq)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFECompConsultar(Contable.servicios1.afip.gov.ar.FEAuthRequest,Contable.servicios1.afip.gov.ar.FECompConsultaReq,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFECompConsultar(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FECAEARegInformativo(Contable.servicios1.afip.gov.ar.FEAuthRequest,Contable.servicios1.afip.gov.ar.FECAEARequest)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFECAEARegInformativo(Contable.servicios1.afip.gov.ar.FEAuthRequest,Contable.servicios1.afip.gov.ar.FECAEARequest,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFECAEARegInformativo(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FECAEASolicitar(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.Int32,System.Int16)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFECAEASolicitar(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.Int32,System.Int16,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFECAEASolicitar(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FECAEASinMovimientoConsultar(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.String,System.Int32)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFECAEASinMovimientoConsultar(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.String,System.Int32,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFECAEASinMovimientoConsultar(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FECAEASinMovimientoInformar(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.Int32,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFECAEASinMovimientoInformar(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.Int32,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFECAEASinMovimientoInformar(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FECAEAConsultar(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.Int32,System.Int16)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFECAEAConsultar(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.Int32,System.Int16,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFECAEAConsultar(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FEParamGetCotizacion(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFEParamGetCotizacion(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFEParamGetCotizacion(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FEParamGetTiposTributos(Contable.servicios1.afip.gov.ar.FEAuthRequest)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFEParamGetTiposTributos(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFEParamGetTiposTributos(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FEParamGetTiposMonedas(Contable.servicios1.afip.gov.ar.FEAuthRequest)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFEParamGetTiposMonedas(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFEParamGetTiposMonedas(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FEParamGetTiposIva(Contable.servicios1.afip.gov.ar.FEAuthRequest)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFEParamGetTiposIva(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFEParamGetTiposIva(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FEParamGetTiposOpcional(Contable.servicios1.afip.gov.ar.FEAuthRequest)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFEParamGetTiposOpcional(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFEParamGetTiposOpcional(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FEParamGetTiposConcepto(Contable.servicios1.afip.gov.ar.FEAuthRequest)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFEParamGetTiposConcepto(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFEParamGetTiposConcepto(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FEParamGetPtosVenta(Contable.servicios1.afip.gov.ar.FEAuthRequest)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFEParamGetPtosVenta(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFEParamGetPtosVenta(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FEParamGetTiposCbte(Contable.servicios1.afip.gov.ar.FEAuthRequest)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFEParamGetTiposCbte(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFEParamGetTiposCbte(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FEParamGetTiposDoc(Contable.servicios1.afip.gov.ar.FEAuthRequest)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFEParamGetTiposDoc(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFEParamGetTiposDoc(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.FEParamGetTiposPaises(Contable.servicios1.afip.gov.ar.FEAuthRequest)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.BeginFEParamGetTiposPaises(Contable.servicios1.afip.gov.ar.FEAuthRequest,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.servicios1.afip.gov.ar.Service.EndFEParamGetTiposPaises(System.IAsyncResult)">
+            <remarks/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FEAuthRequest">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEAuthRequest.Token">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEAuthRequest.Sign">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEAuthRequest.Cuit">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.PaisTipo">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.PaisTipo.Id">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.PaisTipo.Desc">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FEPaisResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEPaisResponse.ResultGet">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEPaisResponse.Errors">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEPaisResponse.Events">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.Err">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Err.Code">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Err.Msg">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.Evt">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Evt.Code">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Evt.Msg">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.DocTipo">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.DocTipo.Id">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.DocTipo.Desc">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.DocTipo.FchDesde">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.DocTipo.FchHasta">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.DocTipoResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.DocTipoResponse.ResultGet">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.DocTipoResponse.Errors">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.DocTipoResponse.Events">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.CbteTipo">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.CbteTipo.Id">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.CbteTipo.Desc">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.CbteTipo.FchDesde">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.CbteTipo.FchHasta">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.CbteTipoResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.CbteTipoResponse.ResultGet">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.CbteTipoResponse.Errors">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.CbteTipoResponse.Events">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.PtoVenta">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.PtoVenta.Nro">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.PtoVenta.EmisionTipo">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.PtoVenta.Bloqueado">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.PtoVenta.FchBaja">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FEPtoVentaResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEPtoVentaResponse.ResultGet">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEPtoVentaResponse.Errors">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEPtoVentaResponse.Events">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.ConceptoTipo">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.ConceptoTipo.Id">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.ConceptoTipo.Desc">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.ConceptoTipo.FchDesde">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.ConceptoTipo.FchHasta">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.ConceptoTipoResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.ConceptoTipoResponse.ResultGet">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.ConceptoTipoResponse.Errors">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.ConceptoTipoResponse.Events">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.OpcionalTipo">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.OpcionalTipo.Id">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.OpcionalTipo.Desc">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.OpcionalTipo.FchDesde">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.OpcionalTipo.FchHasta">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.OpcionalTipoResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.OpcionalTipoResponse.ResultGet">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.OpcionalTipoResponse.Errors">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.OpcionalTipoResponse.Events">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.IvaTipo">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.IvaTipo.Id">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.IvaTipo.Desc">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.IvaTipo.FchDesde">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.IvaTipo.FchHasta">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.IvaTipoResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.IvaTipoResponse.ResultGet">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.IvaTipoResponse.Errors">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.IvaTipoResponse.Events">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.Moneda">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Moneda.Id">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Moneda.Desc">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Moneda.FchDesde">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Moneda.FchHasta">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.MonedaResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.MonedaResponse.ResultGet">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.MonedaResponse.Errors">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.MonedaResponse.Events">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.TributoTipo">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.TributoTipo.Id">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.TributoTipo.Desc">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.TributoTipo.FchDesde">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.TributoTipo.FchHasta">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FETributoResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FETributoResponse.ResultGet">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FETributoResponse.Errors">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FETributoResponse.Events">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.Cotizacion">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Cotizacion.MonId">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Cotizacion.MonCotiz">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Cotizacion.FchCotiz">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECotizacionResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECotizacionResponse.ResultGet">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECotizacionResponse.Errors">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECotizacionResponse.Events">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECAEASinMov">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEASinMov.CAEA">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEASinMov.FchProceso">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEASinMov.PtoVta">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECAEASinMovResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEASinMovResponse.Resultado">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEASinMovResponse.Errors">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEASinMovResponse.Events">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECAEASinMovConsResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEASinMovConsResponse.ResultGet">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEASinMovConsResponse.Errors">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEASinMovConsResponse.Events">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECAEAGet">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEAGet.CAEA">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEAGet.Periodo">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEAGet.Orden">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEAGet.FchVigDesde">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEAGet.FchVigHasta">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEAGet.FchTopeInf">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEAGet.FchProceso">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEAGet.Observaciones">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.Obs">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Obs.Code">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Obs.Msg">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECAEAGetResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEAGetResponse.ResultGet">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEAGetResponse.Errors">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEAGetResponse.Events">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECAEAResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEAResponse.FeCabResp">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEAResponse.FeDetResp">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEAResponse.Events">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEAResponse.Errors">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECAEACabResponse">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECabResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECabResponse.Cuit">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECabResponse.PtoVta">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECabResponse.CbteTipo">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECabResponse.FchProceso">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECabResponse.CantReg">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECabResponse.Resultado">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECabResponse.Reproceso">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECAECabResponse">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECAEADetResponse">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FEDetResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetResponse.Concepto">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetResponse.DocTipo">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetResponse.DocNro">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetResponse.CbteDesde">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetResponse.CbteHasta">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetResponse.CbteFch">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetResponse.Resultado">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetResponse.Observaciones">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEADetResponse.CAEA">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECAEDetResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEDetResponse.CAE">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEDetResponse.CAEFchVto">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECAEARequest">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEARequest.FeCabReq">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEARequest.FeDetReq">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECAEACabRequest">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECabRequest">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECabRequest.CantReg">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECabRequest.PtoVta">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECabRequest.CbteTipo">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECAECabRequest">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECAEADetRequest">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FEDetRequest">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.Concepto">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.DocTipo">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.DocNro">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.CbteDesde">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.CbteHasta">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.CbteFch">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.ImpTotal">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.ImpTotConc">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.ImpNeto">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.ImpOpEx">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.ImpTrib">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.ImpIVA">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.FchServDesde">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.FchServHasta">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.FchVtoPago">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.MonId">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.MonCotiz">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.CbtesAsoc">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.Tributos">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.Iva">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FEDetRequest.Opcionales">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEADetRequest.CAEA">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.CbteAsoc">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.CbteAsoc.Tipo">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.CbteAsoc.PtoVta">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.CbteAsoc.Nro">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.Tributo">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Tributo.Id">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Tributo.Desc">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Tributo.BaseImp">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Tributo.Alic">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Tributo.Importe">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.AlicIva">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.AlicIva.Id">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.AlicIva.BaseImp">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.AlicIva.Importe">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.Opcional">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Opcional.Id">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.Opcional.Valor">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECAEDetRequest">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECompConsResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECompConsResponse.Resultado">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECompConsResponse.CodAutorizacion">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECompConsResponse.EmisionTipo">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECompConsResponse.FchVto">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECompConsResponse.FchProceso">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECompConsResponse.Observaciones">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECompConsResponse.PtoVta">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECompConsResponse.CbteTipo">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECompConsultaResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECompConsultaResponse.ResultGet">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECompConsultaResponse.Errors">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECompConsultaResponse.Events">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECompConsultaReq">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECompConsultaReq.CbteTipo">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECompConsultaReq.CbteNro">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECompConsultaReq.PtoVta">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FERecuperaLastCbteResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FERecuperaLastCbteResponse.PtoVta">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FERecuperaLastCbteResponse.CbteTipo">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FERecuperaLastCbteResponse.CbteNro">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FERecuperaLastCbteResponse.Errors">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FERecuperaLastCbteResponse.Events">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.DummyResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.DummyResponse.AppServer">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.DummyResponse.DbServer">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.DummyResponse.AuthServer">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FERegXReqResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FERegXReqResponse.RegXReq">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FERegXReqResponse.Errors">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FERegXReqResponse.Events">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECAEResponse">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEResponse.FeCabResp">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEResponse.FeDetResp">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEResponse.Events">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAEResponse.Errors">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.servicios1.afip.gov.ar.FECAERequest">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAERequest.FeCabReq">
+            <comentarios/>
+        </member>
+        <member name="F:Contable.servicios1.afip.gov.ar.FECAERequest.FeDetReq">
+            <comentarios/>
+        </member>
+        <member name="T:Contable.wsaa.afip.gov.ar.LoginCMSService">
+            <remarks/>
+        </member>
+        <member name="M:Contable.wsaa.afip.gov.ar.LoginCMSService.#ctor">
+            <remarks/>
+        </member>
+        <member name="M:Contable.wsaa.afip.gov.ar.LoginCMSService.loginCms(System.String)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.wsaa.afip.gov.ar.LoginCMSService.BeginloginCms(System.String,System.AsyncCallback,System.Object)">
+            <remarks/>
+        </member>
+        <member name="M:Contable.wsaa.afip.gov.ar.LoginCMSService.EndloginCms(System.IAsyncResult)">
+            <remarks/>
+        </member>
+    </members>
+</doc>

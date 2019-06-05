@@ -1,0 +1,563 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectGuid>{83E04F68-E61D-4ECB-90C6-220F6DEF0742}</ProjectGuid>
+    <ProjectTypeGuids>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Contable</RootNamespace>
+    <AssemblyName>Contable</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <RunCodeAnalysis>False</RunCodeAnalysis>
+    <SourceAnalysisOverrideSettingsFile>C:\Users\Juan Carlos\Desktop\Programa Contable\Contable\Contable\Settings.SourceAnalysis</SourceAnalysisOverrideSettingsFile>
+    <SignAssembly>False</SignAssembly>
+    <DelaySign>False</DelaySign>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Contable.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Security.Principal" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Actualizaciones\frmBancos.cs" />
+    <Compile Include="Actualizaciones\frmBancos.Designer.cs">
+      <DependentUpon>frmBancos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Actualizaciones\frmBancos.Designer1.cs">
+      <DependentUpon>frmBancos.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Actualizaciones\frmClientes.cs" />
+    <Compile Include="Actualizaciones\frmClientes.Designer.cs">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Actualizaciones\frmMercaderia.cs" />
+    <Compile Include="Actualizaciones\frmMercaderia.Designer.cs">
+      <DependentUpon>frmMercaderia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Actualizaciones\frmProveedores.cs" />
+    <Compile Include="Actualizaciones\frmProveedores.Designer.cs">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Actualizaciones\frmTransporte.cs" />
+    <Compile Include="Actualizaciones\frmTransporte.Designer.cs">
+      <DependentUpon>frmTransporte.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AFIP\AFIP.cs" />
+    <Compile Include="AFIP\WSAA-JCF.cs" />
+    <Compile Include="Carteles\frmCarteles.cs" />
+    <Compile Include="Carteles\frmCarteles.Designer.cs">
+      <DependentUpon>frmCarteles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cheques\frmCheqListado.cs" />
+    <Compile Include="Cheques\frmCheqListado.Designer.cs">
+      <DependentUpon>frmCheqListado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cheques\frmCheqOp.cs" />
+    <Compile Include="Cheques\frmCheqOp.Designer.cs">
+      <DependentUpon>frmCheqOp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cheques\frmCheqOrdenPago.cs" />
+    <Compile Include="Cheques\frmCheqOrdenPago.Designer.cs">
+      <DependentUpon>frmCheqOrdenPago.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cheques\frmCheques.cs" />
+    <Compile Include="Cheques\frmCheques.Designer.cs">
+      <DependentUpon>frmCheques.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Clientes\frmClieReporte.cs" />
+    <Compile Include="Clientes\frmClieReporte.Designer.cs" />
+    <Compile Include="Clientes\frmClieReporteDeduda.cs" />
+    <Compile Include="Clientes\frmClieReporteDeduda.Designer.cs" />
+    <Compile Include="Configuracion\frmConfiguracion.cs" />
+    <Compile Include="Configuracion\frmConfiguracion.Designer.cs">
+      <DependentUpon>frmConfiguracion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contador\Balance\frmContadorBalance.cs" />
+    <Compile Include="Contador\Balance\frmContadorBalance.Designer.cs">
+      <DependentUpon>frmContadorBalance.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contador\Egresos\frmContadorChequeEmitido.cs" />
+    <Compile Include="Contador\Egresos\frmContadorChequeEmitido.Designer.cs">
+      <DependentUpon>frmContadorChequeEmitido.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contador\Facturas Con Iva\frmContadorFactConIVA.cs" />
+    <Compile Include="Contador\Facturas Con Iva\frmContadorFactConIVA.Designer.cs">
+      <DependentUpon>frmContadorFactConIVA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contador\frmContadorDepBanc.cs" />
+    <Compile Include="Contador\frmContadorDepBanc.Designer.cs">
+      <DependentUpon>frmContadorDepBanc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contador\IVA\frmContadorIVACompras.cs" />
+    <Compile Include="Contador\IVA\frmContadorIVACompras.Designer.cs">
+      <DependentUpon>frmContadorIVACompras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contador\IVA\frmContadorIVACompras.Designer1.cs">
+      <DependentUpon>frmContadorIVACompras.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Contador\IVA\frmContadorIVAVentas.cs" />
+    <Compile Include="Contador\IVA\frmContadorIVAVentas.Designer.cs">
+      <DependentUpon>frmContadorIVAVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contador\ResumenSemana\frmContadorInformeSemanal.cs" />
+    <Compile Include="Contador\ResumenSemana\frmContadorInformeSemanal.Designer.cs">
+      <DependentUpon>frmContadorInformeSemanal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturas\frmDocumentoFiscal.cs" />
+    <Compile Include="Facturas\frmDocumentoFiscal.Designer.cs">
+      <DependentUpon>frmDocumentoFiscal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturas\frmFactImpagas.cs" />
+    <Compile Include="Facturas\frmFactImpagas.Designer.cs">
+      <DependentUpon>frmFactImpagas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Facturas\frmFactImpagas.Designer1.cs">
+      <DependentUpon>frmFactImpagas.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Interdepositos\frmInterOp.cs" />
+    <Compile Include="Interdepositos\frmInterOp.Designer.cs">
+      <DependentUpon>frmInterOp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs" />
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MigrarDB\MigrarDB.cs" />
+    <Compile Include="Modulos\Clientes.cs" />
+    <Compile Include="Modulos\CodigoBarras.cs" />
+    <Compile Include="Modulos\ConexionAccess2007.cs" />
+    <Compile Include="Modulos\Conversor.cs" />
+    <Compile Include="Modulos\Documentos Fiscales.cs" />
+    <Compile Include="Modulos\dtGridWtoDataTable.cs" />
+    <Compile Include="Modulos\Escribir XML.cs" />
+    <Compile Include="Modulos\EscribirTXT.cs" />
+    <Compile Include="Modulos\Imprimir.cs" />
+    <Compile Include="Modulos\InputBox.cs" />
+    <Compile Include="Modulos\OperacionesComunes.cs" />
+    <Compile Include="Modulos\Recibos.cs" />
+    <Compile Include="Modulos\Remitos.cs" />
+    <Compile Include="Modulos\Transportes.cs" />
+    <Compile Include="Modulos\VariablesPropias.cs" />
+    <Compile Include="Partes de forms Viejos\Form1.cs" />
+    <Compile Include="Partes de forms Viejos\Form1.Designer.cs" />
+    <Compile Include="Pedidos\frmPedidosGeneral.cs" />
+    <Compile Include="Pedidos\frmPedidosGeneral.Designer.cs">
+      <DependentUpon>frmPedidosGeneral.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pedidos\frmPedidosNuevos.cs" />
+    <Compile Include="Pedidos\frmPedidosNuevos.Designer.cs">
+      <DependentUpon>frmPedidosNuevos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Pruebas\frmPruebas.cs" />
+    <Compile Include="Pruebas\frmPruebas.Designer.cs">
+      <DependentUpon>frmPruebas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Recibo\frmRecibos.cs" />
+    <Compile Include="Recibo\frmRecibos.Designer.cs">
+      <DependentUpon>frmRecibos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Remitos\frmRemitos.cs" />
+    <Compile Include="Remitos\frmRemitos.Designer.cs">
+      <DependentUpon>frmRemitos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmRepVentas.cs" />
+    <Compile Include="Reportes\frmRepVentas.Designer.cs">
+      <DependentUpon>frmRepVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\frmRepViajes.cs" />
+    <Compile Include="Reportes\frmRepViajes.Designer.cs">
+      <DependentUpon>frmRepViajes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SENASA\frmBaseDatosTraza.cs" />
+    <Compile Include="SENASA\frmBaseDatosTraza.Designer.cs">
+      <DependentUpon>frmBaseDatosTraza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SENASA\frmConsultaTraza.cs" />
+    <Compile Include="SENASA\frmConsultaTraza.Designer.cs">
+      <DependentUpon>frmConsultaTraza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SENASA\frmInformarTraza.cs" />
+    <Compile Include="SENASA\frmInformarTraza.Designer.cs">
+      <DependentUpon>frmInformarTraza.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SENASA\frmIngresoTrazabilidad.cs" />
+    <Compile Include="SENASA\frmIngresoTrazabilidad.Designer.cs">
+      <DependentUpon>frmIngresoTrazabilidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SENASA\frmTrazabilidad.cs" />
+    <Compile Include="SENASA\frmTrazabilidad.Designer.cs">
+      <DependentUpon>frmTrazabilidad.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SENASA\frmTrazabilidadIcona.cs" />
+    <Compile Include="SENASA\frmTrazabilidadIcona.Designer.cs">
+      <DependentUpon>frmTrazabilidadIcona.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SENASA\Modulo SENASA.cs" />
+    <Compile Include="SENASA\OperacionesTrazabilidad.cs" />
+    <Compile Include="SENASA\ServiceClient.cs" />
+    <Compile Include="Service References\servicios.pami.org.ar\Reference.cs">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\servicios1.afip.gov.ar\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\wsaa.afip.gov.ar\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Iconos\AFIP\icono_afip 32x32.JPG" />
+    <None Include="Iconos\AFIP\icono_afip_281432_1.gif" />
+    <None Include="Iconos\PNG 22x22\accept22.png" />
+    <None Include="Iconos\PNG 22x22\add22.png" />
+    <None Include="Iconos\PNG 22x22\addfile22.png" />
+    <None Include="Iconos\PNG 22x22\adduser22.png" />
+    <None Include="Iconos\PNG 22x22\app22.png" />
+    <None Include="Iconos\PNG 22x22\back22.png" />
+    <None Include="Iconos\PNG 22x22\backward22.png" />
+    <None Include="Iconos\PNG 22x22\bug22.png" />
+    <None Include="Iconos\PNG 22x22\burn22.png" />
+    <None Include="Iconos\PNG 22x22\cd22.png" />
+    <None Include="Iconos\PNG 22x22\chat22.png" />
+    <None Include="Iconos\PNG 22x22\clock22.png" />
+    <None Include="Iconos\PNG 22x22\close22.png" />
+    <None Include="Iconos\PNG 22x22\configure22.png" />
+    <None Include="Iconos\PNG 22x22\console22.png" />
+    <None Include="Iconos\PNG 22x22\cut22.png" />
+    <None Include="Iconos\PNG 22x22\cutb22.png" />
+    <None Include="Iconos\PNG 22x22\database22.png" />
+    <None Include="Iconos\PNG 22x22\delete22.png" />
+    <None Include="Iconos\PNG 22x22\deletefile22.png" />
+    <None Include="Iconos\PNG 22x22\deleteuser22.png" />
+    <None Include="Iconos\PNG 22x22\documentsorcopy22.png" />
+    <None Include="Iconos\PNG 22x22\down22.png" />
+    <None Include="Iconos\PNG 22x22\edit22.png" />
+    <None Include="Iconos\PNG 22x22\fav22.png" />
+    <None Include="Iconos\PNG 22x22\favadd22.png" />
+    <None Include="Iconos\PNG 22x22\favb22.png" />
+    <None Include="Iconos\PNG 22x22\favbadd22.png" />
+    <None Include="Iconos\PNG 22x22\file22.png" />
+    <None Include="Iconos\PNG 22x22\filelocked22.png" />
+    <None Include="Iconos\PNG 22x22\filesearch22.png" />
+    <None Include="Iconos\PNG 22x22\find22.png" />
+    <None Include="Iconos\PNG 22x22\floppy22.png" />
+    <None Include="Iconos\PNG 22x22\folder22.png" />
+    <None Include="Iconos\PNG 22x22\folderlocked22.png" />
+    <None Include="Iconos\PNG 22x22\foldermove22.png" />
+    <None Include="Iconos\PNG 22x22\folderopenb22.png" />
+    <None Include="Iconos\PNG 22x22\foldersearch22.png" />
+    <None Include="Iconos\PNG 22x22\forward22.png" />
+    <None Include="Iconos\PNG 22x22\gotoapp22.png" />
+    <None Include="Iconos\PNG 22x22\gowebsite22.png" />
+    <None Include="Iconos\PNG 22x22\groupofusers22.png" />
+    <None Include="Iconos\PNG 22x22\hd22.png" />
+    <None Include="Iconos\PNG 22x22\hdlocked22.png" />
+    <None Include="Iconos\PNG 22x22\hdsearch22.png" />
+    <None Include="Iconos\PNG 22x22\help22.png" />
+    <None Include="Iconos\PNG 22x22\home22.png" />
+    <None Include="Iconos\PNG 22x22\infoabout22.png" />
+    <None Include="Iconos\PNG 22x22\key22.png" />
+    <None Include="Iconos\PNG 22x22\lock22.png" />
+    <None Include="Iconos\PNG 22x22\mail22.png" />
+    <None Include="Iconos\PNG 22x22\mailpgp22.png" />
+    <None Include="Iconos\PNG 22x22\mailsend22.png" />
+    <None Include="Iconos\PNG 22x22\money22.png" />
+    <None Include="Iconos\PNG 22x22\moneyb22.png" />
+    <None Include="Iconos\PNG 22x22\moneyc22.png" />
+    <None Include="Iconos\PNG 22x22\movefile22.png" />
+    <None Include="Iconos\PNG 22x22\music22.png" />
+    <None Include="Iconos\PNG 22x22\network22.png" />
+    <None Include="Iconos\PNG 22x22\networkoptions22.png" />
+    <None Include="Iconos\PNG 22x22\networksearch22.png" />
+    <None Include="Iconos\PNG 22x22\next22.png" />
+    <None Include="Iconos\PNG 22x22\paint22.png" />
+    <None Include="Iconos\PNG 22x22\pastfile22.png" />
+    <None Include="Iconos\PNG 22x22\pause22.png" />
+    <None Include="Iconos\PNG 22x22\pictures22.png" />
+    <None Include="Iconos\PNG 22x22\play22.png" />
+    <None Include="Iconos\PNG 22x22\printer22.png" />
+    <None Include="Iconos\PNG 22x22\printpreview22.png" />
+    <None Include="Iconos\PNG 22x22\redo22.png" />
+    <None Include="Iconos\PNG 22x22\refresh22.png" />
+    <None Include="Iconos\PNG 22x22\saveas22.png" />
+    <None Include="Iconos\PNG 22x22\stats22.png" />
+    <None Include="Iconos\PNG 22x22\stop22.png" />
+    <None Include="Iconos\PNG 22x22\textfile22.png" />
+    <None Include="Iconos\PNG 22x22\trash22.png" />
+    <None Include="Iconos\PNG 22x22\trashb22.png" />
+    <None Include="Iconos\PNG 22x22\undo22.png" />
+    <None Include="Iconos\PNG 22x22\up22.png" />
+    <None Include="Iconos\PNG 22x22\user22.png" />
+    <None Include="Iconos\PNG 22x22\userb22.png" />
+    <None Include="Iconos\PNG 22x22\userid22.png" />
+    <None Include="Iconos\PNG 22x22\userlock22.png" />
+    <None Include="Iconos\PNG 22x22\web22.png" />
+    <None Include="Iconos\PNG 22x22\webhd22.png" />
+    <None Include="Iconos\PNG 22x22\weblocked22.png" />
+    <None Include="Iconos\PNG 22x22\weboptions22.png" />
+    <None Include="Iconos\PNG 22x22\websearch22.png" />
+    <None Include="Iconos\PNG 22x22\window22.png" />
+    <None Include="Iconos\PNG 22x22\windowb22.png" />
+    <None Include="Iconos\PNG 22x22\wizard22.png" />
+    <None Include="Iconos\PNG 22x22\zoomin22.png" />
+    <None Include="Iconos\PNG 22x22\zoomout22.png" />
+    <None Include="Iconos\Viejos\%24this.Icon" />
+    <None Include="Iconos\Viejos\%24this2.ico" />
+    <None Include="Iconos\Viejos\cmdGuardar.Image.png" />
+    <None Include="Iconos\Viejos\cmdLimpiar.Image.png" />
+    <None Include="Iconos\Viejos\cmdSobres.Image.png" />
+    <None Include="Iconos\Viejos\Contable.ico" />
+    <None Include="Service References\servicios.pami.org.ar\Reference.svcmap">
+      <LastGenOutput>Reference.cs</LastGenOutput>
+      <Generator>WCF Proxy Generator</Generator>
+    </None>
+    <None Include="Web References\servicios1.afip.gov.ar\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\servicios1.afip.gov.ar\service.wsdl" />
+    <None Include="Web References\wsaa.afip.gov.ar\LoginCms.wsdl" />
+    <None Include="Web References\wsaa.afip.gov.ar\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Actualizaciones" />
+    <Folder Include="AFIP" />
+    <Folder Include="Carteles" />
+    <Folder Include="Cheques" />
+    <Folder Include="Clientes" />
+    <Folder Include="Configuracion" />
+    <Folder Include="Contador" />
+    <Folder Include="Contador\Balance" />
+    <Folder Include="Contador\Egresos" />
+    <Folder Include="Contador\Facturas Con Iva" />
+    <Folder Include="Contador\IVA" />
+    <Folder Include="Contador\ResumenSemana" />
+    <Folder Include="Interdepositos" />
+    <Folder Include="Facturas" />
+    <Folder Include="Iconos" />
+    <Folder Include="Iconos\AFIP" />
+    <Folder Include="Iconos\PNG 22x22" />
+    <Folder Include="Iconos\Viejos" />
+    <Folder Include="MigrarDB" />
+    <Folder Include="Modulos" />
+    <Folder Include="Partes de forms Viejos" />
+    <Folder Include="Pedidos" />
+    <Folder Include="Pruebas" />
+    <Folder Include="Recibo" />
+    <Folder Include="Remitos" />
+    <Folder Include="Reportes" />
+    <Folder Include="SENASA" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Actualizaciones\frmBancos.resx">
+      <DependentUpon>frmBancos.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmBancos.Designer1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Actualizaciones\frmClientes.resx">
+      <DependentUpon>frmClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Actualizaciones\frmMercaderia.resx">
+      <DependentUpon>frmMercaderia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Actualizaciones\frmProveedores.resx">
+      <DependentUpon>frmProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Actualizaciones\frmTransporte.resx">
+      <DependentUpon>frmTransporte.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Carteles\frmCarteles.resx">
+      <DependentUpon>frmCarteles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cheques\frmCheqListado.resx">
+      <DependentUpon>frmCheqListado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cheques\frmCheqOp.resx">
+      <DependentUpon>frmCheqOp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cheques\frmCheqOrdenPago.resx">
+      <DependentUpon>frmCheqOrdenPago.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cheques\frmCheques.resx">
+      <DependentUpon>frmCheques.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Clientes\frmClieReporte.resx" />
+    <EmbeddedResource Include="Clientes\frmClieReporteDeduda.resx" />
+    <EmbeddedResource Include="Configuracion\frmConfiguracion.resx">
+      <DependentUpon>frmConfiguracion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contador\Balance\frmContadorBalance.resx">
+      <DependentUpon>frmContadorBalance.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contador\Egresos\frmContadorChequeEmitido.resx">
+      <DependentUpon>frmContadorChequeEmitido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contador\Facturas Con Iva\frmContadorFactConIVA.resx">
+      <DependentUpon>frmContadorFactConIVA.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contador\frmContadorDepBanc.resx">
+      <DependentUpon>frmContadorDepBanc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contador\IVA\frmContadorIVACompras.resx">
+      <DependentUpon>frmContadorIVACompras.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmContadorIVACompras.Designer1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contador\IVA\frmContadorIVAVentas.resx">
+      <DependentUpon>frmContadorIVAVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contador\ResumenSemana\frmContadorInformeSemanal.resx">
+      <DependentUpon>frmContadorInformeSemanal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturas\frmDocumentoFiscal.resx">
+      <DependentUpon>frmDocumentoFiscal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Facturas\frmFactImpagas.resx">
+      <DependentUpon>frmFactImpagas.cs</DependentUpon>
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>frmFactImpagas.Designer1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Interdepositos\frmInterOp.resx">
+      <DependentUpon>frmInterOp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Partes de forms Viejos\Form1.resx" />
+    <EmbeddedResource Include="Pedidos\frmPedidosGeneral.resx">
+      <DependentUpon>frmPedidosGeneral.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pedidos\frmPedidosNuevos.resx">
+      <DependentUpon>frmPedidosNuevos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pruebas\frmPruebas.resx">
+      <DependentUpon>frmPruebas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recibo\frmRecibos.resx">
+      <DependentUpon>frmRecibos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Remitos\frmRemitos.resx">
+      <DependentUpon>frmRemitos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmRepVentas.resx">
+      <DependentUpon>frmRepVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\frmRepViajes.resx">
+      <DependentUpon>frmRepViajes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SENASA\frmBaseDatosTraza.resx">
+      <DependentUpon>frmBaseDatosTraza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SENASA\frmConsultaTraza.resx">
+      <DependentUpon>frmConsultaTraza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SENASA\frmInformarTraza.resx">
+      <DependentUpon>frmInformarTraza.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SENASA\frmIngresoTrazabilidad.resx">
+      <DependentUpon>frmIngresoTrazabilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SENASA\frmTrazabilidad.resx">
+      <DependentUpon>frmTrazabilidad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SENASA\frmTrazabilidadIcona.resx">
+      <DependentUpon>frmTrazabilidadIcona.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://servicios1.afip.gov.ar/wsfev1/service.asmx%3fWSDL">
+      <UrlBehavior>Static</UrlBehavior>
+      <UpdateFromURL>https://servicios1.afip.gov.ar/wsfev1/service.asmx%3fWSDL</UpdateFromURL>
+      <RelPath>Web References\servicios1.afip.gov.ar</RelPath>
+      <Namespace>Contable.servicios1.afip.gov.ar</Namespace>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://wsaa.afip.gov.ar/ws/services/LoginCms%3fWSDL">
+      <UrlBehavior>Static</UrlBehavior>
+      <UpdateFromURL>https://wsaa.afip.gov.ar/ws/services/LoginCms%3fWSDL</UpdateFromURL>
+      <RelPath>Web References\wsaa.afip.gov.ar</RelPath>
+      <Namespace>Contable.wsaa.afip.gov.ar</Namespace>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\servicios.pami.org.ar" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
