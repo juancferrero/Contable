@@ -1,0 +1,66 @@
+C:\Documents and Settings\Usuario\Escritorio\Client_NET(c#)\pruebawstraza\WsConnector\bin\Debug\WsConnector.dll.config
+C:\Documents and Settings\Usuario\Escritorio\Client_NET(c#)\pruebawstraza\WsConnector\bin\Debug\WsConnector.dll
+C:\Documents and Settings\Usuario\Escritorio\Client_NET(c#)\pruebawstraza\WsConnector\bin\Debug\WsConnector.pdb
+C:\Documents and Settings\Usuario\Escritorio\Client_NET(c#)\pruebawstraza\WsConnector\obj\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\Usuario\Escritorio\Client_NET(c#)\pruebawstraza\WsConnector\obj\Debug\WsConnector.dll
+C:\Documents and Settings\Usuario\Escritorio\Client_NET(c#)\pruebawstraza\WsConnector\obj\Debug\WsConnector.pdb
+E:\Dropbox\Latin Net\Traza\WebService\Client_NET(c#-dll)\pruebawstraza\WsConnector\bin\Debug\WsConnector.dll.config
+E:\Dropbox\Latin Net\Traza\WebService\Client_NET(c#-dll)\pruebawstraza\WsConnector\bin\Debug\WsConnector.dll
+E:\Dropbox\Latin Net\Traza\WebService\Client_NET(c#-dll)\pruebawstraza\WsConnector\bin\Debug\WsConnector.pdb
+E:\Dropbox\Latin Net\Traza\WebService\Client_NET(c#-dll)\pruebawstraza\WsConnector\obj\Debug\ResolveAssemblyReference.cache
+E:\Dropbox\Latin Net\Traza\WebService\Client_NET(c#-dll)\pruebawstraza\WsConnector\obj\Debug\WsConnector.dll
+E:\Dropbox\Latin Net\Traza\WebService\Client_NET(c#-dll)\pruebawstraza\WsConnector\obj\Debug\WsConnector.pdb
+C:\Users\u32564706\Downloads\cliente_dotNet\dotNet\proyecto_cliente_mas_libreria_conexion\pruebawstraza\WsConnector\bin\Debug\WsConnector.dll.config
+C:\Users\u32564706\Downloads\cliente_dotNet\dotNet\proyecto_cliente_mas_libreria_conexion\pruebawstraza\WsConnector\bin\Debug\WsConnector.dll
+C:\Users\u32564706\Downloads\cliente_dotNet\dotNet\proyecto_cliente_mas_libreria_conexion\pruebawstraza\WsConnector\bin\Debug\WsConnector.pdb
+C:\Users\u32564706\Downloads\cliente_dotNet\dotNet\proyecto_cliente_mas_libreria_conexion\pruebawstraza\WsConnector\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\u32564706\Downloads\cliente_dotNet\dotNet\proyecto_cliente_mas_libreria_conexion\pruebawstraza\WsConnector\obj\Debug\WsConnector.dll
+C:\Users\u32564706\Downloads\cliente_dotNet\dotNet\proyecto_cliente_mas_libreria_conexion\pruebawstraza\WsConnector\obj\Debug\WsConnector.pdb
+C:\Users\u32564706\Downloads\cliente_dotNet\cliente_dotNet\dotNet\proyecto_cliente_mas_libreria_conexion\pruebawstraza\WsConnector\bin\Debug\WsConnector.dll.config
+C:\Users\u32564706\Downloads\cliente_dotNet\cliente_dotNet\dotNet\proyecto_cliente_mas_libreria_conexion\pruebawstraza\WsConnector\bin\Debug\WsConnector.dll
+C:\Users\u32564706\Downloads\cliente_dotNet\cliente_dotNet\dotNet\proyecto_cliente_mas_libreria_conexion\pruebawstraza\WsConnector\bin\Debug\WsConnector.pdb
+C:\Users\u32564706\Downloads\cliente_dotNet\cliente_dotNet\dotNet\proyecto_cliente_mas_libreria_conexion\pruebawstraza\WsConnector\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\u32564706\Downloads\cliente_dotNet\cliente_dotNet\dotNet\proyecto_cliente_mas_libreria_conexion\pruebawstraza\WsConnector\obj\Debug\WsConnector.dll
+C:\Users\u32564706\Downloads\cliente_dotNet\cliente_dotNet\dotNet\proyecto_cliente_mas_libreria_conexion\pruebawstraza\WsConnector\obj\Debug\WsConnector.pdb
+C:\Users\u61140\Desktop\cliente_dotNet\cliente_dotNet\dotNet\proyecto_cliente_mas_libreria_conexion\pruebawstraza\WsConnector\bin\Debug\WsConnector.dll.config
+C:\Users\u61140\Desktop\cliente_dotNet\cliente_dotNet\dotNet\proyecto_cliente_mas_libreria_conexion\pruebawstraza\WsConnector\bin\Debug\WsConnector.dll
+C:\Users\u61140\Desktop\cliente_dotNet\cliente_dotNet\dotNet\proyecto_cliente_mas_libreria_conexion\pruebawstraza\WsConnector\bin\Debug\WsConnector.pdb
+C:\Users\u61140\Desktop\cliente_dotNet\cliente_dotNet\dotNet\proyecto_cliente_mas_libreria_conexion\pruebawstraza\WsConnector\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\u61140\Desktop\cliente_dotNet\cliente_dotNet\dotNet\proyecto_cliente_mas_libreria_conexion\pruebawstraza\WsConnector\obj\Debug\WsConnector.dll
+C:\Users\u61140\Desktop\cliente_dotNet\cliente_dotNet\dotNet\proyecto_cliente_mas_libreria_conexion\pruebawstraza\WsConnector\obj\Debug\WsConnector.pdb
+C:\Users\u61140\Documents\Visual Studio 2008\Projects\WebServiceTrazaSedronar\WsConnector\bin\Debug\WsConnector.dll.config
+C:\Users\u61140\Documents\Visual Studio 2008\Projects\WebServiceTrazaSedronar\WsConnector\bin\Debug\WsConnector.dll
+C:\Users\u61140\Documents\Visual Studio 2008\Projects\WebServiceTrazaSedronar\WsConnector\bin\Debug\WsConnector.pdb
+C:\Users\u61140\Documents\Visual Studio 2008\Projects\WebServiceTrazaSedronar\WsConnector\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\u61140\Documents\Visual Studio 2008\Projects\WebServiceTrazaSedronar\WsConnector\obj\Debug\WsConnector.dll
+C:\Users\u61140\Documents\Visual Studio 2008\Projects\WebServiceTrazaSedronar\WsConnector\obj\Debug\WsConnector.pdb
+C:\Users\u61140\Documents\Visual Studio 2008\Projects\WebServiceTrazaSenasa\WsConnector\bin\Debug\WsConnector.dll.config
+C:\Users\u61140\Documents\Visual Studio 2008\Projects\WebServiceTrazaSenasa\WsConnector\bin\Debug\WsConnector.dll
+C:\Users\u61140\Documents\Visual Studio 2008\Projects\WebServiceTrazaSenasa\WsConnector\bin\Debug\WsConnector.pdb
+C:\Users\u61140\Documents\Visual Studio 2008\Projects\WebServiceTrazaSenasa\WsConnector\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\u61140\Documents\Visual Studio 2008\Projects\WebServiceTrazaSenasa\WsConnector\obj\Debug\WsConnector.dll
+C:\Users\u61140\Documents\Visual Studio 2008\Projects\WebServiceTrazaSenasa\WsConnector\obj\Debug\WsConnector.pdb
+C:\Users\u61140\Desktop\TrazabilidadTest\CodigoDeEjemploTraza\Traza Senasa Fito\Trazabilidad-SenasaAgr-Ejemplo-.Net\WebServiceTrazaSenasa\WsConnector\bin\Debug\WsConnector.dll.config
+C:\Users\u61140\Desktop\TrazabilidadTest\CodigoDeEjemploTraza\Traza Senasa Fito\Trazabilidad-SenasaAgr-Ejemplo-.Net\WebServiceTrazaSenasa\WsConnector\bin\Debug\WsConnector.dll
+C:\Users\u61140\Desktop\TrazabilidadTest\CodigoDeEjemploTraza\Traza Senasa Fito\Trazabilidad-SenasaAgr-Ejemplo-.Net\WebServiceTrazaSenasa\WsConnector\bin\Debug\WsConnector.pdb
+C:\Users\u61140\Desktop\TrazabilidadTest\CodigoDeEjemploTraza\Traza Senasa Fito\Trazabilidad-SenasaAgr-Ejemplo-.Net\WebServiceTrazaSenasa\WsConnector\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\u61140\Desktop\TrazabilidadTest\CodigoDeEjemploTraza\Traza Senasa Fito\Trazabilidad-SenasaAgr-Ejemplo-.Net\WebServiceTrazaSenasa\WsConnector\obj\Debug\WsConnector.dll
+C:\Users\u61140\Desktop\TrazabilidadTest\CodigoDeEjemploTraza\Traza Senasa Fito\Trazabilidad-SenasaAgr-Ejemplo-.Net\WebServiceTrazaSenasa\WsConnector\obj\Debug\WsConnector.pdb
+\\MANOLITO\administracion\PROGRAMACION\SENASA\WebServiceTrazaSenasa\WsConnector\bin\Debug\WsConnector.dll.config
+\\MANOLITO\administracion\PROGRAMACION\SENASA\WebServiceTrazaSenasa\WsConnector\bin\Debug\WsConnector.dll
+\\MANOLITO\administracion\PROGRAMACION\SENASA\WebServiceTrazaSenasa\WsConnector\bin\Debug\WsConnector.pdb
+\\MANOLITO\administracion\PROGRAMACION\SENASA\WebServiceTrazaSenasa\WsConnector\obj\Debug\ResolveAssemblyReference.cache
+\\MANOLITO\administracion\PROGRAMACION\SENASA\WebServiceTrazaSenasa\WsConnector\obj\Debug\WsConnector.dll
+\\MANOLITO\administracion\PROGRAMACION\SENASA\WebServiceTrazaSenasa\WsConnector\obj\Debug\WsConnector.pdb
+C:\Users\Juan Carlos\Desktop\WebServiceTrazaSenasa\WsConnector\bin\Debug\WsConnector.dll.config
+C:\Users\Juan Carlos\Desktop\WebServiceTrazaSenasa\WsConnector\bin\Debug\WsConnector.dll
+C:\Users\Juan Carlos\Desktop\WebServiceTrazaSenasa\WsConnector\bin\Debug\WsConnector.pdb
+C:\Users\Juan Carlos\Desktop\WebServiceTrazaSenasa\WsConnector\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Juan Carlos\Desktop\WebServiceTrazaSenasa\WsConnector\obj\Debug\WsConnector.dll
+C:\Users\Juan Carlos\Desktop\WebServiceTrazaSenasa\WsConnector\obj\Debug\WsConnector.pdb
+C:\Users\Juan Carlos\Desktop\Programa Contable\Contable\WsConnector\bin\Debug\WsConnector.dll.config
+C:\Users\Juan Carlos\Desktop\Programa Contable\Contable\WsConnector\bin\Debug\WsConnector.dll
+C:\Users\Juan Carlos\Desktop\Programa Contable\Contable\WsConnector\bin\Debug\WsConnector.pdb
+C:\Users\Juan Carlos\Desktop\Programa Contable\Contable\WsConnector\obj\Debug\WsConnector.csprojResolveAssemblyReference.cache
+C:\Users\Juan Carlos\Desktop\Programa Contable\Contable\WsConnector\obj\Debug\WsConnector.dll
+C:\Users\Juan Carlos\Desktop\Programa Contable\Contable\WsConnector\obj\Debug\WsConnector.pdb

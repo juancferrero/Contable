@@ -1,0 +1,18 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+# SharpDevelop 5.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WsConnector", "WsConnector.csproj", "{0FC1B135-6C08-4FF6-91C6-563F110A7545}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FC1B135-6C08-4FF6-91C6-563F110A7545}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FC1B135-6C08-4FF6-91C6-563F110A7545}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FC1B135-6C08-4FF6-91C6-563F110A7545}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FC1B135-6C08-4FF6-91C6-563F110A7545}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
