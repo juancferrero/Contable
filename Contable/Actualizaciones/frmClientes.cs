@@ -19,24 +19,23 @@ namespace Contable
 		
 		
 #region Barra de tareas
-
-		void _Toolbar1_Button3Click(object sender, EventArgs e)
+		void TlbGuardarClick(object sender, EventArgs e)	
 		{
 	
 		}
 		
-		void _Toolbar1_Button9Click(object sender, EventArgs e)
+		void TlbEditarClick(object sender, EventArgs e)
 		{
 	
-		}
+		}		
+		
+		
 #endregion
 		
-		
-		void TxtCriterioTextChanged(object sender, EventArgs e)
-		{
-			
-		}
-		
+	
+	
+#region Grid
+
 		void GridDataCellDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
 			
@@ -57,12 +56,7 @@ namespace Contable
 			
 			
 		}
-				
-		void FrmClientesLoad(object sender, EventArgs e)
-		{
-			_SSTab1_TabPage0.Show();
-		}
-		
+
 		void GridDataCellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
 		{
 			
@@ -106,7 +100,23 @@ namespace Contable
 			
 			
 			MessageBox.Show("Seguro que es este cliente??" + vpcliente.Contactos[0].strNombre );
+		}		
+#endregion
+
+	
+		void TxtCriterioTextChanged(object sender, EventArgs e)
+		{
+			
 		}
+		
+	
+				
+		void FrmClientesLoad(object sender, EventArgs e)
+		{
+			_SSTab1_TabPage0.Show();
+		}
+		
+
 		
 		void _Label1_15Click(object sender, EventArgs e)
 		{
@@ -175,6 +185,8 @@ namespace Contable
     		}	
 
 }
+
+
 		
 		
 	}

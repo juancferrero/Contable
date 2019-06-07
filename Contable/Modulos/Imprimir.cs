@@ -2337,63 +2337,75 @@ nuevahoja:
 #endregion			
 			
 
-		for (int i = 0; i < Listado.Rows.Count-1; i++) {
-	
-    	ejeY = 20;
-     
+		//for (int i = 0; i < Listado.Rows.Count-1; i++) 
+		//{
+		ejeX = 10;
+		ejeY = 30;
+
+		int r = 1;
+		//Por cada fila en el listado 
 	  	foreach (DataRow row in Listado.Rows) 
-	      {
-	         	
-	      	foreach (DataColumn col in Listado.Columns) 
-	      	{
-	      		//consulta cada fila para ver que es.
-	         	if (col.DataType.Equals(typeof(DateTime)))
-	         	 	{
-				
-					ev.Graphics.DrawString(row[col].ToString(), Arial10, Brushes.Black,
-	                           ejeX -correccionX, ejeY -correccionY) ;
-				 	}
-	         	
-	         	if (col.DataType.Equals(typeof(Decimal)))
-	            	{
-	            		
-	        		ev.Graphics.DrawString(row[col].ToString(), Arial10, Brushes.Black,
-	                           ejeX -correccionX, ejeY -correccionY) ;
-	            	}
-	         	
-	         	else
-	            	{
-	            		
-	        		ev.Graphics.DrawString(row[col].ToString(), Arial10, Brushes.Black,
-	                           ejeX -correccionX, ejeY -correccionY) ;
-	            	}
-	         	
-				//Agrega el tamaño de la columna al eje X
-     			ejeX += Convert.ToSingle (col.ColumnName.Length*2); //Agrega el tamaño de la columna a definir 	
-	         	
-	         	
-	      	}
+			{
+
+	  			
+	      		//Por cada columna en el listado
+	  			foreach (DataColumn col in Listado.Columns)
+	      		 
+	      		{
+		  			
+	      			
+	      			//consulta cada fila para ver que es.
+		      		if (col.DataType.Equals(typeof(DateTime)))
+		         	 	{
+					
+		      			//ev.Graphics.DrawString(row[col].ToString(), Arial10, Brushes.Black,
+		                //           ejeX -correccionX, ejeY -correccionY) ;
+					 	}
+		         	
+		         	if (col.DataType.Equals(typeof(Decimal)))
+		            	{
+		            		
+		        		//ev.Graphics.DrawString(row[col].ToString(), Arial10, Brushes.Black,
+		                //           ejeX -correccionX, ejeY -correccionY) ;
+		            	}
+		         	
+		         	else
+		            	{
+		            		
+		        		ev.Graphics.DrawString(row[col].ToString(), Arial10, Brushes.Black,
+		                           ejeX -correccionX, ejeY -correccionY) ;
+		            	}
+		         	
+					//Agrega el tamaño de la columna al eje X
+	     			ejeX += Convert.ToSingle (col.ColumnName.Length*2); //Agrega el tamaño de la columna a definir 	
+	      		
 	         
-			if (ejeY < 90) {
-	         		ejeY += 5;	
-	         	}
-	         	else
+			}
+	  			
+		  			if (r < 50) 
+		  			{
+		         		ejeX = 10;
+		  				ejeY += 5;
+		         		r ++;
+		         	}
+		         	else
 	         	{
 	         		//goto nuevahoja;
 	         		
 	         		ev.HasMorePages = true; 
 	         		ejeX = 10;
 					ejeY = 20;
+					r= 1;
 	         	}
-	      	
+	  		
 	       
-	      }
+	      	}
 	     
-		}
+		
 
+		//}
 
-
-ev.HasMorePages = false ; 
+ev.HasMorePages = false; 
 
 
 /*
@@ -2434,16 +2446,6 @@ ev.HasMorePages = false ;
   
       }*/
 
-
-
-			
-			
-
-
-
-
-	
-		
 		
 	}
 

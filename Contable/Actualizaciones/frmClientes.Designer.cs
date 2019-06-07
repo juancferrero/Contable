@@ -94,15 +94,15 @@ namespace Contable
 		public System.Windows.Forms.GroupBox Frame5;
 		public System.Windows.Forms.TabPage _SSTab1_TabPage5;
 		public System.Windows.Forms.TabControl SSTab1;
-		public System.Windows.Forms.ToolStripButton _Toolbar1_Button1;
+		public System.Windows.Forms.ToolStripButton tlbNuevo;
 		public System.Windows.Forms.ToolStripSeparator _Toolbar1_Button2;
-		public System.Windows.Forms.ToolStripButton _Toolbar1_Button3;
+		public System.Windows.Forms.ToolStripButton tlbGuardar;
 		public System.Windows.Forms.ToolStripSeparator _Toolbar1_Button4;
-		public System.Windows.Forms.ToolStripButton _Toolbar1_Button5;
+		public System.Windows.Forms.ToolStripButton tlbImprimir;
 		public System.Windows.Forms.ToolStripSeparator _Toolbar1_Button6;
-		public System.Windows.Forms.ToolStripButton _Toolbar1_Button7;
+		public System.Windows.Forms.ToolStripButton tlbAnular;
 		public System.Windows.Forms.ToolStripSeparator _Toolbar1_Button8;
-		public System.Windows.Forms.ToolStripButton _Toolbar1_Button9;
+		public System.Windows.Forms.ToolStripButton tlbEditar;
 		public System.Windows.Forms.ToolStrip Toolbar1;
 		public System.Windows.Forms.Label Label2;
 		//public Microsoft.VisualBasic.Compatibility.VB6.LabelArray Label1;
@@ -116,6 +116,15 @@ namespace Contable
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmClientes));
 			this.ToolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.SSTab1 = new System.Windows.Forms.TabControl();
+			this.tabBusqueda = new System.Windows.Forms.TabPage();
+			this.txtCriterio = new System.Windows.Forms.TextBox();
+			this.Label2 = new System.Windows.Forms.Label();
+			this.gridData = new System.Windows.Forms.DataGridView();
+			this.Frame8 = new System.Windows.Forms.GroupBox();
+			this.optLocalidad = new System.Windows.Forms.RadioButton();
+			this.optProvincia = new System.Windows.Forms.RadioButton();
+			this.optContacto = new System.Windows.Forms.RadioButton();
+			this.optNombre = new System.Windows.Forms.RadioButton();
 			this._SSTab1_TabPage0 = new System.Windows.Forms.TabPage();
 			this.Frame1 = new System.Windows.Forms.GroupBox();
 			this.txtRazonSocial = new System.Windows.Forms.TextBox();
@@ -170,26 +179,20 @@ namespace Contable
 			this.OptYes = new System.Windows.Forms.RadioButton();
 			this.Frame5 = new System.Windows.Forms.GroupBox();
 			this.cmbClienteDe = new System.Windows.Forms.ComboBox();
-			this.tabBusqueda = new System.Windows.Forms.TabPage();
-			this.txtCriterio = new System.Windows.Forms.TextBox();
-			this.Label2 = new System.Windows.Forms.Label();
-			this.gridData = new System.Windows.Forms.DataGridView();
-			this.Frame8 = new System.Windows.Forms.GroupBox();
-			this.optLocalidad = new System.Windows.Forms.RadioButton();
-			this.optProvincia = new System.Windows.Forms.RadioButton();
-			this.optContacto = new System.Windows.Forms.RadioButton();
-			this.optNombre = new System.Windows.Forms.RadioButton();
 			this.Toolbar1 = new System.Windows.Forms.ToolStrip();
-			this._Toolbar1_Button1 = new System.Windows.Forms.ToolStripButton();
+			this.tlbNuevo = new System.Windows.Forms.ToolStripButton();
 			this._Toolbar1_Button2 = new System.Windows.Forms.ToolStripSeparator();
-			this._Toolbar1_Button3 = new System.Windows.Forms.ToolStripButton();
+			this.tlbGuardar = new System.Windows.Forms.ToolStripButton();
 			this._Toolbar1_Button4 = new System.Windows.Forms.ToolStripSeparator();
-			this._Toolbar1_Button5 = new System.Windows.Forms.ToolStripButton();
+			this.tlbImprimir = new System.Windows.Forms.ToolStripButton();
 			this._Toolbar1_Button6 = new System.Windows.Forms.ToolStripSeparator();
-			this._Toolbar1_Button7 = new System.Windows.Forms.ToolStripButton();
+			this.tlbAnular = new System.Windows.Forms.ToolStripButton();
 			this._Toolbar1_Button8 = new System.Windows.Forms.ToolStripSeparator();
-			this._Toolbar1_Button9 = new System.Windows.Forms.ToolStripButton();
+			this.tlbEditar = new System.Windows.Forms.ToolStripButton();
 			this.SSTab1.SuspendLayout();
+			this.tabBusqueda.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
+			this.Frame8.SuspendLayout();
 			this._SSTab1_TabPage0.SuspendLayout();
 			this.Frame1.SuspendLayout();
 			this._SSTab1_TabPage1.SuspendLayout();
@@ -202,9 +205,6 @@ namespace Contable
 			this.Frame6.SuspendLayout();
 			this.Frame2.SuspendLayout();
 			this.Frame5.SuspendLayout();
-			this.tabBusqueda.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
-			this.Frame8.SuspendLayout();
 			this.Toolbar1.SuspendLayout();
 			this.SuspendLayout();
 			// 
@@ -223,6 +223,136 @@ namespace Contable
 			this.SSTab1.SelectedIndex = 5;
 			this.SSTab1.Size = new System.Drawing.Size(1221, 576);
 			this.SSTab1.TabIndex = 0;
+			// 
+			// tabBusqueda
+			// 
+			this.tabBusqueda.Controls.Add(this.txtCriterio);
+			this.tabBusqueda.Controls.Add(this.Label2);
+			this.tabBusqueda.Controls.Add(this.gridData);
+			this.tabBusqueda.Controls.Add(this.Frame8);
+			this.tabBusqueda.Location = new System.Drawing.Point(4, 22);
+			this.tabBusqueda.Name = "tabBusqueda";
+			this.tabBusqueda.Size = new System.Drawing.Size(1213, 550);
+			this.tabBusqueda.TabIndex = 6;
+			this.tabBusqueda.Text = "Busqueda";
+			this.tabBusqueda.UseVisualStyleBackColor = true;
+			// 
+			// txtCriterio
+			// 
+			this.txtCriterio.AcceptsReturn = true;
+			this.txtCriterio.BackColor = System.Drawing.SystemColors.Window;
+			this.txtCriterio.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.txtCriterio.ForeColor = System.Drawing.SystemColors.WindowText;
+			this.txtCriterio.Location = new System.Drawing.Point(136, 16);
+			this.txtCriterio.MaxLength = 0;
+			this.txtCriterio.Name = "txtCriterio";
+			this.txtCriterio.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.txtCriterio.Size = new System.Drawing.Size(257, 20);
+			this.txtCriterio.TabIndex = 57;
+			this.txtCriterio.TextChanged += new System.EventHandler(this.TxtCriterioTextChanged);
+			this.txtCriterio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCriterioKeyPress);
+			// 
+			// Label2
+			// 
+			this.Label2.BackColor = System.Drawing.SystemColors.Control;
+			this.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.Label2.Cursor = System.Windows.Forms.Cursors.Default;
+			this.Label2.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.Label2.Location = new System.Drawing.Point(8, 16);
+			this.Label2.Name = "Label2";
+			this.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.Label2.Size = new System.Drawing.Size(121, 17);
+			this.Label2.TabIndex = 58;
+			this.Label2.Text = "Filtar por:";
+			this.Label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
+			// 
+			// gridData
+			// 
+			this.gridData.AllowUserToAddRows = false;
+			this.gridData.AllowUserToDeleteRows = false;
+			this.gridData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+			this.gridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.gridData.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
+			this.gridData.Location = new System.Drawing.Point(8, 137);
+			this.gridData.MultiSelect = false;
+			this.gridData.Name = "gridData";
+			this.gridData.ReadOnly = true;
+			this.gridData.Size = new System.Drawing.Size(950, 290);
+			this.gridData.TabIndex = 60;
+			this.gridData.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridDataCellContentDoubleClick);
+			// 
+			// Frame8
+			// 
+			this.Frame8.BackColor = System.Drawing.SystemColors.Control;
+			this.Frame8.Controls.Add(this.optLocalidad);
+			this.Frame8.Controls.Add(this.optProvincia);
+			this.Frame8.Controls.Add(this.optContacto);
+			this.Frame8.Controls.Add(this.optNombre);
+			this.Frame8.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.Frame8.Location = new System.Drawing.Point(8, 40);
+			this.Frame8.Name = "Frame8";
+			this.Frame8.Padding = new System.Windows.Forms.Padding(0);
+			this.Frame8.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.Frame8.Size = new System.Drawing.Size(121, 91);
+			this.Frame8.TabIndex = 59;
+			this.Frame8.TabStop = false;
+			// 
+			// optLocalidad
+			// 
+			this.optLocalidad.BackColor = System.Drawing.SystemColors.Control;
+			this.optLocalidad.Cursor = System.Windows.Forms.Cursors.Default;
+			this.optLocalidad.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.optLocalidad.Location = new System.Drawing.Point(8, 64);
+			this.optLocalidad.Name = "optLocalidad";
+			this.optLocalidad.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.optLocalidad.Size = new System.Drawing.Size(105, 17);
+			this.optLocalidad.TabIndex = 59;
+			this.optLocalidad.TabStop = true;
+			this.optLocalidad.Text = "Localidad";
+			this.optLocalidad.UseVisualStyleBackColor = false;
+			// 
+			// optProvincia
+			// 
+			this.optProvincia.BackColor = System.Drawing.SystemColors.Control;
+			this.optProvincia.Cursor = System.Windows.Forms.Cursors.Default;
+			this.optProvincia.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.optProvincia.Location = new System.Drawing.Point(8, 48);
+			this.optProvincia.Name = "optProvincia";
+			this.optProvincia.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.optProvincia.Size = new System.Drawing.Size(105, 17);
+			this.optProvincia.TabIndex = 58;
+			this.optProvincia.TabStop = true;
+			this.optProvincia.Text = "Provincia";
+			this.optProvincia.UseVisualStyleBackColor = false;
+			// 
+			// optContacto
+			// 
+			this.optContacto.BackColor = System.Drawing.SystemColors.Control;
+			this.optContacto.Cursor = System.Windows.Forms.Cursors.Default;
+			this.optContacto.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.optContacto.Location = new System.Drawing.Point(8, 32);
+			this.optContacto.Name = "optContacto";
+			this.optContacto.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.optContacto.Size = new System.Drawing.Size(105, 17);
+			this.optContacto.TabIndex = 57;
+			this.optContacto.TabStop = true;
+			this.optContacto.Text = "Contacto";
+			this.optContacto.UseVisualStyleBackColor = false;
+			// 
+			// optNombre
+			// 
+			this.optNombre.BackColor = System.Drawing.SystemColors.Control;
+			this.optNombre.Checked = true;
+			this.optNombre.Cursor = System.Windows.Forms.Cursors.Default;
+			this.optNombre.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.optNombre.Location = new System.Drawing.Point(8, 16);
+			this.optNombre.Name = "optNombre";
+			this.optNombre.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.optNombre.Size = new System.Drawing.Size(105, 17);
+			this.optNombre.TabIndex = 56;
+			this.optNombre.TabStop = true;
+			this.optNombre.Text = "Nombre";
+			this.optNombre.UseVisualStyleBackColor = false;
 			// 
 			// _SSTab1_TabPage0
 			// 
@@ -927,178 +1057,48 @@ namespace Contable
 			this.cmbClienteDe.TabIndex = 44;
 			this.cmbClienteDe.Text = "ALFREDO FERRERO";
 			// 
-			// tabBusqueda
-			// 
-			this.tabBusqueda.Controls.Add(this.txtCriterio);
-			this.tabBusqueda.Controls.Add(this.Label2);
-			this.tabBusqueda.Controls.Add(this.gridData);
-			this.tabBusqueda.Controls.Add(this.Frame8);
-			this.tabBusqueda.Location = new System.Drawing.Point(4, 22);
-			this.tabBusqueda.Name = "tabBusqueda";
-			this.tabBusqueda.Size = new System.Drawing.Size(1213, 550);
-			this.tabBusqueda.TabIndex = 6;
-			this.tabBusqueda.Text = "Busqueda";
-			this.tabBusqueda.UseVisualStyleBackColor = true;
-			// 
-			// txtCriterio
-			// 
-			this.txtCriterio.AcceptsReturn = true;
-			this.txtCriterio.BackColor = System.Drawing.SystemColors.Window;
-			this.txtCriterio.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.txtCriterio.ForeColor = System.Drawing.SystemColors.WindowText;
-			this.txtCriterio.Location = new System.Drawing.Point(136, 16);
-			this.txtCriterio.MaxLength = 0;
-			this.txtCriterio.Name = "txtCriterio";
-			this.txtCriterio.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.txtCriterio.Size = new System.Drawing.Size(257, 20);
-			this.txtCriterio.TabIndex = 57;
-			this.txtCriterio.TextChanged += new System.EventHandler(this.TxtCriterioTextChanged);
-			this.txtCriterio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCriterioKeyPress);
-			// 
-			// Label2
-			// 
-			this.Label2.BackColor = System.Drawing.SystemColors.Control;
-			this.Label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.Label2.Cursor = System.Windows.Forms.Cursors.Default;
-			this.Label2.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.Label2.Location = new System.Drawing.Point(8, 16);
-			this.Label2.Name = "Label2";
-			this.Label2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.Label2.Size = new System.Drawing.Size(121, 17);
-			this.Label2.TabIndex = 58;
-			this.Label2.Text = "Filtar por:";
-			this.Label2.TextAlign = System.Drawing.ContentAlignment.TopRight;
-			// 
-			// gridData
-			// 
-			this.gridData.AllowUserToAddRows = false;
-			this.gridData.AllowUserToDeleteRows = false;
-			this.gridData.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-			this.gridData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.gridData.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
-			this.gridData.Location = new System.Drawing.Point(8, 137);
-			this.gridData.MultiSelect = false;
-			this.gridData.Name = "gridData";
-			this.gridData.ReadOnly = true;
-			this.gridData.Size = new System.Drawing.Size(950, 290);
-			this.gridData.TabIndex = 60;
-			this.gridData.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GridDataCellContentDoubleClick);
-			// 
-			// Frame8
-			// 
-			this.Frame8.BackColor = System.Drawing.SystemColors.Control;
-			this.Frame8.Controls.Add(this.optLocalidad);
-			this.Frame8.Controls.Add(this.optProvincia);
-			this.Frame8.Controls.Add(this.optContacto);
-			this.Frame8.Controls.Add(this.optNombre);
-			this.Frame8.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.Frame8.Location = new System.Drawing.Point(8, 40);
-			this.Frame8.Name = "Frame8";
-			this.Frame8.Padding = new System.Windows.Forms.Padding(0);
-			this.Frame8.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.Frame8.Size = new System.Drawing.Size(121, 91);
-			this.Frame8.TabIndex = 59;
-			this.Frame8.TabStop = false;
-			// 
-			// optLocalidad
-			// 
-			this.optLocalidad.BackColor = System.Drawing.SystemColors.Control;
-			this.optLocalidad.Cursor = System.Windows.Forms.Cursors.Default;
-			this.optLocalidad.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.optLocalidad.Location = new System.Drawing.Point(8, 64);
-			this.optLocalidad.Name = "optLocalidad";
-			this.optLocalidad.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.optLocalidad.Size = new System.Drawing.Size(105, 17);
-			this.optLocalidad.TabIndex = 59;
-			this.optLocalidad.TabStop = true;
-			this.optLocalidad.Text = "Localidad";
-			this.optLocalidad.UseVisualStyleBackColor = false;
-			// 
-			// optProvincia
-			// 
-			this.optProvincia.BackColor = System.Drawing.SystemColors.Control;
-			this.optProvincia.Cursor = System.Windows.Forms.Cursors.Default;
-			this.optProvincia.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.optProvincia.Location = new System.Drawing.Point(8, 48);
-			this.optProvincia.Name = "optProvincia";
-			this.optProvincia.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.optProvincia.Size = new System.Drawing.Size(105, 17);
-			this.optProvincia.TabIndex = 58;
-			this.optProvincia.TabStop = true;
-			this.optProvincia.Text = "Provincia";
-			this.optProvincia.UseVisualStyleBackColor = false;
-			// 
-			// optContacto
-			// 
-			this.optContacto.BackColor = System.Drawing.SystemColors.Control;
-			this.optContacto.Cursor = System.Windows.Forms.Cursors.Default;
-			this.optContacto.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.optContacto.Location = new System.Drawing.Point(8, 32);
-			this.optContacto.Name = "optContacto";
-			this.optContacto.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.optContacto.Size = new System.Drawing.Size(105, 17);
-			this.optContacto.TabIndex = 57;
-			this.optContacto.TabStop = true;
-			this.optContacto.Text = "Contacto";
-			this.optContacto.UseVisualStyleBackColor = false;
-			// 
-			// optNombre
-			// 
-			this.optNombre.BackColor = System.Drawing.SystemColors.Control;
-			this.optNombre.Checked = true;
-			this.optNombre.Cursor = System.Windows.Forms.Cursors.Default;
-			this.optNombre.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.optNombre.Location = new System.Drawing.Point(8, 16);
-			this.optNombre.Name = "optNombre";
-			this.optNombre.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.optNombre.Size = new System.Drawing.Size(105, 17);
-			this.optNombre.TabIndex = 56;
-			this.optNombre.TabStop = true;
-			this.optNombre.Text = "Nombre";
-			this.optNombre.UseVisualStyleBackColor = false;
-			// 
 			// Toolbar1
 			// 
 			this.Toolbar1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-			this._Toolbar1_Button1,
+			this.tlbNuevo,
 			this._Toolbar1_Button2,
-			this._Toolbar1_Button3,
+			this.tlbGuardar,
 			this._Toolbar1_Button4,
-			this._Toolbar1_Button5,
+			this.tlbImprimir,
 			this._Toolbar1_Button6,
-			this._Toolbar1_Button7,
+			this.tlbAnular,
 			this._Toolbar1_Button8,
-			this._Toolbar1_Button9});
+			this.tlbEditar});
 			this.Toolbar1.Location = new System.Drawing.Point(0, 0);
 			this.Toolbar1.Name = "Toolbar1";
 			this.Toolbar1.Size = new System.Drawing.Size(1370, 42);
 			this.Toolbar1.TabIndex = 47;
 			// 
-			// _Toolbar1_Button1
+			// tlbNuevo
 			// 
-			this._Toolbar1_Button1.AutoSize = false;
-			this._Toolbar1_Button1.Image = ((System.Drawing.Image)(resources.GetObject("_Toolbar1_Button1.Image")));
-			this._Toolbar1_Button1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-			this._Toolbar1_Button1.Name = "_Toolbar1_Button1";
-			this._Toolbar1_Button1.Size = new System.Drawing.Size(40, 39);
-			this._Toolbar1_Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-			this._Toolbar1_Button1.ToolTipText = "Nuevo";
+			this.tlbNuevo.AutoSize = false;
+			this.tlbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tlbNuevo.Image")));
+			this.tlbNuevo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+			this.tlbNuevo.Name = "tlbNuevo";
+			this.tlbNuevo.Size = new System.Drawing.Size(40, 39);
+			this.tlbNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+			this.tlbNuevo.ToolTipText = "Nuevo";
 			// 
 			// _Toolbar1_Button2
 			// 
 			this._Toolbar1_Button2.Name = "_Toolbar1_Button2";
 			this._Toolbar1_Button2.Size = new System.Drawing.Size(6, 42);
 			// 
-			// _Toolbar1_Button3
+			// tlbGuardar
 			// 
-			this._Toolbar1_Button3.AutoSize = false;
-			this._Toolbar1_Button3.Image = ((System.Drawing.Image)(resources.GetObject("_Toolbar1_Button3.Image")));
-			this._Toolbar1_Button3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-			this._Toolbar1_Button3.Name = "_Toolbar1_Button3";
-			this._Toolbar1_Button3.Size = new System.Drawing.Size(40, 39);
-			this._Toolbar1_Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-			this._Toolbar1_Button3.ToolTipText = "Guardar";
-			this._Toolbar1_Button3.Click += new System.EventHandler(this._Toolbar1_Button3Click);
+			this.tlbGuardar.AutoSize = false;
+			this.tlbGuardar.Image = ((System.Drawing.Image)(resources.GetObject("tlbGuardar.Image")));
+			this.tlbGuardar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+			this.tlbGuardar.Name = "tlbGuardar";
+			this.tlbGuardar.Size = new System.Drawing.Size(40, 39);
+			this.tlbGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+			this.tlbGuardar.ToolTipText = "Guardar";
+			this.tlbGuardar.Click += new System.EventHandler(this.TlbGuardarClick);
 			// 
 			// _Toolbar1_Button4
 			// 
@@ -1106,47 +1106,47 @@ namespace Contable
 			this._Toolbar1_Button4.Name = "_Toolbar1_Button4";
 			this._Toolbar1_Button4.Size = new System.Drawing.Size(0, 39);
 			// 
-			// _Toolbar1_Button5
+			// tlbImprimir
 			// 
-			this._Toolbar1_Button5.AutoSize = false;
-			this._Toolbar1_Button5.Enabled = false;
-			this._Toolbar1_Button5.Image = ((System.Drawing.Image)(resources.GetObject("_Toolbar1_Button5.Image")));
-			this._Toolbar1_Button5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-			this._Toolbar1_Button5.Name = "_Toolbar1_Button5";
-			this._Toolbar1_Button5.Size = new System.Drawing.Size(40, 39);
-			this._Toolbar1_Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-			this._Toolbar1_Button5.ToolTipText = "Imprimir";
+			this.tlbImprimir.AutoSize = false;
+			this.tlbImprimir.Enabled = false;
+			this.tlbImprimir.Image = ((System.Drawing.Image)(resources.GetObject("tlbImprimir.Image")));
+			this.tlbImprimir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+			this.tlbImprimir.Name = "tlbImprimir";
+			this.tlbImprimir.Size = new System.Drawing.Size(40, 39);
+			this.tlbImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+			this.tlbImprimir.ToolTipText = "Imprimir";
 			// 
 			// _Toolbar1_Button6
 			// 
 			this._Toolbar1_Button6.Name = "_Toolbar1_Button6";
 			this._Toolbar1_Button6.Size = new System.Drawing.Size(6, 42);
 			// 
-			// _Toolbar1_Button7
+			// tlbAnular
 			// 
-			this._Toolbar1_Button7.AutoSize = false;
-			this._Toolbar1_Button7.Image = ((System.Drawing.Image)(resources.GetObject("_Toolbar1_Button7.Image")));
-			this._Toolbar1_Button7.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-			this._Toolbar1_Button7.Name = "_Toolbar1_Button7";
-			this._Toolbar1_Button7.Size = new System.Drawing.Size(40, 39);
-			this._Toolbar1_Button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-			this._Toolbar1_Button7.ToolTipText = "Anular";
+			this.tlbAnular.AutoSize = false;
+			this.tlbAnular.Image = ((System.Drawing.Image)(resources.GetObject("tlbAnular.Image")));
+			this.tlbAnular.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+			this.tlbAnular.Name = "tlbAnular";
+			this.tlbAnular.Size = new System.Drawing.Size(40, 39);
+			this.tlbAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+			this.tlbAnular.ToolTipText = "Anular";
 			// 
 			// _Toolbar1_Button8
 			// 
 			this._Toolbar1_Button8.Name = "_Toolbar1_Button8";
 			this._Toolbar1_Button8.Size = new System.Drawing.Size(6, 42);
 			// 
-			// _Toolbar1_Button9
+			// tlbEditar
 			// 
-			this._Toolbar1_Button9.AutoSize = false;
-			this._Toolbar1_Button9.Image = ((System.Drawing.Image)(resources.GetObject("_Toolbar1_Button9.Image")));
-			this._Toolbar1_Button9.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-			this._Toolbar1_Button9.Name = "_Toolbar1_Button9";
-			this._Toolbar1_Button9.Size = new System.Drawing.Size(40, 39);
-			this._Toolbar1_Button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-			this._Toolbar1_Button9.ToolTipText = "Editar";
-			this._Toolbar1_Button9.Click += new System.EventHandler(this._Toolbar1_Button9Click);
+			this.tlbEditar.AutoSize = false;
+			this.tlbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tlbEditar.Image")));
+			this.tlbEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+			this.tlbEditar.Name = "tlbEditar";
+			this.tlbEditar.Size = new System.Drawing.Size(40, 39);
+			this.tlbEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+			this.tlbEditar.ToolTipText = "Editar";
+			this.tlbEditar.Click += new System.EventHandler(this.TlbEditarClick);
 			// 
 			// frmClientes
 			// 
@@ -1165,6 +1165,10 @@ namespace Contable
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Load += new System.EventHandler(this.FrmClientesLoad);
 			this.SSTab1.ResumeLayout(false);
+			this.tabBusqueda.ResumeLayout(false);
+			this.tabBusqueda.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.gridData)).EndInit();
+			this.Frame8.ResumeLayout(false);
 			this._SSTab1_TabPage0.ResumeLayout(false);
 			this.Frame1.ResumeLayout(false);
 			this.Frame1.PerformLayout();
@@ -1180,10 +1184,6 @@ namespace Contable
 			this.Frame6.ResumeLayout(false);
 			this.Frame2.ResumeLayout(false);
 			this.Frame5.ResumeLayout(false);
-			this.tabBusqueda.ResumeLayout(false);
-			this.tabBusqueda.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.gridData)).EndInit();
-			this.Frame8.ResumeLayout(false);
 			this.Toolbar1.ResumeLayout(false);
 			this.Toolbar1.PerformLayout();
 			this.ResumeLayout(false);
