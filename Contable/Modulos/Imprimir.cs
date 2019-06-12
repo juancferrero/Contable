@@ -2346,20 +2346,22 @@ nuevahoja:
 		//Por cada fila en el listado 
 	  	foreach (DataRow row in Listado.Rows) 
 			{
-
-	  			
+	  		DataRow fila = Listado.Rows[r];
+	  		
+	  		
+	  		
 	      		//Por cada columna en el listado
 	  			foreach (DataColumn col in Listado.Columns)
 	      		 
 	      		{
-		  			
+		  			//MessageBox.Show(row[col].ToString());
 	      			
 	      			//consulta cada fila para ver que es.
 		      		if (col.DataType.Equals(typeof(DateTime)))
 		         	 	{
 					
-		      			//ev.Graphics.DrawString(row[col].ToString(), Arial10, Brushes.Black,
-		                //           ejeX -correccionX, ejeY -correccionY) ;
+		      			ev.Graphics.DrawString(row[col].ToString(), Arial10, Brushes.Black,
+		                           ejeX -correccionX, ejeY -correccionY) ;
 					 	}
 		         	
 		         	if (col.DataType.Equals(typeof(Decimal)))
@@ -2371,9 +2373,10 @@ nuevahoja:
 		         	
 		         	else
 		            	{
-		            		
-		        		ev.Graphics.DrawString(row[col].ToString(), Arial10, Brushes.Black,
-		                           ejeX -correccionX, ejeY -correccionY) ;
+		            	
+		         		
+		        		//ev.Graphics.DrawString(row[col].ToString(), Arial10, Brushes.Black,
+		                           //ejeX -correccionX, ejeY -correccionY) ;
 		            	}
 		         	
 					//Agrega el tamaño de la columna al eje X

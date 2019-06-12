@@ -54,12 +54,12 @@ namespace Contable.Cheques
 				gridDatos["IDCheque",i].Value = gridDatos["IDCheque",i].Value.ToString().Substring(10,8);
 			
 				//Convierto el Valor de un Importe en Decimal
-				//decimal Importe = Convert.ToDecimal (gridDatos["Importe",i].Value.ToString());
+				decimal Importe = Convert.ToDecimal (gridDatos["Importe",i].Value.ToString());
 				//Convierto el decimal en un string
-				//string strImporte = Importe.ToString("C");
+				string strImporte = Importe.ToString("0.00");
 				
 				//Modifico el importe para que quede como un Currency
-				//gridDatos["Importe",i].Value = strImporte;// .ToString("C"); //Importe;
+				gridDatos["Importe",i].Value = strImporte;// .ToString("C"); //Importe;
 				
 				
 			
@@ -77,8 +77,8 @@ namespace Contable.Cheques
 			//DataTable Tabla = dtGridWtoDataTable.CambiarADatatable(gridDatos);
 			
 			//Funcion para imprimir un listado de cheques
-			//ImprimirEjemplo.Imprimir.Imprimir_ListadoDeCheques( OperacionesComunes.TablaChequesEnCarteraNew());
-			ImprimirEjemplo.Imprimir.Imprimir_ListadoDeCheques(dtGridWtoDataTable.CambiarADatatable(gridDatos));
+			ImprimirEjemplo.Imprimir.Imprimir_ListadoDeCheques( OperacionesComunes.TablaChequesEnCarteraNew());
+			//ImprimirEjemplo.Imprimir.Imprimir_ListadoDeCheques(dtGridWtoDataTable.CambiarADatatable(gridDatos));
 		}
 		
 		
