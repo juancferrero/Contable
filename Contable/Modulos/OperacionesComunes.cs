@@ -1468,7 +1468,35 @@ try
 		
 #region CLIENTES
 
-		
+
+/*
+ID
+Nombre
+Direccion
+Localidad
+Provincia
+Telefono1
+Telefono2
+Fax
+Email
+Contacto1
+Contacto2
+Contacto3
+CodPos
+CUIT
+Desc
+TranspId
+ClienteDe
+Activo
+NroGIS
+Calidad
+Info
+GLN
+
+ */
+
+
+
 		/// <summary>
 		/// 
 		/// </summary>
@@ -1491,7 +1519,62 @@ try
 			
 		}
 		
-
+/// <summary>
+		/// Funcion sobrecargada depende de la variable que se le entrega es lo que hace.
+		/// </summary>
+		///<param name = "DatosInsertar"> Guarda un nuevo cliente</param>		
+		public static void  Guardar (VariablesPropias.VariablesPropias.vpClientes  DatosInsertar)
+		{
+		
+			//Esta funcion conecta con la base de datos a trabajar
+			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseCheques"].ToString());
+			
+			
+			//Comando para ingresar los datos
+			ConexionAccess2007.InsertarFila("Clientes",
+			"ID, Nombre, Direccion, Localidad, Provincia, " +
+			"Telefono1, Telefono2, Fax, " +
+			"Email, Contacto1, Contacto2, Contacto3, " +
+			"CodPos, CUIT, Desc, TranspId, ClienteDe, " +
+			"Activo, NroGIS, Calidad, Info, GLN",
+			"'" + DatosInsertar.strid.Trim() + "', " +
+			"'" + DatosInsertar.strNombre.Trim() + "', " +
+			"'" + DatosInsertar.strDireccion.Trim() + "', " +
+			"'" + DatosInsertar.strLocalidad.Trim() + "', " +
+			"'" + DatosInsertar.strProvincia.Trim() + "', " +
+			"'" + DatosInsertar.strTelefono1.Trim() + "', " +
+			"'" + DatosInsertar.strTelefono2.Trim() + "', " +
+			"'" + DatosInsertar.strTelefono3.Trim() + "', " +
+			"'" + DatosInsertar.stremail.Trim() + "', " +
+			"'" + DatosInsertar.Contactos[0].strNombre.Trim() + "', " +
+			"'" + DatosInsertar.Contactos[1].strNombre.Trim() + "', " +
+			"'" + DatosInsertar.Contactos[3].strNombre.Trim() + "', " +
+			"'" + DatosInsertar.strCodPos.Trim() + "', " +
+			"" + DatosInsertar.dblCUIT + ", " +
+			"" + DatosInsertar.dblDescuento + ", " +
+			"" + DatosInsertar.Transporte.intTranspId + ", " +
+			"'" + DatosInsertar.strClienteDe.Trim() + "', " +
+			"'" + DatosInsertar.bolActivo + "', " +
+			
+			"'" + DatosInsertar..Trim() + "', " +
+			"'" + DatosInsertar.memoVarios.Trim() + "', " +
+			"'" + DatosInsertar.GLN.Trim() + "', " +
+			
+			
+			
+								"'" + DatosInsertar.strIDCheque.Trim() + "', " +
+			                    "'" + DatosInsertar.dtFechaEmision.ToString("dd/MM/yyyy") + "', " +            
+								"'" + DatosInsertar.dtFechaPago.ToString("dd/MM/yyyy") + "', " +
+								"'" + DatosInsertar.dtFechaIngreso.ToString("dd/MM/yyyy") + "', " +
+								"" +  DatosInsertar.curImporte.ToString().Replace(",",".") + ", " +
+								"" +  DatosInsertar.curImporteUSD.ToString().Replace(",",".")  + ", " +
+								"'" + DatosInsertar.strIDCliente.Trim() + "'");
+						
+									
+			//Desconectar la base de datos
+			ConexionAccess2007.Desconectar();
+		
+		}
 		
 		
 		#endregion

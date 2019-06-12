@@ -90,6 +90,9 @@ namespace VariablesPropias
 			public string stremail;
 			public string memoVarios;
 			public string GLN;
+			public string strClienteDe;
+			public bool bolActivo;
+			public double dlbCalidad;
 			
 		
 		}

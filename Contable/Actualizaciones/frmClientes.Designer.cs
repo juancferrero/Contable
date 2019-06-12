@@ -221,7 +221,7 @@ namespace Contable
 			this.SSTab1.Location = new System.Drawing.Point(0, 47);
 			this.SSTab1.Name = "SSTab1";
 			this.SSTab1.SelectedIndex = 5;
-			this.SSTab1.Size = new System.Drawing.Size(1221, 576);
+			this.SSTab1.Size = new System.Drawing.Size(1342, 634);
 			this.SSTab1.TabIndex = 0;
 			// 
 			// tabBusqueda
@@ -232,7 +232,7 @@ namespace Contable
 			this.tabBusqueda.Controls.Add(this.Frame8);
 			this.tabBusqueda.Location = new System.Drawing.Point(4, 22);
 			this.tabBusqueda.Name = "tabBusqueda";
-			this.tabBusqueda.Size = new System.Drawing.Size(1213, 550);
+			this.tabBusqueda.Size = new System.Drawing.Size(1334, 608);
 			this.tabBusqueda.TabIndex = 6;
 			this.tabBusqueda.Text = "Busqueda";
 			this.tabBusqueda.UseVisualStyleBackColor = true;
@@ -1125,6 +1125,7 @@ namespace Contable
 			// tlbAnular
 			// 
 			this.tlbAnular.AutoSize = false;
+			this.tlbAnular.Enabled = false;
 			this.tlbAnular.Image = ((System.Drawing.Image)(resources.GetObject("tlbAnular.Image")));
 			this.tlbAnular.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 			this.tlbAnular.Name = "tlbAnular";
@@ -1140,6 +1141,7 @@ namespace Contable
 			// tlbEditar
 			// 
 			this.tlbEditar.AutoSize = false;
+			this.tlbEditar.Enabled = false;
 			this.tlbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tlbEditar.Image")));
 			this.tlbEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 			this.tlbEditar.Name = "tlbEditar";
@@ -1153,7 +1155,7 @@ namespace Contable
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Control;
-			this.ClientSize = new System.Drawing.Size(1370, 750);
+			this.ClientSize = new System.Drawing.Size(1370, 749);
 			this.Controls.Add(this.SSTab1);
 			this.Controls.Add(this.Toolbar1);
 			this.Cursor = System.Windows.Forms.Cursors.Default;
