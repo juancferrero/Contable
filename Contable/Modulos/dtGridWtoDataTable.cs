@@ -38,23 +38,33 @@ namespace Contable.Modulos
 			//Crea un DataTable
 			DataTable dt = new DataTable();
 		
-			//For para recorrer las columnas
+			
+			
+			
+			//For para colocar las columnas
 			for (int i = 0; i < dataGridView2.Columns.Count; i++) 
 			{
 				
 				//Creo la columna en el DataTable
 				dt.Columns.Add(dataGridView2.Columns[i].HeaderText , dataGridView2.Columns[i].CellType);
+			}
 			
-				//For de cada fila
-				foreach (DataGridViewRow rowGrid in dataGridView2.Rows)
+			
+			//Colocar las filas
+			for (int i = 0; i < dataGridView2.Columns.Count; i++) {
+				
+				
+			
+			//For de cada fila
+			foreach (DataGridViewRow rowGrid in dataGridView2.Rows)
 				{
 			   		DataRow row = dt.NewRow();
 			   		row[i] = rowGrid.Cells[0]; 
 			   
 			   		dt.Rows.Add(row);
 				}
-			}
-		
+			
+		}
 		 
 
 		

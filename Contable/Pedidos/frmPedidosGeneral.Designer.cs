@@ -60,10 +60,6 @@ namespace Contable
 		public System.Windows.Forms.Label Label4;
 		public System.Windows.Forms.GroupBox Frame1;
 		public System.Windows.Forms.Timer Timer1;
-		public System.Windows.Forms.ToolStripSeparator _Toolbar1_Button2;
-		public System.Windows.Forms.ToolStripSeparator _Toolbar1_Button4;
-		public System.Windows.Forms.ToolStripSeparator _Toolbar1_Button6;
-		public System.Windows.Forms.ToolStripSeparator _Toolbar1_Button8;
 		public System.Windows.Forms.ToolStrip Toolbar1;
 //NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
 //Se puede modificar mediante el Diseñador de Windows Forms.
@@ -97,18 +93,18 @@ namespace Contable
 			this.Timer1 = new System.Windows.Forms.Timer(this.components);
 			this.Toolbar1 = new System.Windows.Forms.ToolStrip();
 			this.tbNuevo = new System.Windows.Forms.ToolStripButton();
-			this._Toolbar1_Button2 = new System.Windows.Forms.ToolStripSeparator();
 			this.tbGuardar = new System.Windows.Forms.ToolStripButton();
-			this._Toolbar1_Button4 = new System.Windows.Forms.ToolStripSeparator();
 			this.tbActualizar = new System.Windows.Forms.ToolStripButton();
-			this._Toolbar1_Button6 = new System.Windows.Forms.ToolStripSeparator();
 			this.tbAnular = new System.Windows.Forms.ToolStripButton();
-			this._Toolbar1_Button8 = new System.Windows.Forms.ToolStripSeparator();
 			this.tbEditar = new System.Windows.Forms.ToolStripButton();
-			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
 			this.tbPasarARemito = new System.Windows.Forms.ToolStripButton();
 			this.gridDatos = new System.Windows.Forms.DataGridView();
 			this.gridDatosPedido = new System.Windows.Forms.DataGridView();
+			this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+			this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
 			this.Frame1.SuspendLayout();
 			this.Toolbar1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridDatos)).BeginInit();
@@ -138,7 +134,7 @@ namespace Contable
 			this.Frame1.Controls.Add(this.lblPartida1);
 			this.Frame1.Controls.Add(this.Label4);
 			this.Frame1.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.Frame1.Location = new System.Drawing.Point(667, 257);
+			this.Frame1.Location = new System.Drawing.Point(527, 251);
 			this.Frame1.Name = "Frame1";
 			this.Frame1.Padding = new System.Windows.Forms.Padding(0);
 			this.Frame1.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -384,19 +380,19 @@ namespace Contable
 			// 
 			this.Toolbar1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
 			this.tbNuevo,
-			this._Toolbar1_Button2,
-			this.tbGuardar,
-			this._Toolbar1_Button4,
-			this.tbActualizar,
-			this._Toolbar1_Button6,
-			this.tbAnular,
-			this._Toolbar1_Button8,
-			this.tbEditar,
 			this.toolStripSeparator1,
+			this.tbGuardar,
+			this.toolStripSeparator2,
+			this.tbActualizar,
+			this.toolStripSeparator3,
+			this.tbAnular,
+			this.toolStripSeparator4,
+			this.tbEditar,
+			this.toolStripSeparator5,
 			this.tbPasarARemito});
 			this.Toolbar1.Location = new System.Drawing.Point(0, 0);
 			this.Toolbar1.Name = "Toolbar1";
-			this.Toolbar1.Size = new System.Drawing.Size(1118, 39);
+			this.Toolbar1.Size = new System.Drawing.Size(1118, 29);
 			this.Toolbar1.TabIndex = 21;
 			// 
 			// tbNuevo
@@ -404,15 +400,10 @@ namespace Contable
 			this.tbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tbNuevo.Image")));
 			this.tbNuevo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 			this.tbNuevo.Name = "tbNuevo";
-			this.tbNuevo.Size = new System.Drawing.Size(26, 36);
+			this.tbNuevo.Size = new System.Drawing.Size(26, 26);
 			this.tbNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
 			this.tbNuevo.ToolTipText = "Nuevo";
 			this.tbNuevo.Click += new System.EventHandler(this.TbNuevoClick);
-			// 
-			// _Toolbar1_Button2
-			// 
-			this._Toolbar1_Button2.Name = "_Toolbar1_Button2";
-			this._Toolbar1_Button2.Size = new System.Drawing.Size(6, 39);
 			// 
 			// tbGuardar
 			// 
@@ -420,30 +411,19 @@ namespace Contable
 			this.tbGuardar.Image = ((System.Drawing.Image)(resources.GetObject("tbGuardar.Image")));
 			this.tbGuardar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 			this.tbGuardar.Name = "tbGuardar";
-			this.tbGuardar.Size = new System.Drawing.Size(26, 36);
+			this.tbGuardar.Size = new System.Drawing.Size(26, 26);
 			this.tbGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
 			this.tbGuardar.ToolTipText = "Guardar";
-			// 
-			// _Toolbar1_Button4
-			// 
-			this._Toolbar1_Button4.AutoSize = false;
-			this._Toolbar1_Button4.Name = "_Toolbar1_Button4";
-			this._Toolbar1_Button4.Size = new System.Drawing.Size(0, 39);
 			// 
 			// tbActualizar
 			// 
 			this.tbActualizar.Image = ((System.Drawing.Image)(resources.GetObject("tbActualizar.Image")));
 			this.tbActualizar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 			this.tbActualizar.Name = "tbActualizar";
-			this.tbActualizar.Size = new System.Drawing.Size(26, 36);
+			this.tbActualizar.Size = new System.Drawing.Size(26, 26);
 			this.tbActualizar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
 			this.tbActualizar.ToolTipText = "Actualizar";
 			this.tbActualizar.Click += new System.EventHandler(this.TbActualizarClick);
-			// 
-			// _Toolbar1_Button6
-			// 
-			this._Toolbar1_Button6.Name = "_Toolbar1_Button6";
-			this._Toolbar1_Button6.Size = new System.Drawing.Size(6, 39);
 			// 
 			// tbAnular
 			// 
@@ -451,14 +431,9 @@ namespace Contable
 			this.tbAnular.Image = ((System.Drawing.Image)(resources.GetObject("tbAnular.Image")));
 			this.tbAnular.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 			this.tbAnular.Name = "tbAnular";
-			this.tbAnular.Size = new System.Drawing.Size(26, 36);
+			this.tbAnular.Size = new System.Drawing.Size(26, 26);
 			this.tbAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
 			this.tbAnular.ToolTipText = "Anular";
-			// 
-			// _Toolbar1_Button8
-			// 
-			this._Toolbar1_Button8.Name = "_Toolbar1_Button8";
-			this._Toolbar1_Button8.Size = new System.Drawing.Size(6, 39);
 			// 
 			// tbEditar
 			// 
@@ -466,14 +441,9 @@ namespace Contable
 			this.tbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tbEditar.Image")));
 			this.tbEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
 			this.tbEditar.Name = "tbEditar";
-			this.tbEditar.Size = new System.Drawing.Size(26, 36);
+			this.tbEditar.Size = new System.Drawing.Size(26, 26);
 			this.tbEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
 			this.tbEditar.ToolTipText = "Editar";
-			// 
-			// toolStripSeparator1
-			// 
-			this.toolStripSeparator1.Name = "toolStripSeparator1";
-			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 39);
 			// 
 			// tbPasarARemito
 			// 
@@ -481,7 +451,7 @@ namespace Contable
 			this.tbPasarARemito.Image = ((System.Drawing.Image)(resources.GetObject("tbPasarARemito.Image")));
 			this.tbPasarARemito.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.tbPasarARemito.Name = "tbPasarARemito";
-			this.tbPasarARemito.Size = new System.Drawing.Size(23, 36);
+			this.tbPasarARemito.Size = new System.Drawing.Size(23, 26);
 			this.tbPasarARemito.Text = "Pasar A Remito";
 			this.tbPasarARemito.Click += new System.EventHandler(this.TbPasarARemitoClick);
 			// 
@@ -503,6 +473,31 @@ namespace Contable
 			this.gridDatosPedido.Name = "gridDatosPedido";
 			this.gridDatosPedido.Size = new System.Drawing.Size(547, 166);
 			this.gridDatosPedido.TabIndex = 23;
+			// 
+			// toolStripSeparator1
+			// 
+			this.toolStripSeparator1.Name = "toolStripSeparator1";
+			this.toolStripSeparator1.Size = new System.Drawing.Size(6, 29);
+			// 
+			// toolStripSeparator2
+			// 
+			this.toolStripSeparator2.Name = "toolStripSeparator2";
+			this.toolStripSeparator2.Size = new System.Drawing.Size(6, 29);
+			// 
+			// toolStripSeparator3
+			// 
+			this.toolStripSeparator3.Name = "toolStripSeparator3";
+			this.toolStripSeparator3.Size = new System.Drawing.Size(6, 29);
+			// 
+			// toolStripSeparator4
+			// 
+			this.toolStripSeparator4.Name = "toolStripSeparator4";
+			this.toolStripSeparator4.Size = new System.Drawing.Size(6, 29);
+			// 
+			// toolStripSeparator5
+			// 
+			this.toolStripSeparator5.Name = "toolStripSeparator5";
+			this.toolStripSeparator5.Size = new System.Drawing.Size(6, 29);
 			// 
 			// frmPedidosGeneral
 			// 
@@ -540,6 +535,10 @@ namespace Contable
 		public System.Windows.Forms.ToolStripButton tbActualizar;
 		public System.Windows.Forms.ToolStripButton tbGuardar;
 		public System.Windows.Forms.ToolStripButton tbNuevo;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+		private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
 			#endregion
 	}
 }
