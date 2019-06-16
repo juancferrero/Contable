@@ -1558,17 +1558,7 @@ GLN
 			
 			"'" + DatosInsertar..Trim() + "', " +
 			"'" + DatosInsertar.memoVarios.Trim() + "', " +
-			"'" + DatosInsertar.GLN.Trim() + "', " +
-			
-			
-			
-								"'" + DatosInsertar.strIDCheque.Trim() + "', " +
-			                    "'" + DatosInsertar.dtFechaEmision.ToString("dd/MM/yyyy") + "', " +            
-								"'" + DatosInsertar.dtFechaPago.ToString("dd/MM/yyyy") + "', " +
-								"'" + DatosInsertar.dtFechaIngreso.ToString("dd/MM/yyyy") + "', " +
-								"" +  DatosInsertar.curImporte.ToString().Replace(",",".") + ", " +
-								"" +  DatosInsertar.curImporteUSD.ToString().Replace(",",".")  + ", " +
-								"'" + DatosInsertar.strIDCliente.Trim() + "'");
+			"'" + DatosInsertar.GLN.Trim() + "'");
 						
 									
 			//Desconectar la base de datos

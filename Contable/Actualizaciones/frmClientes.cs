@@ -108,7 +108,6 @@ namespace Contable
 		{
 			
 		}
-		
 	
 				
 		void FrmClientesLoad(object sender, EventArgs e)
