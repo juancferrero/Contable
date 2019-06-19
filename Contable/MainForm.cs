@@ -316,10 +316,7 @@ namespace Contable
 		{
 	
 		}
-		void MnuCuentasCorrientesClick(object sender, EventArgs e)
-		{
-	
-		}
+		
 		void MnuFactBNuevoClick(object sender, EventArgs e)
 		{
 			frmDocumentoFiscal frm = new frmDocumentoFiscal();
@@ -387,6 +384,14 @@ namespace Contable
 			frmTrazabilidadIcona frm = new frmTrazabilidadIcona();
 			frm.MdiParent = this;
 			frm.Show();
+		}
+		void InformacionToolStripMenuItem1Click(object sender, EventArgs e)
+		{
+	
+		}
+		void CuentasCorrientesToolStripMenuItemClick(object sender, EventArgs e)
+		{
+	
 		}
 		
 
