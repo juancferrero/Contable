@@ -56,6 +56,9 @@ namespace Contable.Interdepositos
 		public System.Windows.Forms.Label _Lbl_2;
 		public System.Windows.Forms.Label _Lbl_1;
 		public System.Windows.Forms.Label _Lbl_0;
+		private System.Windows.Forms.DateTimePicker dateTimePicker2;
+		private System.Windows.Forms.DateTimePicker dateTimePicker1;
+		private System.Windows.Forms.DataGridView dataGridView1;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -121,6 +124,9 @@ namespace Contable.Interdepositos
 			this.label1 = new System.Windows.Forms.Label();
 			this.txtBanco = new System.Windows.Forms.TextBox();
 			this.tabPage2 = new System.Windows.Forms.TabPage();
+			this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+			this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
 			this.Toolbar1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
@@ -128,6 +134,8 @@ namespace Contable.Interdepositos
 			this.groupBox2.SuspendLayout();
 			this.frCliente.SuspendLayout();
 			this.groupBox1.SuspendLayout();
+			this.tabPage2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// Toolbar1
@@ -173,6 +181,7 @@ namespace Contable.Interdepositos
 			this.tlbGuardar.Size = new System.Drawing.Size(40, 39);
 			this.tlbGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
 			this.tlbGuardar.ToolTipText = "Guardar";
+			this.tlbGuardar.Click += new System.EventHandler(this.TlbGuardarClick);
 			// 
 			// _Toolbar1_Button4
 			// 
@@ -558,6 +567,9 @@ namespace Contable.Interdepositos
 			// 
 			// tabPage2
 			// 
+			this.tabPage2.Controls.Add(this.dateTimePicker2);
+			this.tabPage2.Controls.Add(this.dateTimePicker1);
+			this.tabPage2.Controls.Add(this.dataGridView1);
 			this.tabPage2.Location = new System.Drawing.Point(4, 22);
 			this.tabPage2.Name = "tabPage2";
 			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -565,6 +577,28 @@ namespace Contable.Interdepositos
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Control";
 			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
+			// dateTimePicker2
+			// 
+			this.dateTimePicker2.Location = new System.Drawing.Point(652, 87);
+			this.dateTimePicker2.Name = "dateTimePicker2";
+			this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
+			this.dateTimePicker2.TabIndex = 2;
+			// 
+			// dateTimePicker1
+			// 
+			this.dateTimePicker1.Location = new System.Drawing.Point(642, 40);
+			this.dateTimePicker1.Name = "dateTimePicker1";
+			this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
+			this.dateTimePicker1.TabIndex = 1;
+			// 
+			// dataGridView1
+			// 
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.Size = new System.Drawing.Size(416, 166);
+			this.dataGridView1.TabIndex = 0;
 			// 
 			// frmInterOp
 			// 
@@ -587,6 +621,8 @@ namespace Contable.Interdepositos
 			this.frCliente.PerformLayout();
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
+			this.tabPage2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 

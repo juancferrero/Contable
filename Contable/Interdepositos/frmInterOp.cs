@@ -22,13 +22,22 @@ namespace Contable.Interdepositos
 	public partial class frmInterOp : Form
 	{
 
+#region Variables
+
 		/// <summary>
 		/// Variable Publica que Arma un Cliente
 		/// </summary>
 		public VariablesPropias.VariablesPropias.vpClientes clie;
 		
+		/// <summary>
+		/// Variable Publica para los Interdepositos 
+		/// </summary>
 		public VariablesPropias.VariablesPropias.vpInterdeposito Interdep;
+#endregion		
 		
+		/// <summary>
+		/// Formulario de operaciones con interdepositos
+		/// </summary>
 		public frmInterOp()
 		{
 			//
@@ -47,16 +56,53 @@ namespace Contable.Interdepositos
 			
 			
 		}
+
+#region Clientes
+		
+		/// <summary>
+		/// Esta funcion coloca los datos en cada uno de los items del recibo
+		/// </summary>		
+		public void CargarClientes()
+		{
+		
+		
+			//Cargo el cliente a la variable publica
+			clie =  OperacionesComunes.ObtenerCliente(cmbRazonSocial.Text);
+		
+			lblIDCliente.Text = clie.strid;
+			lblCUIT.Text = Convert.ToString (clie.dblCUIT);
+			lblDireccion.Text  = clie.strDireccion;
+			lblLocalidad.Text = clie.strLocalidad;				
+			lblProvincia.Text = clie.strProvincia; 
+		
+		}
+#endregion
+
+#region Interdepositos
+
+		public VariablesPropias.VariablesPropias.vpInterdeposito IDepositos ()
+		{
+		
+			Interdep.dblIDInterdeposito = 	Convert.ToDouble(lblIDCliente.Text + dtFecha.Value.Year + dtFecha.Value.Month + dtFecha.Value.Day);
+			Interdep.dtFechaEmision = dtFechaIngreso.Value;
+			Interdep.dtFechaPago = dtFecha.Value;
+			Interdep.strBanco= txtBanco.Text;
+			Interdep.strSucursal = txtSucursal.Text;
+			Interdep.strBancoDestino = txtBcoDestino.Text;
+			Interdep.strIDCliente = lblIDCliente.Text; 
+			Interdep.curImporte = Convert.ToDecimal ( txtImporte.Text);
+			Interdep.strCliente = cmbRazonSocial.Text;
+			
+			return Interdep; 
+		}
+
+#endregion
+
 		
 		void TabPage1Click(object sender, EventArgs e)
 		{
 			
-			Interdep = IDepositos();
 			
-			//Guarda el interdeposito en la base vieja
-			OperacionesComunes.Guardar(Interdep, 1);
-			//Guarda el interdepostio en la base nueva
-			OperacionesComunes.Guardar(Interdep, 2);
 		}
 		
 		void FrmInterOpLoad(object sender, EventArgs e)
@@ -78,39 +124,21 @@ namespace Contable.Interdepositos
 			CargarClientes();
 		}	
 
-		/// <summary>
-		/// Esta funcion coloca los datos en cada uno de los items del recibo
-		/// </summary>		
-		public void CargarClientes()
-		{
 		
-		
-			//Cargo el cliente a la variable publica
-			clie =  OperacionesComunes.ObtenerCliente(cmbRazonSocial.Text);
-		
-			lblIDCliente.Text = clie.strid;
-			lblCUIT.Text = Convert.ToString (clie.dblCUIT);
-			lblDireccion.Text  = clie.strDireccion;
-			lblLocalidad.Text = clie.strLocalidad;				
-			lblProvincia.Text = clie.strProvincia; 
-		
-		}
 
 		
 		
-		public VariablesPropias.VariablesPropias.vpInterdeposito IDepositos ()
-		{
 		
-			Interdep.dblIDInterdeposito = 	Convert.ToDouble(lblIDCliente.Text) + Convert.ToDouble (dtFecha.Value.Year + dtFecha.Value.Month + dtFecha.Value.Day);
-			Interdep.dtFechaEmision = dtFechaIngreso.Value;
-			Interdep.dtFechaPago = dtFecha.Value;
-			Interdep.strBanco= txtBanco.Text;
-			Interdep.strSucursal = txtSucursal.Text;
-			Interdep.strBancoDestino = txtBcoDestino.Text;
-			Interdep.strIDCliente = lblIDCliente.Text; 
-			Interdep.curImporte = Convert.ToDecimal ( txtImporte.Text);
+		void TlbGuardarClick(object sender, EventArgs e)
+		{
+			//Carga los datos del interdeposito en las bases de datos
 			
-			return Interdep; 
+			Interdep = IDepositos();
+			
+			//Guarda el interdeposito en la base vieja
+			OperacionesComunes.Guardar(Interdep, 1);
+			//Guarda el interdepostio en la base nueva
+			OperacionesComunes.Guardar(Interdep, 2);
 		}
 		
 		
