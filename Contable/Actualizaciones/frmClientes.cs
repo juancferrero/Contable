@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 using System.Configuration;
 using ConexionDB;
-
+using Contable.Modulos;
 
 //using 
 
@@ -21,14 +21,17 @@ namespace Contable
 #region Barra de tareas
 		void TlbGuardarClick(object sender, EventArgs e)	
 		{
-	
+			
+			//Guarda un nuevo cliente
+			OperacionesComunes.Guardar(FormAVariable());
 		}
 		
 		void TlbEditarClick(object sender, EventArgs e)
 		{
-	
+
+			//Envia a editar un cliente
+			OperacionesComunes.Editar(FormAVariable());
 		}		
-		
 		
 #endregion
 		
@@ -86,12 +89,12 @@ namespace Contable
 			//Notas
 			richNotas.Text = vpcliente.memoVarios.ToString();
 			
-			
+			//Contactos TODO VER COMO USAR EL TAMAÑO DEL ARRAY
 			for (int i = 0; i < 10 /*vpcliente.Contactos.GetLength*/ ; i++) {
 				dataContactos.Rows.Add(vpcliente.Contactos[i].strNombre);
 			}
 			
-			//dataContactos.DataSource  = vpcliente.Contactos;
+			
 			
 			//Transporte
 			txtTranspNum.Text = vpcliente.Transporte.intTranspId.ToString();
@@ -99,7 +102,11 @@ namespace Contable
 			txtTranspDireccion.Text = vpcliente.Transporte.strDireccion;
 			
 			
-			MessageBox.Show("Seguro que es este cliente??" + vpcliente.Contactos[0].strNombre );
+			//MessageBox.Show("Seguro que es este cliente??" + vpcliente.Contactos[0].strNombre );
+			
+			
+			//Activo el boton para editar
+			tlbEditar.Enabled = true;
 		}		
 #endregion
 
@@ -109,14 +116,12 @@ namespace Contable
 			
 		}
 		
-	
 				
 		void FrmClientesLoad(object sender, EventArgs e)
 		{
 			_SSTab1_TabPage0.Show();
 		}
 		
-
 		
 		void _Label1_15Click(object sender, EventArgs e)
 		{
@@ -186,6 +191,72 @@ namespace Contable
 
 }
 
+
+	
+#region Modulos
+
+
+public VariablesPropias.VariablesPropias.vpClientes FormAVariable ()
+{
+			//Creo una variable propia 
+			VariablesPropias.VariablesPropias.vpClientes vpcliente = new VariablesPropias.VariablesPropias.vpClientes ();
+
+			/*
+			 Cargar los datos obtenidos en la pantalla
+			 */
+			vpcliente.strid = txtNumClie.Text; 
+			vpcliente.strNombre = txtRazonSocial.Text;
+			
+			vpcliente.strProvincia = cmbProvincia.Text;
+			vpcliente.strLocalidad = cmbLocalidad.Text;
+			vpcliente.strDireccion = txtDireccion.Text;
+			vpcliente.strCodPos = txtCodPos.Text;
+			vpcliente.dblCUIT = Convert.ToDouble (txtCUIT.Text);
+			vpcliente.strTelefono1 = txtTelefono1.Text;
+			vpcliente.strTelefono2 = txtTelefono2.Text;
+			vpcliente.strTelefono3 = txtFax.Text;
+			vpcliente.dblDescuento = Convert.ToDouble(txtDesc.Text);
+			vpcliente.stremail = txtEMail.Text;
+			
+			//Notas
+			vpcliente.memoVarios = richNotas.Text;
+			
+			//Contactos TODO VER COMO USAR EL TAMAÑO DEL ARRAY/Y colocarlo en un array nuevamente
+			/*for (int i = 0; i < 10 /*vpcliente.Contactos.GetLength*//* ; i++) {
+				dataContactos.Rows.Add(vpcliente.Contactos[i].strNombre);
+			}*/
+			
+			
+			
+			//Transporte
+			vpcliente.Transporte.intTranspId = Convert.ToInt32(txtTranspNum.Text);
+			vpcliente.Transporte.strNombre = cmbTranspNombre.Text;
+			vpcliente.Transporte.strDireccion = txtTranspDireccion.Text;	
+
+			vpcliente.GLN = txtGLN.Text;
+			vpcliente.strClienteDe= cmbClienteDe.Text;
+			
+			if (OptAct.Checked) {
+				vpcliente.bolActivo = true;
+			}
+				else
+			{
+				vpcliente.bolActivo = false;
+			}
+			
+				
+			
+			//vpcliente.dlbCalidad;
+
+			
+			
+			return vpcliente;
+}
+
+
+
+
+#endregion
 
 		
 		
