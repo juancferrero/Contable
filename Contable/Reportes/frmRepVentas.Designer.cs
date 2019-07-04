@@ -122,6 +122,7 @@ namespace Contable
 			// tlImprimir
 			// 
 			this.tlImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.tlImprimir.Enabled = false;
 			this.tlImprimir.Image = ((System.Drawing.Image)(resources.GetObject("tlImprimir.Image")));
 			this.tlImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.tlImprimir.Name = "tlImprimir";
