@@ -24,6 +24,9 @@ namespace Contable.Contador.Impuestos
 		public System.Windows.Forms.ToolStripButton tlbAnular;
 		public System.Windows.Forms.ToolStripSeparator _Toolbar1_Button8;
 		public System.Windows.Forms.ToolStripButton tlbEditar;
+		private System.Windows.Forms.TabControl tabControl1;
+		private System.Windows.Forms.TabPage tabPage1;
+		private System.Windows.Forms.TabPage tabPage2;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -57,7 +60,11 @@ namespace Contable.Contador.Impuestos
 			this.tlbAnular = new System.Windows.Forms.ToolStripButton();
 			this._Toolbar1_Button8 = new System.Windows.Forms.ToolStripSeparator();
 			this.tlbEditar = new System.Windows.Forms.ToolStripButton();
+			this.tabControl1 = new System.Windows.Forms.TabControl();
+			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.Toolbar1.SuspendLayout();
+			this.tabControl1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// Toolbar1
@@ -151,16 +158,49 @@ namespace Contable.Contador.Impuestos
 			this.tlbEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
 			this.tlbEditar.ToolTipText = "Editar";
 			// 
+			// tabControl1
+			// 
+			this.tabControl1.Controls.Add(this.tabPage1);
+			this.tabControl1.Controls.Add(this.tabPage2);
+			this.tabControl1.Location = new System.Drawing.Point(12, 45);
+			this.tabControl1.Name = "tabControl1";
+			this.tabControl1.SelectedIndex = 0;
+			this.tabControl1.Size = new System.Drawing.Size(914, 298);
+			this.tabControl1.TabIndex = 49;
+			// 
+			// tabPage1
+			// 
+			this.tabPage1.Location = new System.Drawing.Point(4, 22);
+			this.tabPage1.Name = "tabPage1";
+			this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage1.Size = new System.Drawing.Size(906, 272);
+			this.tabPage1.TabIndex = 0;
+			this.tabPage1.Text = "tabPage1";
+			this.tabPage1.UseVisualStyleBackColor = true;
+			// 
+			// tabPage2
+			// 
+			this.tabPage2.Location = new System.Drawing.Point(4, 22);
+			this.tabPage2.Name = "tabPage2";
+			this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+			this.tabPage2.Size = new System.Drawing.Size(192, 74);
+			this.tabPage2.TabIndex = 1;
+			this.tabPage2.Text = "tabPage2";
+			this.tabPage2.UseVisualStyleBackColor = true;
+			// 
 			// frmImpuestos
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1050, 373);
+			this.Controls.Add(this.tabControl1);
 			this.Controls.Add(this.Toolbar1);
 			this.Name = "frmImpuestos";
 			this.Text = "Alta Baja Modificacion de Impuuestos";
+			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
 			this.Toolbar1.ResumeLayout(false);
 			this.Toolbar1.PerformLayout();
+			this.tabControl1.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
