@@ -580,14 +580,14 @@ namespace Contable.Interdepositos
 			// 
 			// dateTimePicker2
 			// 
-			this.dateTimePicker2.Location = new System.Drawing.Point(652, 87);
+			this.dateTimePicker2.Location = new System.Drawing.Point(759, 59);
 			this.dateTimePicker2.Name = "dateTimePicker2";
 			this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
 			this.dateTimePicker2.TabIndex = 2;
 			// 
 			// dateTimePicker1
 			// 
-			this.dateTimePicker1.Location = new System.Drawing.Point(642, 40);
+			this.dateTimePicker1.Location = new System.Drawing.Point(759, 17);
 			this.dateTimePicker1.Name = "dateTimePicker1";
 			this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
 			this.dateTimePicker1.TabIndex = 1;
@@ -595,9 +595,9 @@ namespace Contable.Interdepositos
 			// dataGridView1
 			// 
 			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+			this.dataGridView1.Location = new System.Drawing.Point(8, 6);
 			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(416, 166);
+			this.dataGridView1.Size = new System.Drawing.Size(662, 328);
 			this.dataGridView1.TabIndex = 0;
 			// 
 			// frmInterOp
