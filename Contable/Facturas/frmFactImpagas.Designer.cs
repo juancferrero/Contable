@@ -109,15 +109,15 @@ namespace Contable
 			this.tlImprimir = new System.Windows.Forms.ToolStripButton();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
-			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.gridDatos = new System.Windows.Forms.DataGridView();
+			this.tabPage2 = new System.Windows.Forms.TabPage();
 			this.Frame1.SuspendLayout();
 			this.frmOrden.SuspendLayout();
 			this.toolStrip1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
-			this.tabPage2.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridDatos)).BeginInit();
+			this.tabPage2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// Frame1
@@ -571,12 +571,14 @@ namespace Contable
 			// tlImprimir
 			// 
 			this.tlImprimir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+			this.tlImprimir.Enabled = false;
 			this.tlImprimir.Image = ((System.Drawing.Image)(resources.GetObject("tlImprimir.Image")));
 			this.tlImprimir.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.tlImprimir.Name = "tlImprimir";
 			this.tlImprimir.Size = new System.Drawing.Size(23, 22);
 			this.tlImprimir.Text = "toolStripButton2";
 			this.tlImprimir.ToolTipText = "Imprimir";
+			this.tlImprimir.Click += new System.EventHandler(this.TlImprimirClick);
 			// 
 			// tabControl1
 			// 
@@ -599,6 +601,14 @@ namespace Contable
 			this.tabPage1.Text = "Facturas Pendientes";
 			this.tabPage1.UseVisualStyleBackColor = true;
 			// 
+			// gridDatos
+			// 
+			this.gridDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.gridDatos.Location = new System.Drawing.Point(0, 0);
+			this.gridDatos.Name = "gridDatos";
+			this.gridDatos.Size = new System.Drawing.Size(842, 527);
+			this.gridDatos.TabIndex = 13;
+			// 
 			// tabPage2
 			// 
 			this.tabPage2.Controls.Add(this.frmOrden);
@@ -613,14 +623,6 @@ namespace Contable
 			this.tabPage2.TabIndex = 1;
 			this.tabPage2.Text = "Informacion General";
 			this.tabPage2.UseVisualStyleBackColor = true;
-			// 
-			// gridDatos
-			// 
-			this.gridDatos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.gridDatos.Location = new System.Drawing.Point(0, 0);
-			this.gridDatos.Name = "gridDatos";
-			this.gridDatos.Size = new System.Drawing.Size(842, 527);
-			this.gridDatos.TabIndex = 13;
 			// 
 			// frmFactImpagas
 			// 
@@ -643,8 +645,8 @@ namespace Contable
 			this.toolStrip1.PerformLayout();
 			this.tabControl1.ResumeLayout(false);
 			this.tabPage1.ResumeLayout(false);
-			this.tabPage2.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.gridDatos)).EndInit();
+			this.tabPage2.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
