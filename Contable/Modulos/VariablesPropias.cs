@@ -80,9 +80,8 @@ namespace VariablesPropias
 			public string strPosIVA;
 			public double dblDescuento;
 			public double dblCUIT;
-			public int intTranspId;
+			public int intTranspId;//como que sobra esta en el vpTransporte
 			public vpTransporte Transporte;
-			
 			public string strTelefono1;
 			public string strTelefono2;
 			public string strTelefono3;

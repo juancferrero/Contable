@@ -1498,7 +1498,7 @@ GLN
 
 
 		/// <summary>
-		/// 
+		/// Obtiene el Descuento del cliente
 		/// </summary>
 		/// <param name="IDCliente"></param>
 		/// <returns></returns>
@@ -1519,7 +1519,66 @@ GLN
 			
 		}
 		
-/// <summary>
+		/// <summary>
+		/// Funcion sobrecargada depende de la variable que se le entrega es lo que hace.
+		/// </summary>
+		///<param name = "DatosInsertar"> Edita un Cliente</param>		
+		public static void  Editar (VariablesPropias.VariablesPropias.vpClientes  DatosInsertar)
+		{
+		
+			//Esta funcion conecta con la base de datos a trabajar
+			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseDeDatos"].ToString());
+			
+			//Hace la consulta asumiendo que el cliente esta activo
+			ConexionAccess2007.ModificarFila(
+									"Clientes", //Tabla//
+									
+									"Nombre = '" + DatosInsertar.strNombre.Trim() + "', " +
+									"Direccion = '" + DatosInsertar.strDireccion.Trim() + "', " +
+									//"Localidad = '" + DatosInsertar.strLocalidad.Trim() + "', " +
+									//"Provincia = '" + DatosInsertar.strProvincia.Trim() + "', " +
+									"Telefono1 = '" + DatosInsertar.strTelefono1.Trim() + "', " +
+									"Telefono2 = '" + DatosInsertar.strTelefono2.Trim() + "', " +
+									"Fax = '" + DatosInsertar.strTelefono3.Trim() + "', " +
+									"Email = '" + DatosInsertar.stremail.Trim().Trim() + "', " +
+									//"CodPos = '" + DatosInsertar.strCodPos.Trim() + "', " +
+									//"CUIT = " + DatosInsertar.dblCUIT + ", " +
+									//"Desc = " + DatosInsertar.dblDescuento + ", " +
+									"TranspId = " + DatosInsertar.Transporte.intTranspId + ", " +
+									"ClienteDe = '" + DatosInsertar.strClienteDe.Trim() + "', " +
+									//"Activo = #" + DatosInsertar.bolActivo +  "#, " +
+									"Calidad = '" + DatosInsertar.strid.Trim() + "', " +
+									"Info = '" + DatosInsertar.memoVarios.Trim() + "', " +
+									"GLN = '" + DatosInsertar.GLN.Trim() + "'" 
+									
+								,
+									"ID = " + DatosInsertar.strid.Trim() + " " 
+								);
+			
+			
+			
+		// Con los contactos modificart la base de contactos	
+			
+/*			//Comando para ingresar los datos
+			ConexionAccess2007.ModificarFila("Clientes",
+			
+			"Contacto1, Contacto2, Contacto3, " +
+
+			"'" + DatosInsertar.Contactos[0].strNombre.Trim() + "', " +
+			"'" + DatosInsertar.Contactos[1].strNombre.Trim() + "', " +
+			"'" + DatosInsertar.Contactos[3].strNombre.Trim() + "', " +
+	
+			"'" +   + "'");
+*/			
+			
+									
+			//Desconectar la base de datos
+			ConexionAccess2007.Desconectar();
+		
+		}
+		
+		
+		/// <summary>
 		/// Funcion sobrecargada depende de la variable que se le entrega es lo que hace.
 		/// </summary>
 		///<param name = "DatosInsertar"> Guarda un nuevo cliente</param>		
@@ -1527,7 +1586,7 @@ GLN
 		{
 		
 			//Esta funcion conecta con la base de datos a trabajar
-			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseCheques"].ToString());
+			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseDeDatos"].ToString());
 			
 			
 			//Comando para ingresar los datos
@@ -1536,7 +1595,7 @@ GLN
 			"Telefono1, Telefono2, Fax, " +
 			"Email, Contacto1, Contacto2, Contacto3, " +
 			"CodPos, CUIT, Desc, TranspId, ClienteDe, " +
-			"Activo, NroGIS, Calidad, Info, GLN",
+			"Activo,  Calidad, Info, GLN", //NroGIS,
 			"'" + DatosInsertar.strid.Trim() + "', " +
 			"'" + DatosInsertar.strNombre.Trim() + "', " +
 			"'" + DatosInsertar.strDireccion.Trim() + "', " +
@@ -1556,25 +1615,18 @@ GLN
 			"'" + DatosInsertar.strClienteDe.Trim() + "', " +
 			"'" + DatosInsertar.bolActivo + "', " +
 			
-			"'" + DatosInsertar..Trim() + "', " +
+			//"'" + DatosInsertar..Trim() + "', " +
 			"'" + DatosInsertar.memoVarios.Trim() + "', " +
-			"'" + DatosInsertar.GLN.Trim() + "', " +
+			"'" + DatosInsertar.GLN.Trim()  + "'");
 			
 			
-			
-								"'" + DatosInsertar.strIDCheque.Trim() + "', " +
-			                    "'" + DatosInsertar.dtFechaEmision.ToString("dd/MM/yyyy") + "', " +            
-								"'" + DatosInsertar.dtFechaPago.ToString("dd/MM/yyyy") + "', " +
-								"'" + DatosInsertar.dtFechaIngreso.ToString("dd/MM/yyyy") + "', " +
-								"" +  DatosInsertar.curImporte.ToString().Replace(",",".") + ", " +
-								"" +  DatosInsertar.curImporteUSD.ToString().Replace(",",".")  + ", " +
-								"'" + DatosInsertar.strIDCliente.Trim() + "'");
-						
 									
 			//Desconectar la base de datos
 			ConexionAccess2007.Desconectar();
 		
 		}
+		
+		
 		
 		
 		#endregion
@@ -2594,7 +2646,46 @@ Costo
 			ConexionAccess2007.Desconectar();
 		
 		}
-	
+		
+		
+		/// <summary>
+		/// Funcion sobrecargada depende de la variable que se le entrega es lo que hace.
+		/// </summary>
+		///<param name = "DatosInsertar"> Edita un Cheque</param>		
+		public static void  Editar (VariablesPropias.VariablesPropias.vpCheque  DatosInsertar)
+		{
+		/*
+			//Esta funcion conecta con la base de datos a trabajar
+			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseCheques"].ToString());
+			
+			//Hace la consulta asumiendo que el cliente esta activo
+		ConexionAccess2007.ModificarFila("Cheque", "Banco = '" + BancoFin +"'", "Banco = '" + BancoInicio +"'");
+			
+			//Comando para ingresar los datos
+			ConexionAccess2007.InsertarFila("Cheque",
+								"IDCheque, FechaEmision, FechaPago, FechaIngreso, " +
+								"Importe, ImporteUSD, IDCliente" , 
+								"'" + DatosInsertar.strIDCheque.Trim() + "', " +
+			                    "'" + DatosInsertar.dtFechaEmision.ToString("dd/MM/yyyy") + "', " +            
+								"'" + DatosInsertar.dtFechaPago.ToString("dd/MM/yyyy") + "', " +
+								"'" + DatosInsertar.dtFechaIngreso.ToString("dd/MM/yyyy") + "', " +
+								"" +  DatosInsertar.curImporte.ToString().Replace(",",".") + ", " +
+								"" +  DatosInsertar.curImporteUSD.ToString().Replace(",",".")  + ", " +
+								"'" + DatosInsertar.strIDCliente.Trim() + "'");
+						
+									
+			//Desconectar la base de datos
+			ConexionAccess2007.Desconectar();
+		*/
+		}
+		
+		
+		
+		
+		
+		
+		
+		
 #endregion
 
 		public static string ObtenerBanco(string strcodBaco)
@@ -2636,8 +2727,19 @@ Costo
 
 				
 			//Esta funcion conecta con la base de datos a trabajar
-			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseInterdepositos"].ToString());
+			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseDeDatos"].ToString());
 			
+
+/*ID
+FechaPago
+Banco
+Sucursal
+Importe
+Cliente
+IDCliente
+*/
+
+
 			
 			//Comando para ingresar los datos
 			ConexionAccess2007.InsertarFila("Interdepositos",
@@ -2647,8 +2749,8 @@ Costo
 								"'" + DatosInsertar.strBanco + "', " +
 								"'" + DatosInsertar.strSucursal + "', " +
 								"" +  DatosInsertar.curImporte.ToString().Replace(",",".") +",  "+
-								"'" + DatosInsertar.strIDCliente.Trim() + "', " +
-								"'" + DatosInsertar.strCliente.Trim() + "'") ;
+								"'" + DatosInsertar.strCliente.Trim() + "', " +
+								"" + DatosInsertar.strIDCliente.Trim()) ;
 						
 				
 
