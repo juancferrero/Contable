@@ -22,7 +22,7 @@ using Contable.Pruebas;
 using Contable.Facturas;
 using Contable.Interdepositos;
 using Contable.SENASA;
-
+using Contable.Contador.Impuestos;
 
 namespace Contable
 {
@@ -393,6 +393,20 @@ namespace Contable
 		{
 	
 		}
+		
+		
+#region Actualizaciones
+
+		void ImpuestosToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			frmImpuestos frm = new frmImpuestos();
+			frm.MdiParent = this;
+			frm.Show();
+		}	
+
+
+#endregion
+
 		
 
 #endregion
