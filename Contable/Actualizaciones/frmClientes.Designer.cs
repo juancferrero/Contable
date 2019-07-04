@@ -167,7 +167,7 @@ namespace Contable
 			this.richNotas = new System.Windows.Forms.RichTextBox();
 			this._SSTab1_TabPage4 = new System.Windows.Forms.TabPage();
 			this._SSTab1_TabPage5 = new System.Windows.Forms.TabPage();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.txtGLN = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.Frame7 = new System.Windows.Forms.GroupBox();
 			this.OptAct = new System.Windows.Forms.RadioButton();
@@ -359,7 +359,7 @@ namespace Contable
 			this._SSTab1_TabPage0.Controls.Add(this.Frame1);
 			this._SSTab1_TabPage0.Location = new System.Drawing.Point(4, 22);
 			this._SSTab1_TabPage0.Name = "_SSTab1_TabPage0";
-			this._SSTab1_TabPage0.Size = new System.Drawing.Size(1213, 550);
+			this._SSTab1_TabPage0.Size = new System.Drawing.Size(1334, 608);
 			this._SSTab1_TabPage0.TabIndex = 0;
 			this._SSTab1_TabPage0.Text = "Generales";
 			// 
@@ -730,7 +730,7 @@ namespace Contable
 			this._SSTab1_TabPage1.Controls.Add(this.dataContactos);
 			this._SSTab1_TabPage1.Location = new System.Drawing.Point(4, 22);
 			this._SSTab1_TabPage1.Name = "_SSTab1_TabPage1";
-			this._SSTab1_TabPage1.Size = new System.Drawing.Size(1213, 550);
+			this._SSTab1_TabPage1.Size = new System.Drawing.Size(1334, 608);
 			this._SSTab1_TabPage1.TabIndex = 1;
 			this._SSTab1_TabPage1.Text = "Contactos";
 			// 
@@ -760,7 +760,7 @@ namespace Contable
 			this._SSTab1_TabPage2.Controls.Add(this.Frame3);
 			this._SSTab1_TabPage2.Location = new System.Drawing.Point(4, 22);
 			this._SSTab1_TabPage2.Name = "_SSTab1_TabPage2";
-			this._SSTab1_TabPage2.Size = new System.Drawing.Size(1213, 550);
+			this._SSTab1_TabPage2.Size = new System.Drawing.Size(1334, 608);
 			this._SSTab1_TabPage2.TabIndex = 2;
 			this._SSTab1_TabPage2.Text = "Transporte";
 			// 
@@ -868,7 +868,7 @@ namespace Contable
 			this._SSTab1_TabPage3.Controls.Add(this.richNotas);
 			this._SSTab1_TabPage3.Location = new System.Drawing.Point(4, 22);
 			this._SSTab1_TabPage3.Name = "_SSTab1_TabPage3";
-			this._SSTab1_TabPage3.Size = new System.Drawing.Size(1213, 550);
+			this._SSTab1_TabPage3.Size = new System.Drawing.Size(1334, 608);
 			this._SSTab1_TabPage3.TabIndex = 3;
 			this._SSTab1_TabPage3.Text = "Notas";
 			// 
@@ -884,13 +884,13 @@ namespace Contable
 			// 
 			this._SSTab1_TabPage4.Location = new System.Drawing.Point(4, 22);
 			this._SSTab1_TabPage4.Name = "_SSTab1_TabPage4";
-			this._SSTab1_TabPage4.Size = new System.Drawing.Size(1213, 550);
+			this._SSTab1_TabPage4.Size = new System.Drawing.Size(1334, 608);
 			this._SSTab1_TabPage4.TabIndex = 4;
 			this._SSTab1_TabPage4.Text = "Contables";
 			// 
 			// _SSTab1_TabPage5
 			// 
-			this._SSTab1_TabPage5.Controls.Add(this.textBox1);
+			this._SSTab1_TabPage5.Controls.Add(this.txtGLN);
 			this._SSTab1_TabPage5.Controls.Add(this.label1);
 			this._SSTab1_TabPage5.Controls.Add(this.Frame7);
 			this._SSTab1_TabPage5.Controls.Add(this.Frame6);
@@ -898,16 +898,16 @@ namespace Contable
 			this._SSTab1_TabPage5.Controls.Add(this.Frame5);
 			this._SSTab1_TabPage5.Location = new System.Drawing.Point(4, 22);
 			this._SSTab1_TabPage5.Name = "_SSTab1_TabPage5";
-			this._SSTab1_TabPage5.Size = new System.Drawing.Size(1213, 550);
+			this._SSTab1_TabPage5.Size = new System.Drawing.Size(1334, 608);
 			this._SSTab1_TabPage5.TabIndex = 5;
 			this._SSTab1_TabPage5.Text = "Otros Datos";
 			// 
-			// textBox1
+			// txtGLN
 			// 
-			this.textBox1.Location = new System.Drawing.Point(262, 180);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(123, 20);
-			this.textBox1.TabIndex = 45;
+			this.txtGLN.Location = new System.Drawing.Point(262, 180);
+			this.txtGLN.Name = "txtGLN";
+			this.txtGLN.Size = new System.Drawing.Size(123, 20);
+			this.txtGLN.TabIndex = 45;
 			// 
 			// label1
 			// 
@@ -1194,12 +1194,12 @@ namespace Contable
 		}
 		internal System.Windows.Forms.DataGridView gridData;
 		public System.Windows.Forms.TextBox txtCriterio;
-		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TabPage tabBusqueda;
 		private System.Windows.Forms.DataGridView dataContactos;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colContactoNombre;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colContactoDireccion;
+		private System.Windows.Forms.TextBox txtGLN;
 			#endregion
 	}
 }
