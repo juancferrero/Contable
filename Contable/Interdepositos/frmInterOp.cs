@@ -45,14 +45,6 @@ namespace Contable.Interdepositos
 			//
 			InitializeComponent();
 			
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
-			
-			
-			
-			
-			
 			
 			
 		}
@@ -80,9 +72,13 @@ namespace Contable.Interdepositos
 
 #region Interdepositos
 
+/// <summary>
+/// Carga los datos del form en una variable del tipo Intedeposito
+/// </summary>
+/// <returns>Una variable del tipo Interdeposito</returns>
 		public VariablesPropias.VariablesPropias.vpInterdeposito IDepositos ()
 		{
-		
+		//TODO: INTERDEPOSITO: Evitar que haya campos en blanco
 			Interdep.dblIDInterdeposito = 	Convert.ToDouble(lblIDCliente.Text + dtFecha.Value.Year + dtFecha.Value.Month + dtFecha.Value.Day);
 			Interdep.dtFechaEmision = dtFechaIngreso.Value;
 			Interdep.dtFechaPago = dtFecha.Value;
@@ -99,11 +95,11 @@ namespace Contable.Interdepositos
 #endregion
 
 		
-		void TabPage1Click(object sender, EventArgs e)
+		/*void TabPage1Click(object sender, EventArgs e)
 		{
 			
 			
-		}
+		}*/
 		
 		void FrmInterOpLoad(object sender, EventArgs e)
 		{
