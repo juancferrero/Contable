@@ -7,15 +7,34 @@ using System.Windows.Forms;
 
 using System.Configuration;
 using ConexionDB;
-using Contable.Modulos;
+using Contable.Modulos; 
 
-//using 
+
+
+
 
 namespace Contable
 {
 	internal partial class frmClientes : System.Windows.Forms.Form
 	{
-		
+			
+		void FrmClientesLoad(object sender, EventArgs e)
+		{
+			_SSTab1_TabPage0.Show();
+			_SSTab1_TabPage5.BringToFront();
+			_SSTab1_TabPage5.Show();
+			
+			//Carga los transportes en el combo
+			CargarTransporteCombo();
+		}
+
+
+
+#region Variables Publicas
+		public VariablesPropias.VariablesPropias.vpTransporte transp;
+		public VariablesPropias.VariablesPropias.vpClientes clie;
+
+#endregion
 		
 		
 #region Barra de tareas
@@ -34,8 +53,6 @@ namespace Contable
 		}		
 		
 #endregion
-		
-	
 	
 #region Grid
 
@@ -110,22 +127,11 @@ namespace Contable
 		}		
 #endregion
 
-	
+#region Busqueda
+
 		void TxtCriterioTextChanged(object sender, EventArgs e)
 		{
 			
-		}
-		
-				
-		void FrmClientesLoad(object sender, EventArgs e)
-		{
-			_SSTab1_TabPage0.Show();
-		}
-		
-		
-		void _Label1_15Click(object sender, EventArgs e)
-		{
-	
 		}
 		
 		void TxtCriterioKeyPress(object sender, KeyPressEventArgs e)
@@ -140,7 +146,6 @@ namespace Contable
 				string strcondicion = "Nombre";
 
 #endregion
-			
 			
 			
 				/*
@@ -191,12 +196,25 @@ namespace Contable
 
 }
 
+#endregion
+	
+		
+				
+		
+		
+		
+		void _Label1_15Click(object sender, EventArgs e)
+		{
+	
+		}
+		
+		
 
 	
 #region Modulos
 
-
-public VariablesPropias.VariablesPropias.vpClientes FormAVariable ()
+		//Desde las cosas que estan en el form a una variable vpClientes
+		public VariablesPropias.VariablesPropias.vpClientes FormAVariable ()
 {
 			//Creo una variable propia 
 			VariablesPropias.VariablesPropias.vpClientes vpcliente = new VariablesPropias.VariablesPropias.vpClientes ();
@@ -217,7 +235,7 @@ public VariablesPropias.VariablesPropias.vpClientes FormAVariable ()
 			vpcliente.strTelefono3 = txtFax.Text;
 			vpcliente.dblDescuento = Convert.ToDouble(txtDesc.Text);
 			vpcliente.stremail = txtEMail.Text;
-			
+			 
 			//Notas
 			vpcliente.memoVarios = richNotas.Text;
 			
@@ -233,9 +251,15 @@ public VariablesPropias.VariablesPropias.vpClientes FormAVariable ()
 			vpcliente.Transporte.strNombre = cmbTranspNombre.Text;
 			vpcliente.Transporte.strDireccion = txtTranspDireccion.Text;	
 
+			
+			//TRAZABILIDAD
 			vpcliente.GLN = txtGLN.Text;
+			
+			//Cliente de (revisar y sacar esto)
 			vpcliente.strClienteDe= cmbClienteDe.Text;
 			
+			
+			//ACTIVO
 			if (OptAct.Checked) {
 				vpcliente.bolActivo = true;
 			}
@@ -252,13 +276,71 @@ public VariablesPropias.VariablesPropias.vpClientes FormAVariable ()
 			
 			return vpcliente;
 }
+		
+		
+/// <summary>
+/// Carga los datos del Cliente en el ComboBox
+/// </summary>
+		void CargarClientesCombo()
+		{
+		//Esto conecta con la base de datos
+			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseDeDatos"].ToString());
+            
+			//Hace la consulta asumiendo que el cliente esta activo
+			ConexionAccess2007.Consultar("Clientes", "Nombre", "Nombre","Activo = TRUE");
+			            
+            
+            //Genera un datasource para pasarlo al combo
+            //cmbRazonSocial.DataSource = ConexionAccess2007.Source;
+			
+            //Cerrar la conexion
+            ConexionAccess2007.Desconectar();
+		}
 
-
-
+/// <summary>
+/// Carga los datos del Cliente en el ComboBox
+/// </summary>
+		void CargarTransporteCombo()
+		{
+		//Esto conecta con la base de datos
+			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseDeDatos"].ToString());
+            
+			//Hace la consulta asumiendo que el cliente esta activo
+			ConexionAccess2007.Consultar("Transporte", "TranspNombre", "TranspNombre");
+			            
+            
+            //Genera un datasource para pasarlo al combo
+            cmbTranspNombre.DataSource = ConexionAccess2007.Source;
+			
+            //Cerrar la conexion
+            ConexionAccess2007.Desconectar();
+		}
 
 #endregion
 
 		
+#region Transporte
+		void CmbTranspNombreDropDown(object sender, EventArgs e)
+		{
+//Solo muestra la columna de NOMBRE
+			cmbTranspNombre.DisplayMember = "TranspNombre";
+		}
+		void CmbTranspNombreSelectedIndexChanged(object sender, EventArgs e)
+		{
+			
+			//Carga los transportes en el combo
+			CargarTransporteCombo();
+		}
+		
+
+#endregion
+		
+		void BtnVerificarActivosClick(object sender, EventArgs e)
+			{
+		for (int i = 0; i < gridData.Rows.Count -1; i++) {
+			
+		}
+			}
 		
 	}
 }

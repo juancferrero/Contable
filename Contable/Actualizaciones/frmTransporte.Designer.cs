@@ -70,15 +70,8 @@ namespace Contable
 		public System.Windows.Forms.RichTextBox RichDestinos;
 		public System.Windows.Forms.TabPage _SSTab1_TabPage2;
 		public System.Windows.Forms.TabControl SSTab1;
-		public System.Windows.Forms.ToolStripButton _Toolbar1_Button1;
-		public System.Windows.Forms.ToolStripSeparator _Toolbar1_Button2;
-		public System.Windows.Forms.ToolStripButton _Toolbar1_Button3;
 		public System.Windows.Forms.ToolStripSeparator _Toolbar1_Button4;
-		public System.Windows.Forms.ToolStripButton _Toolbar1_Button5;
-		public System.Windows.Forms.ToolStripSeparator _Toolbar1_Button6;
-		public System.Windows.Forms.ToolStripButton _Toolbar1_Button7;
 		public System.Windows.Forms.ToolStripSeparator _Toolbar1_Button8;
-		public System.Windows.Forms.ToolStripButton _Toolbar1_Button9;
 		public System.Windows.Forms.ToolStrip Toolbar1;
 		public System.Windows.Forms.Label Label12;
 //NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
@@ -87,7 +80,7 @@ namespace Contable
 		[System.Diagnostics.DebuggerStepThrough()]
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTransporte));
 			this.txtTranspTel5 = new System.Windows.Forms.TextBox();
 			this.txtTranspFax = new System.Windows.Forms.TextBox();
 			this.Frame3 = new System.Windows.Forms.GroupBox();
@@ -121,18 +114,18 @@ namespace Contable
 			this.Label11 = new System.Windows.Forms.Label();
 			this._SSTab1_TabPage2 = new System.Windows.Forms.TabPage();
 			this.RichDestinos = new System.Windows.Forms.RichTextBox();
-			this.Toolbar1 = new System.Windows.Forms.ToolStrip();
-			this._Toolbar1_Button1 = new System.Windows.Forms.ToolStripButton();
-			this._Toolbar1_Button2 = new System.Windows.Forms.ToolStripSeparator();
-			this._Toolbar1_Button3 = new System.Windows.Forms.ToolStripButton();
-			this._Toolbar1_Button4 = new System.Windows.Forms.ToolStripSeparator();
-			this._Toolbar1_Button5 = new System.Windows.Forms.ToolStripButton();
-			this._Toolbar1_Button6 = new System.Windows.Forms.ToolStripSeparator();
-			this._Toolbar1_Button7 = new System.Windows.Forms.ToolStripButton();
-			this._Toolbar1_Button8 = new System.Windows.Forms.ToolStripSeparator();
-			this._Toolbar1_Button9 = new System.Windows.Forms.ToolStripButton();
 			this.Label12 = new System.Windows.Forms.Label();
 			this.DataGridView1 = new System.Windows.Forms.DataGridView();
+			this.Toolbar1 = new System.Windows.Forms.ToolStrip();
+			this.tlbNuevo = new System.Windows.Forms.ToolStripButton();
+			this._Toolbar1_Button2 = new System.Windows.Forms.ToolStripSeparator();
+			this.tlbGuardar = new System.Windows.Forms.ToolStripButton();
+			this._Toolbar1_Button4 = new System.Windows.Forms.ToolStripSeparator();
+			this.tlbImprimir = new System.Windows.Forms.ToolStripButton();
+			this._Toolbar1_Button6 = new System.Windows.Forms.ToolStripSeparator();
+			this.tlbAnular = new System.Windows.Forms.ToolStripButton();
+			this._Toolbar1_Button8 = new System.Windows.Forms.ToolStripSeparator();
+			this.tlbEditar = new System.Windows.Forms.ToolStripButton();
 			this.Frame3.SuspendLayout();
 			this.SSTab1.SuspendLayout();
 			this._SSTab1_TabPage0.SuspendLayout();
@@ -140,8 +133,8 @@ namespace Contable
 			this._SSTab1_TabPage1.SuspendLayout();
 			this.Frame2.SuspendLayout();
 			this._SSTab1_TabPage2.SuspendLayout();
-			this.Toolbar1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
+			this.Toolbar1.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// txtTranspTel5
@@ -581,98 +574,6 @@ namespace Contable
 			this.RichDestinos.TabIndex = 25;
 			this.RichDestinos.Text = "";
 			// 
-			// Toolbar1
-			// 
-			this.Toolbar1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this._Toolbar1_Button1,
-									this._Toolbar1_Button2,
-									this._Toolbar1_Button3,
-									this._Toolbar1_Button4,
-									this._Toolbar1_Button5,
-									this._Toolbar1_Button6,
-									this._Toolbar1_Button7,
-									this._Toolbar1_Button8,
-									this._Toolbar1_Button9});
-			this.Toolbar1.Location = new System.Drawing.Point(0, 0);
-			this.Toolbar1.Name = "Toolbar1";
-			this.Toolbar1.Size = new System.Drawing.Size(1016, 42);
-			this.Toolbar1.TabIndex = 26;
-			// 
-			// _Toolbar1_Button1
-			// 
-			this._Toolbar1_Button1.AutoSize = false;
-			this._Toolbar1_Button1.ImageIndex = -1;
-			this._Toolbar1_Button1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-			this._Toolbar1_Button1.Name = "_Toolbar1_Button1";
-			this._Toolbar1_Button1.Size = new System.Drawing.Size(40, 39);
-			this._Toolbar1_Button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-			this._Toolbar1_Button1.ToolTipText = "Nuevo";
-			// 
-			// _Toolbar1_Button2
-			// 
-			this._Toolbar1_Button2.AutoSize = false;
-			this._Toolbar1_Button2.Name = "_Toolbar1_Button2";
-			this._Toolbar1_Button2.Size = new System.Drawing.Size(40, 39);
-			// 
-			// _Toolbar1_Button3
-			// 
-			this._Toolbar1_Button3.AutoSize = false;
-			this._Toolbar1_Button3.ImageIndex = -1;
-			this._Toolbar1_Button3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-			this._Toolbar1_Button3.Name = "_Toolbar1_Button3";
-			this._Toolbar1_Button3.Size = new System.Drawing.Size(40, 39);
-			this._Toolbar1_Button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-			this._Toolbar1_Button3.ToolTipText = "Guardar";
-			// 
-			// _Toolbar1_Button4
-			// 
-			this._Toolbar1_Button4.AutoSize = false;
-			this._Toolbar1_Button4.Name = "_Toolbar1_Button4";
-			this._Toolbar1_Button4.Size = new System.Drawing.Size(0, 39);
-			// 
-			// _Toolbar1_Button5
-			// 
-			this._Toolbar1_Button5.AutoSize = false;
-			this._Toolbar1_Button5.Enabled = false;
-			this._Toolbar1_Button5.ImageIndex = -1;
-			this._Toolbar1_Button5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-			this._Toolbar1_Button5.Name = "_Toolbar1_Button5";
-			this._Toolbar1_Button5.Size = new System.Drawing.Size(40, 39);
-			this._Toolbar1_Button5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-			this._Toolbar1_Button5.ToolTipText = "Imprimir";
-			// 
-			// _Toolbar1_Button6
-			// 
-			this._Toolbar1_Button6.AutoSize = false;
-			this._Toolbar1_Button6.Name = "_Toolbar1_Button6";
-			this._Toolbar1_Button6.Size = new System.Drawing.Size(40, 39);
-			// 
-			// _Toolbar1_Button7
-			// 
-			this._Toolbar1_Button7.AutoSize = false;
-			this._Toolbar1_Button7.ImageIndex = -1;
-			this._Toolbar1_Button7.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-			this._Toolbar1_Button7.Name = "_Toolbar1_Button7";
-			this._Toolbar1_Button7.Size = new System.Drawing.Size(40, 39);
-			this._Toolbar1_Button7.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-			this._Toolbar1_Button7.ToolTipText = "Anular";
-			// 
-			// _Toolbar1_Button8
-			// 
-			this._Toolbar1_Button8.AutoSize = false;
-			this._Toolbar1_Button8.Name = "_Toolbar1_Button8";
-			this._Toolbar1_Button8.Size = new System.Drawing.Size(40, 39);
-			// 
-			// _Toolbar1_Button9
-			// 
-			this._Toolbar1_Button9.AutoSize = false;
-			this._Toolbar1_Button9.ImageIndex = -1;
-			this._Toolbar1_Button9.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-			this._Toolbar1_Button9.Name = "_Toolbar1_Button9";
-			this._Toolbar1_Button9.Size = new System.Drawing.Size(40, 39);
-			this._Toolbar1_Button9.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-			this._Toolbar1_Button9.ToolTipText = "Editar";
-			// 
 			// Label12
 			// 
 			this.Label12.BackColor = System.Drawing.SystemColors.Control;
@@ -695,6 +596,97 @@ namespace Contable
 			this.DataGridView1.Size = new System.Drawing.Size(240, 150);
 			this.DataGridView1.TabIndex = 31;
 			// 
+			// Toolbar1
+			// 
+			this.Toolbar1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.tlbNuevo,
+			this._Toolbar1_Button2,
+			this.tlbGuardar,
+			this._Toolbar1_Button4,
+			this.tlbImprimir,
+			this._Toolbar1_Button6,
+			this.tlbAnular,
+			this._Toolbar1_Button8,
+			this.tlbEditar});
+			this.Toolbar1.Location = new System.Drawing.Point(0, 0);
+			this.Toolbar1.Name = "Toolbar1";
+			this.Toolbar1.Size = new System.Drawing.Size(1016, 42);
+			this.Toolbar1.TabIndex = 48;
+			// 
+			// tlbNuevo
+			// 
+			this.tlbNuevo.AutoSize = false;
+			this.tlbNuevo.Image = ((System.Drawing.Image)(resources.GetObject("tlbNuevo.Image")));
+			this.tlbNuevo.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+			this.tlbNuevo.Name = "tlbNuevo";
+			this.tlbNuevo.Size = new System.Drawing.Size(40, 39);
+			this.tlbNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+			this.tlbNuevo.ToolTipText = "Nuevo";
+			// 
+			// _Toolbar1_Button2
+			// 
+			this._Toolbar1_Button2.Name = "_Toolbar1_Button2";
+			this._Toolbar1_Button2.Size = new System.Drawing.Size(6, 42);
+			// 
+			// tlbGuardar
+			// 
+			this.tlbGuardar.AutoSize = false;
+			this.tlbGuardar.Image = ((System.Drawing.Image)(resources.GetObject("tlbGuardar.Image")));
+			this.tlbGuardar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+			this.tlbGuardar.Name = "tlbGuardar";
+			this.tlbGuardar.Size = new System.Drawing.Size(40, 39);
+			this.tlbGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+			this.tlbGuardar.ToolTipText = "Guardar";
+			// 
+			// _Toolbar1_Button4
+			// 
+			this._Toolbar1_Button4.AutoSize = false;
+			this._Toolbar1_Button4.Name = "_Toolbar1_Button4";
+			this._Toolbar1_Button4.Size = new System.Drawing.Size(0, 39);
+			// 
+			// tlbImprimir
+			// 
+			this.tlbImprimir.AutoSize = false;
+			this.tlbImprimir.Enabled = false;
+			this.tlbImprimir.Image = ((System.Drawing.Image)(resources.GetObject("tlbImprimir.Image")));
+			this.tlbImprimir.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+			this.tlbImprimir.Name = "tlbImprimir";
+			this.tlbImprimir.Size = new System.Drawing.Size(40, 39);
+			this.tlbImprimir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+			this.tlbImprimir.ToolTipText = "Imprimir";
+			// 
+			// _Toolbar1_Button6
+			// 
+			this._Toolbar1_Button6.Name = "_Toolbar1_Button6";
+			this._Toolbar1_Button6.Size = new System.Drawing.Size(6, 42);
+			// 
+			// tlbAnular
+			// 
+			this.tlbAnular.AutoSize = false;
+			this.tlbAnular.Enabled = false;
+			this.tlbAnular.Image = ((System.Drawing.Image)(resources.GetObject("tlbAnular.Image")));
+			this.tlbAnular.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+			this.tlbAnular.Name = "tlbAnular";
+			this.tlbAnular.Size = new System.Drawing.Size(40, 39);
+			this.tlbAnular.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+			this.tlbAnular.ToolTipText = "Anular";
+			// 
+			// _Toolbar1_Button8
+			// 
+			this._Toolbar1_Button8.Name = "_Toolbar1_Button8";
+			this._Toolbar1_Button8.Size = new System.Drawing.Size(6, 42);
+			// 
+			// tlbEditar
+			// 
+			this.tlbEditar.AutoSize = false;
+			this.tlbEditar.Enabled = false;
+			this.tlbEditar.Image = ((System.Drawing.Image)(resources.GetObject("tlbEditar.Image")));
+			this.tlbEditar.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+			this.tlbEditar.Name = "tlbEditar";
+			this.tlbEditar.Size = new System.Drawing.Size(40, 39);
+			this.tlbEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+			this.tlbEditar.ToolTipText = "Editar";
+			// 
 			// frmTransporte
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -702,11 +694,11 @@ namespace Contable
 			this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
 			this.BackColor = System.Drawing.SystemColors.Control;
 			this.ClientSize = new System.Drawing.Size(1016, 734);
+			this.Controls.Add(this.Toolbar1);
 			this.Controls.Add(this.DataGridView1);
 			this.Controls.Add(this.Frame3);
 			this.Controls.Add(this.Text1);
 			this.Controls.Add(this.SSTab1);
-			this.Controls.Add(this.Toolbar1);
 			this.Controls.Add(this.Label12);
 			this.Cursor = System.Windows.Forms.Cursors.Default;
 			this.Location = new System.Drawing.Point(4, 23);
@@ -724,13 +716,21 @@ namespace Contable
 			this.Frame2.ResumeLayout(false);
 			this.Frame2.PerformLayout();
 			this._SSTab1_TabPage2.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
 			this.Toolbar1.ResumeLayout(false);
 			this.Toolbar1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
+
 		}
 			#endregion
 		internal System.Windows.Forms.DataGridView DataGridView1;
+		public System.Windows.Forms.ToolStripButton tlbNuevo;
+		public System.Windows.Forms.ToolStripSeparator _Toolbar1_Button2;
+		public System.Windows.Forms.ToolStripButton tlbGuardar;
+		public System.Windows.Forms.ToolStripButton tlbImprimir;
+		public System.Windows.Forms.ToolStripSeparator _Toolbar1_Button6;
+		public System.Windows.Forms.ToolStripButton tlbAnular;
+		public System.Windows.Forms.ToolStripButton tlbEditar;
 	}
 }

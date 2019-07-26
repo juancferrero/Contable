@@ -189,6 +189,7 @@ namespace Contable
 			this.tlbAnular = new System.Windows.Forms.ToolStripButton();
 			this._Toolbar1_Button8 = new System.Windows.Forms.ToolStripSeparator();
 			this.tlbEditar = new System.Windows.Forms.ToolStripButton();
+			this.btnVerificarActivos = new System.Windows.Forms.Button();
 			this.SSTab1.SuspendLayout();
 			this.tabBusqueda.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
@@ -226,6 +227,7 @@ namespace Contable
 			// 
 			// tabBusqueda
 			// 
+			this.tabBusqueda.Controls.Add(this.btnVerificarActivos);
 			this.tabBusqueda.Controls.Add(this.txtCriterio);
 			this.tabBusqueda.Controls.Add(this.Label2);
 			this.tabBusqueda.Controls.Add(this.gridData);
@@ -820,6 +822,8 @@ namespace Contable
 			this.cmbTranspNombre.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.cmbTranspNombre.Size = new System.Drawing.Size(193, 21);
 			this.cmbTranspNombre.TabIndex = 34;
+			this.cmbTranspNombre.DropDown += new System.EventHandler(this.CmbTranspNombreDropDown);
+			this.cmbTranspNombre.SelectedIndexChanged += new System.EventHandler(this.CmbTranspNombreSelectedIndexChanged);
 			// 
 			// _Label1_12
 			// 
@@ -1150,6 +1154,16 @@ namespace Contable
 			this.tlbEditar.ToolTipText = "Editar";
 			this.tlbEditar.Click += new System.EventHandler(this.TlbEditarClick);
 			// 
+			// btnVerificarActivos
+			// 
+			this.btnVerificarActivos.Location = new System.Drawing.Point(511, 43);
+			this.btnVerificarActivos.Name = "btnVerificarActivos";
+			this.btnVerificarActivos.Size = new System.Drawing.Size(141, 23);
+			this.btnVerificarActivos.TabIndex = 61;
+			this.btnVerificarActivos.Text = "Verificar Activos";
+			this.btnVerificarActivos.UseVisualStyleBackColor = true;
+			this.btnVerificarActivos.Click += new System.EventHandler(this.BtnVerificarActivosClick);
+			// 
 			// frmClientes
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1200,6 +1214,7 @@ namespace Contable
 		private System.Windows.Forms.DataGridViewTextBoxColumn colContactoNombre;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colContactoDireccion;
 		private System.Windows.Forms.TextBox txtGLN;
+		private System.Windows.Forms.Button btnVerificarActivos;
 			#endregion
 	}
 }
