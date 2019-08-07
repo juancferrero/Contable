@@ -20,9 +20,11 @@ namespace Contable
 			
 		void FrmClientesLoad(object sender, EventArgs e)
 		{
-			_SSTab1_TabPage0.Show();
-			_SSTab1_TabPage5.BringToFront();
-			_SSTab1_TabPage5.Show();
+			
+			tabBusqueda.Show();
+			//_SSTab1_TabPage0.Show();
+			//_SSTab1_TabPage5.BringToFront();
+			//_SSTab1_TabPage5.Show();
 			
 			//Carga los transportes en el combo
 			CargarTransporteCombo();

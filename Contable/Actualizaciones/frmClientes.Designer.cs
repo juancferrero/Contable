@@ -117,6 +117,7 @@ namespace Contable
 			this.ToolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.SSTab1 = new System.Windows.Forms.TabControl();
 			this.tabBusqueda = new System.Windows.Forms.TabPage();
+			this.btnVerificarActivos = new System.Windows.Forms.Button();
 			this.txtCriterio = new System.Windows.Forms.TextBox();
 			this.Label2 = new System.Windows.Forms.Label();
 			this.gridData = new System.Windows.Forms.DataGridView();
@@ -167,8 +168,6 @@ namespace Contable
 			this.richNotas = new System.Windows.Forms.RichTextBox();
 			this._SSTab1_TabPage4 = new System.Windows.Forms.TabPage();
 			this._SSTab1_TabPage5 = new System.Windows.Forms.TabPage();
-			this.txtGLN = new System.Windows.Forms.TextBox();
-			this.label1 = new System.Windows.Forms.Label();
 			this.Frame7 = new System.Windows.Forms.GroupBox();
 			this.OptAct = new System.Windows.Forms.RadioButton();
 			this.OptInact = new System.Windows.Forms.RadioButton();
@@ -189,7 +188,9 @@ namespace Contable
 			this.tlbAnular = new System.Windows.Forms.ToolStripButton();
 			this._Toolbar1_Button8 = new System.Windows.Forms.ToolStripSeparator();
 			this.tlbEditar = new System.Windows.Forms.ToolStripButton();
-			this.btnVerificarActivos = new System.Windows.Forms.Button();
+			this.grSENASA = new System.Windows.Forms.GroupBox();
+			this.txtGLN = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.SSTab1.SuspendLayout();
 			this.tabBusqueda.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
@@ -207,6 +208,7 @@ namespace Contable
 			this.Frame2.SuspendLayout();
 			this.Frame5.SuspendLayout();
 			this.Toolbar1.SuspendLayout();
+			this.grSENASA.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// SSTab1
@@ -238,6 +240,17 @@ namespace Contable
 			this.tabBusqueda.TabIndex = 6;
 			this.tabBusqueda.Text = "Busqueda";
 			this.tabBusqueda.UseVisualStyleBackColor = true;
+			// 
+			// btnVerificarActivos
+			// 
+			this.btnVerificarActivos.Enabled = false;
+			this.btnVerificarActivos.Location = new System.Drawing.Point(511, 43);
+			this.btnVerificarActivos.Name = "btnVerificarActivos";
+			this.btnVerificarActivos.Size = new System.Drawing.Size(141, 23);
+			this.btnVerificarActivos.TabIndex = 61;
+			this.btnVerificarActivos.Text = "Verificar Activos";
+			this.btnVerificarActivos.UseVisualStyleBackColor = true;
+			this.btnVerificarActivos.Click += new System.EventHandler(this.BtnVerificarActivosClick);
 			// 
 			// txtCriterio
 			// 
@@ -894,8 +907,7 @@ namespace Contable
 			// 
 			// _SSTab1_TabPage5
 			// 
-			this._SSTab1_TabPage5.Controls.Add(this.txtGLN);
-			this._SSTab1_TabPage5.Controls.Add(this.label1);
+			this._SSTab1_TabPage5.Controls.Add(this.grSENASA);
 			this._SSTab1_TabPage5.Controls.Add(this.Frame7);
 			this._SSTab1_TabPage5.Controls.Add(this.Frame6);
 			this._SSTab1_TabPage5.Controls.Add(this.Frame2);
@@ -905,21 +917,6 @@ namespace Contable
 			this._SSTab1_TabPage5.Size = new System.Drawing.Size(1334, 608);
 			this._SSTab1_TabPage5.TabIndex = 5;
 			this._SSTab1_TabPage5.Text = "Otros Datos";
-			// 
-			// txtGLN
-			// 
-			this.txtGLN.Location = new System.Drawing.Point(262, 180);
-			this.txtGLN.Name = "txtGLN";
-			this.txtGLN.Size = new System.Drawing.Size(123, 20);
-			this.txtGLN.TabIndex = 45;
-			// 
-			// label1
-			// 
-			this.label1.Location = new System.Drawing.Point(226, 183);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(39, 19);
-			this.label1.TabIndex = 44;
-			this.label1.Text = "GLN";
 			// 
 			// Frame7
 			// 
@@ -973,8 +970,9 @@ namespace Contable
 			// 
 			this.Frame6.BackColor = System.Drawing.SystemColors.Control;
 			this.Frame6.Controls.Add(this.ProgressBar1);
+			this.Frame6.Enabled = false;
 			this.Frame6.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.Frame6.Location = new System.Drawing.Point(192, 48);
+			this.Frame6.Location = new System.Drawing.Point(757, 40);
 			this.Frame6.Name = "Frame6";
 			this.Frame6.Padding = new System.Windows.Forms.Padding(0);
 			this.Frame6.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1154,15 +1152,31 @@ namespace Contable
 			this.tlbEditar.ToolTipText = "Editar";
 			this.tlbEditar.Click += new System.EventHandler(this.TlbEditarClick);
 			// 
-			// btnVerificarActivos
+			// grSENASA
 			// 
-			this.btnVerificarActivos.Location = new System.Drawing.Point(511, 43);
-			this.btnVerificarActivos.Name = "btnVerificarActivos";
-			this.btnVerificarActivos.Size = new System.Drawing.Size(141, 23);
-			this.btnVerificarActivos.TabIndex = 61;
-			this.btnVerificarActivos.Text = "Verificar Activos";
-			this.btnVerificarActivos.UseVisualStyleBackColor = true;
-			this.btnVerificarActivos.Click += new System.EventHandler(this.BtnVerificarActivosClick);
+			this.grSENASA.Controls.Add(this.txtGLN);
+			this.grSENASA.Controls.Add(this.label1);
+			this.grSENASA.Location = new System.Drawing.Point(413, 40);
+			this.grSENASA.Name = "grSENASA";
+			this.grSENASA.Size = new System.Drawing.Size(204, 102);
+			this.grSENASA.TabIndex = 46;
+			this.grSENASA.TabStop = false;
+			this.grSENASA.Text = "SENASA";
+			// 
+			// txtGLN
+			// 
+			this.txtGLN.Location = new System.Drawing.Point(59, 40);
+			this.txtGLN.Name = "txtGLN";
+			this.txtGLN.Size = new System.Drawing.Size(123, 20);
+			this.txtGLN.TabIndex = 47;
+			// 
+			// label1
+			// 
+			this.label1.Location = new System.Drawing.Point(23, 43);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(39, 19);
+			this.label1.TabIndex = 46;
+			this.label1.Text = "GLN";
 			// 
 			// frmClientes
 			// 
@@ -1195,13 +1209,14 @@ namespace Contable
 			this.Frame3.PerformLayout();
 			this._SSTab1_TabPage3.ResumeLayout(false);
 			this._SSTab1_TabPage5.ResumeLayout(false);
-			this._SSTab1_TabPage5.PerformLayout();
 			this.Frame7.ResumeLayout(false);
 			this.Frame6.ResumeLayout(false);
 			this.Frame2.ResumeLayout(false);
 			this.Frame5.ResumeLayout(false);
 			this.Toolbar1.ResumeLayout(false);
 			this.Toolbar1.PerformLayout();
+			this.grSENASA.ResumeLayout(false);
+			this.grSENASA.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1215,6 +1230,7 @@ namespace Contable
 		private System.Windows.Forms.DataGridViewTextBoxColumn colContactoDireccion;
 		private System.Windows.Forms.TextBox txtGLN;
 		private System.Windows.Forms.Button btnVerificarActivos;
+		private System.Windows.Forms.GroupBox grSENASA;
 			#endregion
 	}
 }

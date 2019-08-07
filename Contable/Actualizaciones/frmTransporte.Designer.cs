@@ -50,7 +50,7 @@ namespace Contable
 		public System.Windows.Forms.Label Label3;
 		public System.Windows.Forms.Label Label4;
 		public System.Windows.Forms.GroupBox Frame1;
-		public System.Windows.Forms.TabPage _SSTab1_TabPage0;
+		public System.Windows.Forms.TabPage tabGeneral;
 		public System.Windows.Forms.TextBox txtTranspTel1;
 		public System.Windows.Forms.TextBox txtTranspTel2;
 		public System.Windows.Forms.TextBox txtTranspTel3;
@@ -66,9 +66,9 @@ namespace Contable
 		public System.Windows.Forms.Label Label10;
 		public System.Windows.Forms.Label Label11;
 		public System.Windows.Forms.GroupBox Frame2;
-		public System.Windows.Forms.TabPage _SSTab1_TabPage1;
+		public System.Windows.Forms.TabPage tabContacto;
 		public System.Windows.Forms.RichTextBox RichDestinos;
-		public System.Windows.Forms.TabPage _SSTab1_TabPage2;
+		public System.Windows.Forms.TabPage tabDestintos;
 		public System.Windows.Forms.TabControl SSTab1;
 		public System.Windows.Forms.ToolStripSeparator _Toolbar1_Button4;
 		public System.Windows.Forms.ToolStripSeparator _Toolbar1_Button8;
@@ -83,12 +83,8 @@ namespace Contable
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTransporte));
 			this.txtTranspTel5 = new System.Windows.Forms.TextBox();
 			this.txtTranspFax = new System.Windows.Forms.TextBox();
-			this.Frame3 = new System.Windows.Forms.GroupBox();
-			this.optDestino = new System.Windows.Forms.RadioButton();
-			this.optNombre = new System.Windows.Forms.RadioButton();
-			this.Text1 = new System.Windows.Forms.TextBox();
 			this.SSTab1 = new System.Windows.Forms.TabControl();
-			this._SSTab1_TabPage0 = new System.Windows.Forms.TabPage();
+			this.tabGeneral = new System.Windows.Forms.TabPage();
 			this.Frame1 = new System.Windows.Forms.GroupBox();
 			this.txtTranspNum = new System.Windows.Forms.TextBox();
 			this.txtTranspNombre = new System.Windows.Forms.TextBox();
@@ -98,7 +94,7 @@ namespace Contable
 			this.Label2 = new System.Windows.Forms.Label();
 			this.Label3 = new System.Windows.Forms.Label();
 			this.Label4 = new System.Windows.Forms.Label();
-			this._SSTab1_TabPage1 = new System.Windows.Forms.TabPage();
+			this.tabContacto = new System.Windows.Forms.TabPage();
 			this.Frame2 = new System.Windows.Forms.GroupBox();
 			this.txtTranspTel1 = new System.Windows.Forms.TextBox();
 			this.txtTranspTel2 = new System.Windows.Forms.TextBox();
@@ -112,10 +108,8 @@ namespace Contable
 			this.Label9 = new System.Windows.Forms.Label();
 			this.Label10 = new System.Windows.Forms.Label();
 			this.Label11 = new System.Windows.Forms.Label();
-			this._SSTab1_TabPage2 = new System.Windows.Forms.TabPage();
+			this.tabDestintos = new System.Windows.Forms.TabPage();
 			this.RichDestinos = new System.Windows.Forms.RichTextBox();
-			this.Label12 = new System.Windows.Forms.Label();
-			this.DataGridView1 = new System.Windows.Forms.DataGridView();
 			this.Toolbar1 = new System.Windows.Forms.ToolStrip();
 			this.tlbNuevo = new System.Windows.Forms.ToolStripButton();
 			this._Toolbar1_Button2 = new System.Windows.Forms.ToolStripSeparator();
@@ -126,15 +120,23 @@ namespace Contable
 			this.tlbAnular = new System.Windows.Forms.ToolStripButton();
 			this._Toolbar1_Button8 = new System.Windows.Forms.ToolStripSeparator();
 			this.tlbEditar = new System.Windows.Forms.ToolStripButton();
-			this.Frame3.SuspendLayout();
+			this.tabBusqueda = new System.Windows.Forms.TabPage();
+			this.DataGridView1 = new System.Windows.Forms.DataGridView();
+			this.Frame3 = new System.Windows.Forms.GroupBox();
+			this.optDestino = new System.Windows.Forms.RadioButton();
+			this.optNombre = new System.Windows.Forms.RadioButton();
+			this.Text1 = new System.Windows.Forms.TextBox();
+			this.Label12 = new System.Windows.Forms.Label();
 			this.SSTab1.SuspendLayout();
-			this._SSTab1_TabPage0.SuspendLayout();
+			this.tabGeneral.SuspendLayout();
 			this.Frame1.SuspendLayout();
-			this._SSTab1_TabPage1.SuspendLayout();
+			this.tabContacto.SuspendLayout();
 			this.Frame2.SuspendLayout();
-			this._SSTab1_TabPage2.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
+			this.tabDestintos.SuspendLayout();
 			this.Toolbar1.SuspendLayout();
+			this.tabBusqueda.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).BeginInit();
+			this.Frame3.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// txtTranspTel5
@@ -163,83 +165,27 @@ namespace Contable
 			this.txtTranspFax.Size = new System.Drawing.Size(200, 20);
 			this.txtTranspFax.TabIndex = 11;
 			// 
-			// Frame3
-			// 
-			this.Frame3.BackColor = System.Drawing.SystemColors.Control;
-			this.Frame3.Controls.Add(this.optDestino);
-			this.Frame3.Controls.Add(this.optNombre);
-			this.Frame3.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.Frame3.Location = new System.Drawing.Point(568, 88);
-			this.Frame3.Name = "Frame3";
-			this.Frame3.Padding = new System.Windows.Forms.Padding(0);
-			this.Frame3.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.Frame3.Size = new System.Drawing.Size(385, 65);
-			this.Frame3.TabIndex = 30;
-			this.Frame3.TabStop = false;
-			this.Frame3.Text = "Opciones";
-			// 
-			// optDestino
-			// 
-			this.optDestino.BackColor = System.Drawing.SystemColors.Control;
-			this.optDestino.Cursor = System.Windows.Forms.Cursors.Default;
-			this.optDestino.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.optDestino.Location = new System.Drawing.Point(16, 40);
-			this.optDestino.Name = "optDestino";
-			this.optDestino.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.optDestino.Size = new System.Drawing.Size(65, 17);
-			this.optDestino.TabIndex = 32;
-			this.optDestino.TabStop = true;
-			this.optDestino.Text = "Destino";
-			this.optDestino.UseVisualStyleBackColor = false;
-			// 
-			// optNombre
-			// 
-			this.optNombre.BackColor = System.Drawing.SystemColors.Control;
-			this.optNombre.Checked = true;
-			this.optNombre.Cursor = System.Windows.Forms.Cursors.Default;
-			this.optNombre.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.optNombre.Location = new System.Drawing.Point(16, 16);
-			this.optNombre.Name = "optNombre";
-			this.optNombre.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.optNombre.Size = new System.Drawing.Size(81, 17);
-			this.optNombre.TabIndex = 31;
-			this.optNombre.TabStop = true;
-			this.optNombre.Text = "Nombre";
-			this.optNombre.UseVisualStyleBackColor = false;
-			// 
-			// Text1
-			// 
-			this.Text1.AcceptsReturn = true;
-			this.Text1.BackColor = System.Drawing.SystemColors.Window;
-			this.Text1.Cursor = System.Windows.Forms.Cursors.IBeam;
-			this.Text1.ForeColor = System.Drawing.SystemColors.WindowText;
-			this.Text1.Location = new System.Drawing.Point(696, 56);
-			this.Text1.MaxLength = 0;
-			this.Text1.Name = "Text1";
-			this.Text1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.Text1.Size = new System.Drawing.Size(257, 20);
-			this.Text1.TabIndex = 27;
-			// 
 			// SSTab1
 			// 
-			this.SSTab1.Controls.Add(this._SSTab1_TabPage0);
-			this.SSTab1.Controls.Add(this._SSTab1_TabPage1);
-			this.SSTab1.Controls.Add(this._SSTab1_TabPage2);
+			this.SSTab1.Controls.Add(this.tabBusqueda);
+			this.SSTab1.Controls.Add(this.tabGeneral);
+			this.SSTab1.Controls.Add(this.tabContacto);
+			this.SSTab1.Controls.Add(this.tabDestintos);
 			this.SSTab1.ItemSize = new System.Drawing.Size(42, 18);
 			this.SSTab1.Location = new System.Drawing.Point(32, 72);
 			this.SSTab1.Name = "SSTab1";
 			this.SSTab1.SelectedIndex = 0;
-			this.SSTab1.Size = new System.Drawing.Size(433, 345);
+			this.SSTab1.Size = new System.Drawing.Size(993, 519);
 			this.SSTab1.TabIndex = 0;
 			// 
-			// _SSTab1_TabPage0
+			// tabGeneral
 			// 
-			this._SSTab1_TabPage0.Controls.Add(this.Frame1);
-			this._SSTab1_TabPage0.Location = new System.Drawing.Point(4, 22);
-			this._SSTab1_TabPage0.Name = "_SSTab1_TabPage0";
-			this._SSTab1_TabPage0.Size = new System.Drawing.Size(425, 319);
-			this._SSTab1_TabPage0.TabIndex = 0;
-			this._SSTab1_TabPage0.Text = "General";
+			this.tabGeneral.Controls.Add(this.Frame1);
+			this.tabGeneral.Location = new System.Drawing.Point(4, 22);
+			this.tabGeneral.Name = "tabGeneral";
+			this.tabGeneral.Size = new System.Drawing.Size(425, 319);
+			this.tabGeneral.TabIndex = 0;
+			this.tabGeneral.Text = "General";
 			// 
 			// Frame1
 			// 
@@ -366,14 +312,14 @@ namespace Contable
 			this.Label4.TabIndex = 6;
 			this.Label4.Text = "Localidad";
 			// 
-			// _SSTab1_TabPage1
+			// tabContacto
 			// 
-			this._SSTab1_TabPage1.Controls.Add(this.Frame2);
-			this._SSTab1_TabPage1.Location = new System.Drawing.Point(4, 22);
-			this._SSTab1_TabPage1.Name = "_SSTab1_TabPage1";
-			this._SSTab1_TabPage1.Size = new System.Drawing.Size(425, 319);
-			this._SSTab1_TabPage1.TabIndex = 1;
-			this._SSTab1_TabPage1.Text = "Contacto";
+			this.tabContacto.Controls.Add(this.Frame2);
+			this.tabContacto.Location = new System.Drawing.Point(4, 22);
+			this.tabContacto.Name = "tabContacto";
+			this.tabContacto.Size = new System.Drawing.Size(425, 319);
+			this.tabContacto.TabIndex = 1;
+			this.tabContacto.Text = "Contacto";
 			// 
 			// Frame2
 			// 
@@ -557,14 +503,14 @@ namespace Contable
 			this.Label11.TabIndex = 18;
 			this.Label11.Text = "Fax";
 			// 
-			// _SSTab1_TabPage2
+			// tabDestintos
 			// 
-			this._SSTab1_TabPage2.Controls.Add(this.RichDestinos);
-			this._SSTab1_TabPage2.Location = new System.Drawing.Point(4, 22);
-			this._SSTab1_TabPage2.Name = "_SSTab1_TabPage2";
-			this._SSTab1_TabPage2.Size = new System.Drawing.Size(425, 319);
-			this._SSTab1_TabPage2.TabIndex = 2;
-			this._SSTab1_TabPage2.Text = "Destinos";
+			this.tabDestintos.Controls.Add(this.RichDestinos);
+			this.tabDestintos.Location = new System.Drawing.Point(4, 22);
+			this.tabDestintos.Name = "tabDestintos";
+			this.tabDestintos.Size = new System.Drawing.Size(425, 319);
+			this.tabDestintos.TabIndex = 2;
+			this.tabDestintos.Text = "Destinos";
 			// 
 			// RichDestinos
 			// 
@@ -573,28 +519,6 @@ namespace Contable
 			this.RichDestinos.Size = new System.Drawing.Size(313, 193);
 			this.RichDestinos.TabIndex = 25;
 			this.RichDestinos.Text = "";
-			// 
-			// Label12
-			// 
-			this.Label12.BackColor = System.Drawing.SystemColors.Control;
-			this.Label12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.Label12.Cursor = System.Windows.Forms.Cursors.Default;
-			this.Label12.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.Label12.Location = new System.Drawing.Point(568, 56);
-			this.Label12.Name = "Label12";
-			this.Label12.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.Label12.Size = new System.Drawing.Size(121, 17);
-			this.Label12.TabIndex = 29;
-			this.Label12.Text = "Filtar por:";
-			this.Label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
-			// 
-			// DataGridView1
-			// 
-			this.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.DataGridView1.Location = new System.Drawing.Point(584, 190);
-			this.DataGridView1.Name = "DataGridView1";
-			this.DataGridView1.Size = new System.Drawing.Size(240, 150);
-			this.DataGridView1.TabIndex = 31;
 			// 
 			// Toolbar1
 			// 
@@ -687,6 +611,98 @@ namespace Contable
 			this.tlbEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
 			this.tlbEditar.ToolTipText = "Editar";
 			// 
+			// tabBusqueda
+			// 
+			this.tabBusqueda.Controls.Add(this.DataGridView1);
+			this.tabBusqueda.Controls.Add(this.Frame3);
+			this.tabBusqueda.Controls.Add(this.Text1);
+			this.tabBusqueda.Controls.Add(this.Label12);
+			this.tabBusqueda.Location = new System.Drawing.Point(4, 22);
+			this.tabBusqueda.Name = "tabBusqueda";
+			this.tabBusqueda.Size = new System.Drawing.Size(985, 493);
+			this.tabBusqueda.TabIndex = 3;
+			this.tabBusqueda.Text = "Busqueda";
+			this.tabBusqueda.UseVisualStyleBackColor = true;
+			// 
+			// DataGridView1
+			// 
+			this.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.DataGridView1.Location = new System.Drawing.Point(131, 50);
+			this.DataGridView1.Name = "DataGridView1";
+			this.DataGridView1.Size = new System.Drawing.Size(661, 357);
+			this.DataGridView1.TabIndex = 35;
+			// 
+			// Frame3
+			// 
+			this.Frame3.BackColor = System.Drawing.SystemColors.Control;
+			this.Frame3.Controls.Add(this.optDestino);
+			this.Frame3.Controls.Add(this.optNombre);
+			this.Frame3.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.Frame3.Location = new System.Drawing.Point(3, 50);
+			this.Frame3.Name = "Frame3";
+			this.Frame3.Padding = new System.Windows.Forms.Padding(0);
+			this.Frame3.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.Frame3.Size = new System.Drawing.Size(121, 65);
+			this.Frame3.TabIndex = 34;
+			this.Frame3.TabStop = false;
+			this.Frame3.Text = "Opciones";
+			// 
+			// optDestino
+			// 
+			this.optDestino.BackColor = System.Drawing.SystemColors.Control;
+			this.optDestino.Cursor = System.Windows.Forms.Cursors.Default;
+			this.optDestino.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.optDestino.Location = new System.Drawing.Point(16, 40);
+			this.optDestino.Name = "optDestino";
+			this.optDestino.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.optDestino.Size = new System.Drawing.Size(65, 17);
+			this.optDestino.TabIndex = 32;
+			this.optDestino.TabStop = true;
+			this.optDestino.Text = "Destino";
+			this.optDestino.UseVisualStyleBackColor = false;
+			// 
+			// optNombre
+			// 
+			this.optNombre.BackColor = System.Drawing.SystemColors.Control;
+			this.optNombre.Checked = true;
+			this.optNombre.Cursor = System.Windows.Forms.Cursors.Default;
+			this.optNombre.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.optNombre.Location = new System.Drawing.Point(16, 16);
+			this.optNombre.Name = "optNombre";
+			this.optNombre.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.optNombre.Size = new System.Drawing.Size(81, 17);
+			this.optNombre.TabIndex = 31;
+			this.optNombre.TabStop = true;
+			this.optNombre.Text = "Nombre";
+			this.optNombre.UseVisualStyleBackColor = false;
+			// 
+			// Text1
+			// 
+			this.Text1.AcceptsReturn = true;
+			this.Text1.BackColor = System.Drawing.SystemColors.Window;
+			this.Text1.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.Text1.ForeColor = System.Drawing.SystemColors.WindowText;
+			this.Text1.Location = new System.Drawing.Point(131, 18);
+			this.Text1.MaxLength = 0;
+			this.Text1.Name = "Text1";
+			this.Text1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.Text1.Size = new System.Drawing.Size(375, 20);
+			this.Text1.TabIndex = 32;
+			// 
+			// Label12
+			// 
+			this.Label12.BackColor = System.Drawing.SystemColors.Control;
+			this.Label12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.Label12.Cursor = System.Windows.Forms.Cursors.Default;
+			this.Label12.ForeColor = System.Drawing.SystemColors.ControlText;
+			this.Label12.Location = new System.Drawing.Point(3, 18);
+			this.Label12.Name = "Label12";
+			this.Label12.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.Label12.Size = new System.Drawing.Size(121, 17);
+			this.Label12.TabIndex = 33;
+			this.Label12.Text = "Filtar por:";
+			this.Label12.TextAlign = System.Drawing.ContentAlignment.TopRight;
+			// 
 			// frmTransporte
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -695,11 +711,7 @@ namespace Contable
 			this.BackColor = System.Drawing.SystemColors.Control;
 			this.ClientSize = new System.Drawing.Size(1016, 734);
 			this.Controls.Add(this.Toolbar1);
-			this.Controls.Add(this.DataGridView1);
-			this.Controls.Add(this.Frame3);
-			this.Controls.Add(this.Text1);
 			this.Controls.Add(this.SSTab1);
-			this.Controls.Add(this.Label12);
 			this.Cursor = System.Windows.Forms.Cursors.Default;
 			this.Location = new System.Drawing.Point(4, 23);
 			this.Name = "frmTransporte";
@@ -707,18 +719,20 @@ namespace Contable
 			this.StartPosition = System.Windows.Forms.FormStartPosition.WindowsDefaultBounds;
 			this.Text = "Transportes ";
 			this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-			this.Frame3.ResumeLayout(false);
 			this.SSTab1.ResumeLayout(false);
-			this._SSTab1_TabPage0.ResumeLayout(false);
+			this.tabGeneral.ResumeLayout(false);
 			this.Frame1.ResumeLayout(false);
 			this.Frame1.PerformLayout();
-			this._SSTab1_TabPage1.ResumeLayout(false);
+			this.tabContacto.ResumeLayout(false);
 			this.Frame2.ResumeLayout(false);
 			this.Frame2.PerformLayout();
-			this._SSTab1_TabPage2.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
+			this.tabDestintos.ResumeLayout(false);
 			this.Toolbar1.ResumeLayout(false);
 			this.Toolbar1.PerformLayout();
+			this.tabBusqueda.ResumeLayout(false);
+			this.tabBusqueda.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.DataGridView1)).EndInit();
+			this.Frame3.ResumeLayout(false);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -732,5 +746,6 @@ namespace Contable
 		public System.Windows.Forms.ToolStripSeparator _Toolbar1_Button6;
 		public System.Windows.Forms.ToolStripButton tlbAnular;
 		public System.Windows.Forms.ToolStripButton tlbEditar;
+		private System.Windows.Forms.TabPage tabBusqueda;
 	}
 }
