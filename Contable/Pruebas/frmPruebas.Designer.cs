@@ -92,28 +92,28 @@ namespace Contable.Pruebas
 			this.label1 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.tabPage4 = new System.Windows.Forms.TabPage();
+			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.button5 = new System.Windows.Forms.Button();
+			this.txtNumReciboNvo = new System.Windows.Forms.TextBox();
+			this.label8 = new System.Windows.Forms.Label();
+			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.button7 = new System.Windows.Forms.Button();
+			this.btnImprimirRecibo = new System.Windows.Forms.Button();
+			this.txtNumRecibo = new System.Windows.Forms.TextBox();
+			this.label6 = new System.Windows.Forms.Label();
 			this.button6 = new System.Windows.Forms.Button();
 			this.txtNumFactura = new System.Windows.Forms.TextBox();
 			this.label7 = new System.Windows.Forms.Label();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
 			this.button8 = new System.Windows.Forms.Button();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.txtNumRecibo = new System.Windows.Forms.TextBox();
-			this.label6 = new System.Windows.Forms.Label();
-			this.button7 = new System.Windows.Forms.Button();
-			this.btnImprimirRecibo = new System.Windows.Forms.Button();
-			this.groupBox2 = new System.Windows.Forms.GroupBox();
-			this.txtNumReciboNvo = new System.Windows.Forms.TextBox();
-			this.label8 = new System.Windows.Forms.Label();
-			this.button5 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			this.tabPage3.SuspendLayout();
 			this.tabPage4.SuspendLayout();
-			this.tabPage5.SuspendLayout();
-			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
+			this.groupBox1.SuspendLayout();
+			this.tabPage5.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// tabControl1
@@ -320,6 +320,90 @@ namespace Contable.Pruebas
 			this.tabPage4.Text = "Recibos";
 			this.tabPage4.UseVisualStyleBackColor = true;
 			// 
+			// groupBox2
+			// 
+			this.groupBox2.Controls.Add(this.button5);
+			this.groupBox2.Controls.Add(this.txtNumReciboNvo);
+			this.groupBox2.Controls.Add(this.label8);
+			this.groupBox2.Location = new System.Drawing.Point(4, 66);
+			this.groupBox2.Name = "groupBox2";
+			this.groupBox2.Size = new System.Drawing.Size(704, 44);
+			this.groupBox2.TabIndex = 8;
+			this.groupBox2.TabStop = false;
+			this.groupBox2.Text = "Nuevos";
+			// 
+			// button5
+			// 
+			this.button5.Location = new System.Drawing.Point(516, 11);
+			this.button5.Name = "button5";
+			this.button5.Size = new System.Drawing.Size(75, 23);
+			this.button5.TabIndex = 8;
+			this.button5.Text = "Imprimir";
+			this.button5.UseVisualStyleBackColor = true;
+			this.button5.Click += new System.EventHandler(this.Button5Click);
+			// 
+			// txtNumReciboNvo
+			// 
+			this.txtNumReciboNvo.Location = new System.Drawing.Point(188, 16);
+			this.txtNumReciboNvo.Name = "txtNumReciboNvo";
+			this.txtNumReciboNvo.Size = new System.Drawing.Size(175, 20);
+			this.txtNumReciboNvo.TabIndex = 5;
+			// 
+			// label8
+			// 
+			this.label8.Location = new System.Drawing.Point(14, 16);
+			this.label8.Name = "label8";
+			this.label8.Size = new System.Drawing.Size(168, 19);
+			this.label8.TabIndex = 4;
+			this.label8.Text = "Numero de Recibo a Imprimir";
+			// 
+			// groupBox1
+			// 
+			this.groupBox1.Controls.Add(this.button7);
+			this.groupBox1.Controls.Add(this.btnImprimirRecibo);
+			this.groupBox1.Controls.Add(this.txtNumRecibo);
+			this.groupBox1.Controls.Add(this.label6);
+			this.groupBox1.Location = new System.Drawing.Point(3, 3);
+			this.groupBox1.Name = "groupBox1";
+			this.groupBox1.Size = new System.Drawing.Size(705, 50);
+			this.groupBox1.TabIndex = 7;
+			this.groupBox1.TabStop = false;
+			this.groupBox1.Text = "Viejos";
+			// 
+			// button7
+			// 
+			this.button7.Location = new System.Drawing.Point(598, 14);
+			this.button7.Name = "button7";
+			this.button7.Size = new System.Drawing.Size(105, 23);
+			this.button7.TabIndex = 8;
+			this.button7.Text = "Hacer Imprimbles";
+			this.button7.UseVisualStyleBackColor = true;
+			// 
+			// btnImprimirRecibo
+			// 
+			this.btnImprimirRecibo.Location = new System.Drawing.Point(517, 16);
+			this.btnImprimirRecibo.Name = "btnImprimirRecibo";
+			this.btnImprimirRecibo.Size = new System.Drawing.Size(75, 23);
+			this.btnImprimirRecibo.TabIndex = 7;
+			this.btnImprimirRecibo.Text = "Imprimir";
+			this.btnImprimirRecibo.UseVisualStyleBackColor = true;
+			this.btnImprimirRecibo.Click += new System.EventHandler(this.BtnImprimirReciboClick);
+			// 
+			// txtNumRecibo
+			// 
+			this.txtNumRecibo.Location = new System.Drawing.Point(189, 16);
+			this.txtNumRecibo.Name = "txtNumRecibo";
+			this.txtNumRecibo.Size = new System.Drawing.Size(175, 20);
+			this.txtNumRecibo.TabIndex = 3;
+			// 
+			// label6
+			// 
+			this.label6.Location = new System.Drawing.Point(15, 16);
+			this.label6.Name = "label6";
+			this.label6.Size = new System.Drawing.Size(168, 19);
+			this.label6.TabIndex = 2;
+			this.label6.Text = "Numero de Recibo a Imprimir";
+			// 
 			// button6
 			// 
 			this.button6.Location = new System.Drawing.Point(520, 193);
@@ -365,89 +449,6 @@ namespace Contable.Pruebas
 			this.button8.UseVisualStyleBackColor = true;
 			this.button8.Click += new System.EventHandler(this.Button8Click);
 			// 
-			// groupBox1
-			// 
-			this.groupBox1.Controls.Add(this.button7);
-			this.groupBox1.Controls.Add(this.btnImprimirRecibo);
-			this.groupBox1.Controls.Add(this.txtNumRecibo);
-			this.groupBox1.Controls.Add(this.label6);
-			this.groupBox1.Location = new System.Drawing.Point(3, 3);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(705, 50);
-			this.groupBox1.TabIndex = 7;
-			this.groupBox1.TabStop = false;
-			this.groupBox1.Text = "Viejos";
-			// 
-			// txtNumRecibo
-			// 
-			this.txtNumRecibo.Location = new System.Drawing.Point(189, 16);
-			this.txtNumRecibo.Name = "txtNumRecibo";
-			this.txtNumRecibo.Size = new System.Drawing.Size(175, 20);
-			this.txtNumRecibo.TabIndex = 3;
-			// 
-			// label6
-			// 
-			this.label6.Location = new System.Drawing.Point(15, 16);
-			this.label6.Name = "label6";
-			this.label6.Size = new System.Drawing.Size(168, 19);
-			this.label6.TabIndex = 2;
-			this.label6.Text = "Numero de Recibo a Imprimir";
-			// 
-			// button7
-			// 
-			this.button7.Location = new System.Drawing.Point(598, 14);
-			this.button7.Name = "button7";
-			this.button7.Size = new System.Drawing.Size(105, 23);
-			this.button7.TabIndex = 8;
-			this.button7.Text = "Hacer Imprimbles";
-			this.button7.UseVisualStyleBackColor = true;
-			// 
-			// btnImprimirRecibo
-			// 
-			this.btnImprimirRecibo.Location = new System.Drawing.Point(517, 16);
-			this.btnImprimirRecibo.Name = "btnImprimirRecibo";
-			this.btnImprimirRecibo.Size = new System.Drawing.Size(75, 23);
-			this.btnImprimirRecibo.TabIndex = 7;
-			this.btnImprimirRecibo.Text = "Imprimir";
-			this.btnImprimirRecibo.UseVisualStyleBackColor = true;
-			this.btnImprimirRecibo.Click += new System.EventHandler(this.BtnImprimirReciboClick);
-			// 
-			// groupBox2
-			// 
-			this.groupBox2.Controls.Add(this.button5);
-			this.groupBox2.Controls.Add(this.txtNumReciboNvo);
-			this.groupBox2.Controls.Add(this.label8);
-			this.groupBox2.Location = new System.Drawing.Point(4, 66);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(704, 44);
-			this.groupBox2.TabIndex = 8;
-			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "Nuevos";
-			// 
-			// txtNumReciboNvo
-			// 
-			this.txtNumReciboNvo.Location = new System.Drawing.Point(188, 16);
-			this.txtNumReciboNvo.Name = "txtNumReciboNvo";
-			this.txtNumReciboNvo.Size = new System.Drawing.Size(175, 20);
-			this.txtNumReciboNvo.TabIndex = 5;
-			// 
-			// label8
-			// 
-			this.label8.Location = new System.Drawing.Point(14, 16);
-			this.label8.Name = "label8";
-			this.label8.Size = new System.Drawing.Size(168, 19);
-			this.label8.TabIndex = 4;
-			this.label8.Text = "Numero de Recibo a Imprimir";
-			// 
-			// button5
-			// 
-			this.button5.Location = new System.Drawing.Point(516, 11);
-			this.button5.Name = "button5";
-			this.button5.Size = new System.Drawing.Size(75, 23);
-			this.button5.TabIndex = 8;
-			this.button5.Text = "Imprimir";
-			this.button5.UseVisualStyleBackColor = true;
-			// 
 			// frmPruebas
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -465,11 +466,11 @@ namespace Contable.Pruebas
 			this.tabPage3.PerformLayout();
 			this.tabPage4.ResumeLayout(false);
 			this.tabPage4.PerformLayout();
-			this.tabPage5.ResumeLayout(false);
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
 			this.groupBox2.PerformLayout();
+			this.groupBox1.ResumeLayout(false);
+			this.groupBox1.PerformLayout();
+			this.tabPage5.ResumeLayout(false);
 			this.ResumeLayout(false);
 
 		}

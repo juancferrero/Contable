@@ -76,7 +76,7 @@ namespace Contable.Pruebas
 	
 			VariablesPropias.VariablesPropias.vpRecibo reci = new VariablesPropias.VariablesPropias.vpRecibo();
 				
-			reci= Modulos.Recibos.CargarRecibo(Convert.ToInt32 (txtNumRecibo.Text));
+			reci= Modulos.Recibos.CargarReciboNvo(txtNumReciboNvo.Text);
 			
 			// MessageBox.Show (reci.Cliente.strDireccion);
 			Imprimir.Imprimir_Recibo(reci);
