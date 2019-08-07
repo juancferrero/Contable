@@ -238,10 +238,7 @@ namespace Contable.Modulos
 			
 		}
 		
-		
-		
-		
-		
+				
 		public static BindingSource FuenteObtenerRecibosHechos(DateTime dtFechaInicio, DateTime dtFechaFinal)
 		{
 			//Conecta a la Base de datos segun ruta guardada
@@ -1455,15 +1452,7 @@ try
        	 	return Remito;
 		}		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
 		#endregion
 		
 #region CLIENTES
@@ -1535,8 +1524,8 @@ GLN
 									
 									"Nombre = '" + DatosInsertar.strNombre.Trim() + "', " +
 									"Direccion = '" + DatosInsertar.strDireccion.Trim() + "', " +
-									//"Localidad = '" + DatosInsertar.strLocalidad.Trim() + "', " +
-									//"Provincia = '" + DatosInsertar.strProvincia.Trim() + "', " +
+									"Localidad = '" + DatosInsertar.strLocalidad.Trim() + "', " +
+									"Provincia = '" + DatosInsertar.strProvincia.Trim() + "', " +
 									"Telefono1 = '" + DatosInsertar.strTelefono1.Trim() + "', " +
 									"Telefono2 = '" + DatosInsertar.strTelefono2.Trim() + "', " +
 									"Fax = '" + DatosInsertar.strTelefono3.Trim() + "', " +
@@ -1546,7 +1535,7 @@ GLN
 									//"Desc = " + DatosInsertar.dblDescuento + ", " +
 									"TranspId = " + DatosInsertar.Transporte.intTranspId + ", " +
 									"ClienteDe = '" + DatosInsertar.strClienteDe.Trim() + "', " +
-									//"Activo = #" + DatosInsertar.bolActivo +  "#, " +
+									"Activo = " + DatosInsertar.bolActivo +  ", " +
 									"Calidad = '" + DatosInsertar.strid.Trim() + "', " +
 									"Info = '" + DatosInsertar.memoVarios.Trim() + "', " +
 									"GLN = '" + DatosInsertar.GLN.Trim() + "'" 
@@ -1837,7 +1826,6 @@ HechoPor
  */
 
 
-
 #region RECIBO
 //Conecta a la Base de datos segun ruta guardada
 			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseRecibos"].ToString());
@@ -1984,38 +1972,38 @@ if (vpReci.curIVA != 0) {
             
 #region Modifico la tabla de CHEQUES
 
-
+/*
+ * Esta secccion lo que hace es modificar la tabla de cheques para saber que cheques se imputaron
+ * en el cheque dado
+ */
 if (vpReci.Cheques != null) 
 {
 			//Conecta a la Base de datos segun ruta guardada
 			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseCheques"].ToString());										
 			
 			try // para obtener errores posibles
-			 {
+			{
 			//Edito la tabla de los cheques
 			for (int i = 0; i < vpReci.Cheques.Length ; i++) 
-			{
+				{
 				//Coloco el numero del recibo en el cheque (para identificarlo)
 				ConexionAccess2007.ModificarFila("cheque",
 												"IDRecibo = '" + "0001X" + vpReci.dblNumReci.ToString("00000000") + "'",
 												"IDCheque = '" + vpReci.Cheques[i].strIDCheque.Trim() + "'");
-			}
+				}
 
-			
 				
-				
-			}
-            catch (Exception ex)
-			{
+				}
+        	catch (Exception ex)
+				{
 				MessageBox.Show (ex.Message , "Error");
-			}
+				}
 			
 			//Cerrar la conexion
             ConexionAccess2007.Desconectar();
 }
 			
 #endregion
-
 
 
 #region Modifico la tabla de interdepositos
@@ -2026,17 +2014,14 @@ if (vpReci.Interdepositos != null)
 
 			
 			try // para obtener errores posibles
-			 {
+			{
 			//Edito la tabla de los cheques
 			for (int i = 0; i < vpReci.Interdepositos.Length ; i++) 
-			{
+				{
 				ConexionAccess2007.ModificarFila("Interdepositos",
 												"IDRecibo = '" + "0001X" + vpReci.dblNumReci.ToString("00000000") + "'", 
 												"ID = " + vpReci.Interdepositos[i].dblIDInterdeposito.ToString().Trim());
-			}
-
-			
-				
+				}
 				
 			}
             catch (Exception ex)
@@ -2077,8 +2062,6 @@ if (vpReci.Facturas != null)
 												"NumFact = " + vpReci.Facturas[i].dblNumFact );
 			}
 
-			
-				
 				
 			}
             catch (Exception ex)
@@ -2102,12 +2085,12 @@ if (vpReci.FacturasB != null)
 			 {
 			//Edito la tabla de los cheques
 			for (int i = 0; i < vpReci.FacturasB.Length ; i++) 
-			{
+				{
 				ConexionAccess2007.ModificarFila("FacturasB",
 												"Recibo1 = " + vpReci.dblNumReci + ", " + 
 												"Saldo = '0'",
 												"NumFact = " + vpReci.FacturasB[i].dblNumFact );
-			}
+				}
 
 			
 				
@@ -2207,7 +2190,7 @@ if (vpReci.NDs != null)
 //
 			MessageBox.Show ("Registro guardado", "Guardado");
 
-/*
+/*TODO: MEJORAS DEL GUARDADO DE RECIBOS
  Aca falta colocar lo que va a pasar con los distintos comprobantes. Esto es con las FC que se cancelan, las ND NC y cheques que se colocan en el recibo.
  La idea es armar funciones que hagan de edicion de distintas cosas, las FC, ND,NC,Ch y los impuestos que se cobran.
  
@@ -2277,17 +2260,6 @@ if (vpReci.NDs != null)
 				//Cargo los datos en el grid
 			return  ConexionAccess2007.Table;
 		}
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -2410,45 +2382,12 @@ public static BindingSource FuenteObtenerFacturasImputadas(DateTime dtFechaInici
 		}
 
 		
-/// <summary>
-/// Obtiene el Transporte y lo vuelca en una estructura vpTransporte
-/// </summary>
-/// <param name="strId"></param>
-/// <returns></returns>
-		public static VariablesPropias.VariablesPropias.vpTransporte ObtenerTransporte(string strId)
-		{
-			
-			//Creo una variable del mismo tipo que la "funcion" para que despues la descarge con un return
-			VariablesPropias.VariablesPropias.vpTransporte Transp = new VariablesPropias.VariablesPropias.vpTransporte();
-			
-			
-			
 
-			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseDeDatos"].ToString());
-			
-			//tener en cuenta que primero va la condicion y luego el Order by
-            ConexionAccess2007.Consultar("Transporte", "*", "TranspId = " + strId , "TranspNombre" );
-			
-            //Nueva Tabla
-            DataTable Remito = new DataTable();
- 			//Cargo la tabla con los datos de la Base de Datos
-            Remito = ConexionAccess2007.Table;
-
-			//Cargo los datos en una vp (Variable propia) para despues pasarlo a cada parte
-			//lo hago asi para que luego si cambio algo no se joda todo.
-			Transp.strNombre  = Remito.Rows[0]["TranspNombre"].ToString();
-			Transp.strDireccion = Remito.Rows [0]["TranspDireccion"].ToString();
-			Transp.strHorario = Remito.Rows[0]["Horario"].ToString();
-			
-			 //Cerrar la conexion
-            ConexionAccess2007.Desconectar();
-			
-			
-		return Transp;	
-		}		
-		
 	
-		
+/// <summary>
+/// Carga los datos de la mercaderia en un binding source
+/// </summary>
+/// <returns>Binding con los datos</returns>
 		public static BindingSource FuenteObtenerMercaderia()
 		{
 			//Conecta a la Base de datos segun ruta guardada
@@ -2517,13 +2456,13 @@ Costo
 			Clie.dblDescuento = Convert.ToDouble (Remito.Rows[0]["Desc"] );
 			Clie.strTelefono1 = Remito.Rows[0]["Telefono1"].ToString();
 			Clie.strTelefono2 = Remito.Rows[0]["Telefono2"].ToString();
-		
+			Clie.strTelefono3 = Remito.Rows[0]["Fax"].ToString();
 		
 			Clie.strCodPos = Convert.ToString (Remito.Rows[0]["CodPos"] );
 			
 			//Transporte
 			Clie.intTranspId = Convert.ToInt32(Remito.Rows[0]["TranspId"] );
-			Clie.Transporte = OperacionesComunes.ObtenerTransporte(Clie.intTranspId.ToString());
+			Clie.Transporte = OperacionesComunes.ObtenerTransporte(Remito.Rows[0]["TranspId"].ToString());
 			
 			/*
 			 Aca va la otra parte donde se arregla la base y se colocan los valore de la base de datos de contactos
@@ -2538,6 +2477,7 @@ Costo
 			//Variable Memo con los datos de la empresa
 			Clie.memoVarios = Convert.ToString (Remito.Rows[0]["Info"] );;
 			
+
 			Clie.GLN = Convert.ToString (Remito.Rows[0]["GLN"] );;
 			
 		
@@ -2679,7 +2619,58 @@ Costo
 		*/
 		}
 		
-		
+		/// <summary>
+		/// Obtiene los cheques
+		/// </summary>
+		/// <returns>Un Array de Cheques</returns>
+		public static VariablesPropias.VariablesPropias.vpCheque[]  ObtenerCheque (string strIDRecibo)
+		{
+			//Conecta a la Base de datos segun ruta guardada
+			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseCheques"].ToString());
+			
+			//Hace la consulta asumiendo que el cliente esta activo
+			ConexionAccess2007.Consultar("Cheque", "*","IDRecibo = '" + strIDRecibo + "'", "IDRecibo" );
+			
+			//Nueva Tabla
+            DataTable Remito = new DataTable();
+ 			//Cargo la tabla con los datos de la Base de Datos
+            Remito = ConexionAccess2007.Table;
+			
+            
+            
+			
+			VariablesPropias.VariablesPropias.vpCheque[] Cheques = new VariablesPropias.VariablesPropias.vpCheque[Remito.Rows.Count-1];
+			
+			//try {
+				
+				
+				for (int i = 0; i < Remito.Rows.Count -1; i++) {
+					
+					Cheques[i].strIDCheque =  Convert.ToString (Remito.Rows[i]["IDCheque"] );
+					Cheques[i].dtFechaEmision =  Convert.ToDateTime (Remito.Rows[i]["FechaEmision"] );
+					Cheques[i].dtFechaPago =  Convert.ToDateTime (Remito.Rows[i]["FechaPago"] );
+					Cheques[i].dtFechaIngreso =  Convert.ToDateTime (Remito.Rows[i]["FechaIngreso"] );
+					//Cheques[i].dtFechaDeposito =  Convert.ToDateTime (Remito.Rows[i]["FechaDeposito"] );
+					Cheques[i].curImporte =  Convert.ToDecimal (Remito.Rows[i]["Importe"] );
+					Cheques[i].curImporteUSD =  Convert.ToDecimal (Remito.Rows[i]["ImporteUSD"] );
+					Cheques[i].strIDCliente =  Convert.ToString (Remito.Rows[i]["IDCliente"] );
+					Cheques[i].strIDRecibo =  Convert.ToString (Remito.Rows[i]["IDRecibo"] );
+					Cheques[i].dblNumCheque = Convert.ToDouble (Remito.Rows[i]["IDCheque"].ToString().Substring(10,8));
+					//Cheques[i]. =  Convert.ToString (Remito.Rows[i]["Estado"] );
+					
+
+					
+				}
+				
+				
+				
+				//Desconecto para no tener problemas
+				ConexionAccess2007.Desconectar ();
+				
+				//Cargo los datos en la funcion
+				return  Cheques;
+			
+		}
 		
 		
 		
@@ -2813,12 +2804,213 @@ IDRecibo
 		 */
 		
 		
+		/// <summary>
+		/// Obtiene los Interdepositos
+		/// </summary>
+		/// <returns>Un Array de Cheques</returns>
+		public static VariablesPropias.VariablesPropias.vpInterdeposito[]  ObtenerInterdeposito (string strIDRecibo)
+		{
+			//Conecta a la Base de datos segun ruta guardada
+			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseInterdepositos"].ToString());
+			
+			//Hace la consulta asumiendo que el cliente esta activo
+			ConexionAccess2007.Consultar("Interdepositos", "*","IDRecibo = '" + strIDRecibo + "'", "IDRecibo" );
+			
+			//Nueva Tabla
+            DataTable Remito = new DataTable();
+ 			//Cargo la tabla con los datos de la Base de Datos
+            Remito = ConexionAccess2007.Table;
+			
 		
+			VariablesPropias.VariablesPropias.vpInterdeposito[] Interdepositos = new VariablesPropias.VariablesPropias.vpInterdeposito[Remito.Rows.Count-1];
+			
+						
+				
+				for (int i = 0; i < Remito.Rows.Count -1; i++) 
+				{
+					
+					Interdepositos[i].dblIDInterdeposito =  Convert.ToDouble (Remito.Rows[i]["ID"] );
+					Interdepositos[i].dtFechaEmision =  Convert.ToDateTime (Remito.Rows[i]["Fecha"] );
+					Interdepositos[i].dtFechaPago =  Convert.ToDateTime (Remito.Rows[i]["Fecha"] );
+					Interdepositos[i].dtFechaIngreso =  Convert.ToDateTime (Remito.Rows[i]["FechaIngreso"] );
+					
+					Interdepositos[i].strBanco =  Convert.ToString (Remito.Rows[i]["BancoPagador"] );
+					Interdepositos[i].strSucursal =  Convert.ToString (Remito.Rows[i]["BancoPagadorSuc"] );
+					Interdepositos[i].strBancoDestino =  Convert.ToString (Remito.Rows[i]["BancoRecibidor"] );
+					
+					Interdepositos[i].curImporte =  Convert.ToDecimal (Remito.Rows[i]["Importe"] );
+					//Interdepositos[i].curImporteUSD =  Convert.ToDecimal (Remito.Rows[i]["ImporteUSD"] );
+					Interdepositos[i].strIDCliente =  Convert.ToString (Remito.Rows[i]["IDCliente"] );
+					Interdepositos[i].strIDRecibo =  Convert.ToString (Remito.Rows[i]["IDRecibo"] );
+					
+				}
+				
+				
+				
+				//Desconecto para no tener problemas
+				ConexionAccess2007.Desconectar ();
+				
+				//Cargo los datos en la funcion
+				return  Interdepositos;
+			
+		}		
 		
 		
 
 #endregion
 	
+#region TRANSPORTE
+	public static BindingSource FuenteObtenerTransporte()
+		{
+			//Conecta a la Base de datos segun ruta guardada
+			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseDeDatos"].ToString());
+			
+			//Hace la consulta segun criterio
+			//Uso el ToString("MM/dd/yyyy") porque es la unica forma que tome los valores como acepta SQL
+			ConexionAccess2007.Consultar("Transporte", 
+			                             "TranspId, TranspNombre, TranspDireccion, TranspLocalidad, " +
+										 "TranspTelefono1, TranspTelefono2, TranspTelefono3, TranspTelefono4, " +
+										 "TranspTelefono5, TranspFax, Horario, Destinos",
+			                              "TranspId");
+
+/*
+ TranspId
+TranspNombre
+TranspDireccion
+TranspLocalidad
+TranspTelefono1
+TranspTelefono2
+TranspTelefono3
+TranspTelefono4
+TranspTelefono5
+TranspFax
+Horario
+Destinos
+
+ */
+			 
+			//Desconecto para no tener problemas
+			ConexionAccess2007.Desconectar ();
+			
+			//Cargo los datos en el grid
+			return ConexionAccess2007.Source;
+	}	
+
+	
+/// <summary>
+/// Obtiene el Transporte y lo vuelca en una estructura vpTransporte
+/// </summary>
+/// <param name="strId"></param>
+/// <returns></returns>
+		public static VariablesPropias.VariablesPropias.vpTransporte ObtenerTransporte(string strId)
+		{
+			
+			//Creo una variable del mismo tipo que la "funcion" para que despues la descarge con un return
+			VariablesPropias.VariablesPropias.vpTransporte Transp = new VariablesPropias.VariablesPropias.vpTransporte();
+			
+			
+			
+
+			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseDeDatos"].ToString());
+			
+			//tener en cuenta que primero va la condicion y luego el Order by
+            ConexionAccess2007.Consultar("Transporte", "*", "TranspId = " + strId , "TranspNombre" );
+			
+            //Nueva Tabla
+            DataTable Remito = new DataTable();
+ 			//Cargo la tabla con los datos de la Base de Datos
+            Remito = ConexionAccess2007.Table;
+
+			//Cargo los datos en una vp (Variable propia) para despues pasarlo a cada parte
+			//lo hago asi para que luego si cambio algo no se joda todo.
+			Transp.intTranspId = Convert.ToInt32( Remito.Rows[0]["TranspId"].ToString());
+			Transp.strNombre  = Remito.Rows[0]["TranspNombre"].ToString();
+			Transp.strDireccion = Remito.Rows [0]["TranspDireccion"].ToString();
+			Transp.strHorario = Remito.Rows[0]["Horario"].ToString();
+			
+			 //Cerrar la conexion
+            ConexionAccess2007.Desconectar();
+			
+			
+		return Transp;	
+		}		
+		
+
+
+#endregion
+
+
+#region  NOTA DE DEBITO
+
+/**/
+
+
+		/// <summary>
+		/// Obtiene las Notas de Debito de un recibo
+		/// </summary>
+		/// <param name="strIDRecibo"></param>
+		/// <returns>Array de notas de debito</returns>
+		public static VariablesPropias.VariablesPropias.vpFactura[]  ObtenerNotaDebito (string strIDRecibo)
+		{
+			//TODO: Necesito cambiar esto por su base de datos correspondiente
+			
+			//Conecta a la Base de datos segun ruta guardada
+			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseDeDatos"].ToString());
+			
+			//Hace la consulta asumiendo que el cliente esta activo
+			ConexionAccess2007.Consultar("NotaDebito", "*","IDRecibo = '" + strIDRecibo + "'", "IDRecibo" );
+			
+			//Nueva Tabla
+            DataTable Remito = new DataTable();
+ 			//Cargo la tabla con los datos de la Base de Datos
+            Remito = ConexionAccess2007.Table;
+			
+		
+			VariablesPropias.VariablesPropias.vpFactura[] NotaDebito = new VariablesPropias.VariablesPropias.vpFactura[Remito.Rows.Count-1];
+			
+/*
+ 
+ 
+ 
+ 
+ */
+				
+				for (int i = 0; i < Remito.Rows.Count -1; i++) 
+				{
+					/*
+					NotaDebito[i].dblIDInterdeposito =  Convert.ToDouble (Remito.Rows[i]["ID"] );
+					NotaDebito[i].dtFechaEmision =  Convert.ToDateTime (Remito.Rows[i]["Fecha"] );
+					NotaDebito[i].dtFechaPago =  Convert.ToDateTime (Remito.Rows[i]["Fecha"] );
+					NotaDebito[i].dtFechaIngreso =  Convert.ToDateTime (Remito.Rows[i]["FechaIngreso"] );
+					
+					NotaDebito[i].strBanco =  Convert.ToString (Remito.Rows[i]["BancoPagador"] );
+					NotaDebito[i].strSucursal =  Convert.ToString (Remito.Rows[i]["BancoPagadorSuc"] );
+					NotaDebito[i].strBancoDestino =  Convert.ToString (Remito.Rows[i]["BancoRecibidor"] );
+					
+					NotaDebito[i].curImporte =  Convert.ToDecimal (Remito.Rows[i]["Importe"] );
+					//Interdepositos[i].curImporteUSD =  Convert.ToDecimal (Remito.Rows[i]["ImporteUSD"] );
+					NotaDebito[i].strIDCliente =  Convert.ToString (Remito.Rows[i]["IDCliente"] );
+					NotaDebito[i].strIDRecibo =  Convert.ToString (Remito.Rows[i]["IDRecibo"] );
+					*/
+				}
+				
+				
+				
+				//Desconecto para no tener problemas
+				ConexionAccess2007.Desconectar ();
+				
+				//Cargo los datos en la funcion
+				return  NotaDebito;
+			
+		}		
+		
+
+
+#endregion
+
+#region NOTA DE CREDITO
+
+#endregion
 		
 	}
 }

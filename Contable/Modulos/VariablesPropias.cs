@@ -20,7 +20,7 @@ using System.Xml.Linq;
 namespace VariablesPropias
 	
 {
-	public class VariablesPropias
+	public static class VariablesPropias
 	{
 
 
@@ -61,12 +61,15 @@ namespace VariablesPropias
 			public double dblNumInterdeposito;
 			public System.DateTime dtFechaEmision;
 			public System.DateTime dtFechaPago;
+			public System.DateTime dtFechaIngreso;
 			public string strBanco;
 			public string strSucursal;
 			public string strBancoDestino;
 			public string strCliente;
 			public string strIDCliente;
 			public decimal curImporte;
+			public string strIDRecibo;
+			
 		}
 
 		public struct vpClientes
@@ -145,6 +148,7 @@ namespace VariablesPropias
 			public vpProducto Producto3;
 			public vpProducto Producto4;
 			public vpProducto Producto5;
+			
 			public decimal curSubTotal;
 			public decimal curIVA;
 			public int IdIVA;
