@@ -394,12 +394,18 @@ namespace Contable
 	
 		}
 		
-		
+#endregion		
 #region Actualizaciones
 
 		void ImpuestosToolStripMenuItemClick(object sender, EventArgs e)
 		{
 			frmImpuestos frm = new frmImpuestos();
+			frm.MdiParent = this;
+			frm.Show();
+		}
+		void PruebaDeImpresionToolStripMenuItemClick(object sender, EventArgs e)
+		{
+	frmPruebaDeImpresion   frm = new frmPruebaDeImpresion();
 			frm.MdiParent = this;
 			frm.Show();
 		}	
@@ -409,7 +415,7 @@ namespace Contable
 
 		
 
-#endregion
+
 		
 		
 	}
