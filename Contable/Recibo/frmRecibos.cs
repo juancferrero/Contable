@@ -43,7 +43,9 @@ namespace Contable
             cmbRazonSocial.DataSource = OperacionesComunes.FuenteObtenerClientes();
             cmbRazonSocial.DisplayMember = "Nombre";
 		}
-			
+
+
+		
 		void CmbRazonSocialDropDown(object sender, EventArgs e)
 		{
 			
@@ -72,12 +74,14 @@ namespace Contable
 					
 				ObtenerChequesPendientes(lblIDCliente.Text);
 				
-				//Utilizo una funcion para cargar los importes
-				lblSubTotal.Text = ObtenerDeuda().ToString();
+				
 			
 				//Utilizo una funcion para cargar los importes
 				lblCobranzaTotal.Text = ObtenerCredito().ToString();
 				
+				
+				//Utilizo una funcion para cargar los importes
+				lblSubTotal.Text = ObtenerDeuda().ToString();
 				}
 			
 		}
@@ -332,26 +336,31 @@ public  decimal ObtenerCredito()
 		{
 			//Recalcula los valores de deuda
 			lblSubTotal.Text= ObtenerDeuda().ToString();
+			lblDiferenciaTotal.Text = (ObtenerCredito()-ObtenerDeuda()).ToString();
 		}
 		void GridNDRowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
 		{
 			//Recalcula los valores de deuda
 			lblSubTotal.Text= ObtenerDeuda().ToString();
+			lblDiferenciaTotal.Text = (ObtenerCredito()-ObtenerDeuda()).ToString();
 		}
 		void GridChequeRowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
 		{
 			//Recalcula los valores de credito
 			lblCobranzaTotal.Text= ObtenerCredito().ToString();
+			lblDiferenciaTotal.Text = (ObtenerCredito()-ObtenerDeuda()).ToString();
 		}
 		void GridInterdepositoRowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
 		{
 			//Recalcula los valores de credito
 			lblCobranzaTotal.Text= ObtenerCredito().ToString();
+			lblDiferenciaTotal.Text = (ObtenerCredito()-ObtenerDeuda()).ToString();
 		}
 		void GridNCRowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
 		{
 			//Recalcula los valores de credito
 			lblCobranzaTotal.Text= ObtenerCredito().ToString();
+			lblDiferenciaTotal.Text = (ObtenerCredito()-ObtenerDeuda()).ToString();
 		}
 #endregion
 		
@@ -404,8 +413,10 @@ public  decimal ObtenerCredito()
 			//Condicion para saber que hay CHEQUES a cargar
 			if (gridCheque.Rows.Count > 1) {
 				
-				//De esta manera inicializo el array de los cheques
+			//De esta manera inicializo el array de los cheques
 			reci.Cheques = new VariablesPropias.VariablesPropias.vpCheque[gridCheque.Rows.Count-1];
+			
+			//Cargo cada uno de los Cheques en el Array de Cheques
 			for (int i = 0; i < gridCheque.Rows.Count-1; i++) {
 				//Uso el substring para sacar el numero del cheque
 				reci.Cheques[i].strIDCheque = gridCheque["IdCheque", i].Value.ToString();
@@ -425,9 +436,11 @@ public  decimal ObtenerCredito()
 			if (gridInterdeposito.Rows.Count > 1) 
 			{
 				
-				//De esta manera inicializo el array de los cheques
+			//De esta manera inicializo el array de los Interdepositos
 			reci.Interdepositos = new VariablesPropias.VariablesPropias.vpInterdeposito[gridInterdeposito.Rows.Count-1];
-			for (int i = 0; i < gridInterdeposito.Rows.Count-1; i++) 
+			
+			//Cargo cada uno de los Cheques en el Array de Interdepositos
+			for (int i = 0; i < gridInterdeposito.Rows.Count-1; i++)
 				{
 				reci.Interdepositos[i].dblIDInterdeposito = Convert.ToDouble(gridInterdeposito["ID", i].Value);
 				reci.Interdepositos[i].dblNumInterdeposito = Convert.ToDouble(gridInterdeposito["ID", i].Value);
@@ -448,7 +461,9 @@ public  decimal ObtenerCredito()
 			
 			//De esta manera inicializo el array de las Notas de credito
 			reci.NCs = new VariablesPropias.VariablesPropias.vpFactura[gridNC.Rows.Count - 1];
-			for (int i = 0; i < gridNC.Rows.Count-1; i++) 
+			
+			//Cargo cada uno de los Cheques en el Array de Notas de Credito
+			for (int i = 0; i < gridNC.Rows.Count-1; i++)
 				{
 				reci.NCs[i].strComprobante = gridNC["Documento", i].Value.ToString();
 				reci.NCs[i].dtFecha = Convert.ToDateTime(gridNC["Fecha", i].Value.ToString());
@@ -469,9 +484,11 @@ public  decimal ObtenerCredito()
 			{
 				
 				
-				//De esta manera inicializo el array de Facturas
+			//De esta manera inicializo el array de Facturas
 			reci.Facturas = new VariablesPropias.VariablesPropias.vpFactura[gridFact.Rows.Count - 1];
-			for (int i = 0; i < gridFact.Rows.Count-1; i++) 
+			
+			//Cargo cada uno de los Cheques en el Array de Facturas
+			for (int i = 0; i < gridFact.Rows.Count-1; i++)
 				{
 				reci.Facturas[i].dblNumFact = Convert.ToDouble (gridFact["Documento", i].Value.ToString().Substring(10,8));
 				reci.Facturas[i].strComprobante = gridFact["Documento", i].Value.ToString();
@@ -483,8 +500,11 @@ public  decimal ObtenerCredito()
 			
 			if (gridFactB.Rows.Count > 1) 
 			{
-			//De esta manera inicializo el array de Facturas
+				
+			//De esta manera inicializo el array de Facturas B
 			reci.FacturasB = new VariablesPropias.VariablesPropias.vpFactura[gridFactB.Rows.Count - 1];
+			
+			//Cargo cada uno de las Facturas B en el Array de Facturas B
 			for (int i = 0; i < gridFactB.Rows.Count-1; i++) 
 				{
 				reci.FacturasB[i].dblNumFact = Convert.ToDouble (gridFactB["Documento", i].Value.ToString().Substring(10,8));
@@ -500,9 +520,10 @@ public  decimal ObtenerCredito()
 			if (gridND.Rows.Count > 1) 
 			{
 				
-				
-				//De esta manera inicializo el array de Facturas
+			//De esta manera inicializo el array de Notas de Debito
 			reci.NDs = new VariablesPropias.VariablesPropias.vpFactura[gridND.Rows.Count - 1];
+			
+			//Cargo cada uno de las Notas de Debitos en el Array de Notas de Debitos
 			for (int i = 0; i < gridND.Rows.Count-1; i++) 
 				{
 				//reci.Facturas[i].dblNumFact = Convert.ToDouble (gridFact["Documento", i].Value.ToString());
@@ -573,8 +594,43 @@ reci.curIVA = Convert.ToDecimal(txtRetenIVA.Text);
 			//Funcion que lo que hace es guardar el objeto VpReci
 			OperacionesComunes.Guardar(CargarRecibo());
 		}
+		
+		
+		
+#region RETENCIONES
+
+		void TxtRetenIIBTextChanged(object sender, EventArgs e)
+		{
+			txtRetenciones.Text = (Convert.ToDecimal(txtRetenIVA.Text) + 
+			                       Convert.ToDecimal(txtRetenIIB.Text) +
+			                       Convert.ToDecimal(txtRetenGanancias.Text) +
+			                       Convert.ToDecimal(txtRetenCargasSoc.Text)).ToString();
+			                       
+		}
+		void TxtRetenIVATextChanged(object sender, EventArgs e)
+		{
+			txtRetenciones.Text = (Convert.ToDecimal(txtRetenIVA.Text) + 
+			                       Convert.ToDecimal(txtRetenIIB.Text) +
+			                       Convert.ToDecimal(txtRetenGanancias.Text) +
+			                       Convert.ToDecimal(txtRetenCargasSoc.Text)).ToString();
+		}
+		void TxtRetenGananciasTextChanged(object sender, EventArgs e)
+		{
+			txtRetenciones.Text = (Convert.ToDecimal(txtRetenIVA.Text) + 
+			                       Convert.ToDecimal(txtRetenIIB.Text) +
+			                       Convert.ToDecimal(txtRetenGanancias.Text) +
+			                       Convert.ToDecimal(txtRetenCargasSoc.Text)).ToString();
+		}
+		void TxtRetenCargasSocTextChanged(object sender, EventArgs e)
+		{
+			txtRetenciones.Text = (Convert.ToDecimal(txtRetenIVA.Text) + 
+			                       Convert.ToDecimal(txtRetenIIB.Text) +
+			                       Convert.ToDecimal(txtRetenGanancias.Text) +
+			                       Convert.ToDecimal(txtRetenCargasSoc.Text)).ToString();
+		}
 	
-	
+#endregion
+
 
 	}
 }

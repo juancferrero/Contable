@@ -155,6 +155,8 @@ namespace Contable
 			this.tabControl2 = new System.Windows.Forms.TabControl();
 			this.tabFacturasA = new System.Windows.Forms.TabPage();
 			this.gridFact = new System.Windows.Forms.DataGridView();
+			this.tabFacturaB = new System.Windows.Forms.TabPage();
+			this.gridFactB = new System.Windows.Forms.DataGridView();
 			this.tabND = new System.Windows.Forms.TabPage();
 			this.gridND = new System.Windows.Forms.DataGridView();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -193,14 +195,14 @@ namespace Contable
 			this.label2 = new System.Windows.Forms.Label();
 			this.txtEfectivo = new System.Windows.Forms.TextBox();
 			this.lblCobranzaTotal = new System.Windows.Forms.Label();
-			this.tabFacturaB = new System.Windows.Forms.TabPage();
-			this.gridFactB = new System.Windows.Forms.DataGridView();
 			this.Frame1.SuspendLayout();
 			this.frCliente.SuspendLayout();
 			this.Toolbar1.SuspendLayout();
 			this.tabControl2.SuspendLayout();
 			this.tabFacturasA.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridFact)).BeginInit();
+			this.tabFacturaB.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.gridFactB)).BeginInit();
 			this.tabND.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridND)).BeginInit();
 			this.tabControl1.SuspendLayout();
@@ -215,8 +217,6 @@ namespace Contable
 			this.frameVarios.SuspendLayout();
 			this.tabPage2.SuspendLayout();
 			this.Frame2.SuspendLayout();
-			this.tabFacturaB.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.gridFactB)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// cmdClienteNuevo
@@ -645,6 +645,24 @@ namespace Contable
 			this.gridFact.TabIndex = 146;
 			this.gridFact.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.GridFactRowsRemoved);
 			// 
+			// tabFacturaB
+			// 
+			this.tabFacturaB.Controls.Add(this.gridFactB);
+			this.tabFacturaB.Location = new System.Drawing.Point(4, 22);
+			this.tabFacturaB.Name = "tabFacturaB";
+			this.tabFacturaB.Size = new System.Drawing.Size(408, 195);
+			this.tabFacturaB.TabIndex = 2;
+			this.tabFacturaB.Text = "Factura B";
+			this.tabFacturaB.UseVisualStyleBackColor = true;
+			// 
+			// gridFactB
+			// 
+			this.gridFactB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.gridFactB.Location = new System.Drawing.Point(3, 2);
+			this.gridFactB.Name = "gridFactB";
+			this.gridFactB.Size = new System.Drawing.Size(402, 190);
+			this.gridFactB.TabIndex = 147;
+			// 
 			// tabND
 			// 
 			this.tabND.Controls.Add(this.gridND);
@@ -995,6 +1013,7 @@ namespace Contable
 			this.txtRetenIVA.TabIndex = 139;
 			this.txtRetenIVA.Text = "0";
 			this.txtRetenIVA.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.txtRetenIVA.TextChanged += new System.EventHandler(this.TxtRetenIVATextChanged);
 			// 
 			// txtRetenCargasSoc
 			// 
@@ -1010,6 +1029,7 @@ namespace Contable
 			this.txtRetenCargasSoc.TabIndex = 138;
 			this.txtRetenCargasSoc.Text = "0";
 			this.txtRetenCargasSoc.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.txtRetenCargasSoc.TextChanged += new System.EventHandler(this.TxtRetenCargasSocTextChanged);
 			// 
 			// txtRetenGanancias
 			// 
@@ -1025,6 +1045,7 @@ namespace Contable
 			this.txtRetenGanancias.TabIndex = 137;
 			this.txtRetenGanancias.Text = "0";
 			this.txtRetenGanancias.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.txtRetenGanancias.TextChanged += new System.EventHandler(this.TxtRetenGananciasTextChanged);
 			// 
 			// txtRetenIIB
 			// 
@@ -1040,6 +1061,7 @@ namespace Contable
 			this.txtRetenIIB.TabIndex = 136;
 			this.txtRetenIIB.Text = "0";
 			this.txtRetenIIB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+			this.txtRetenIIB.TextChanged += new System.EventHandler(this.TxtRetenIIBTextChanged);
 			// 
 			// Label8
 			// 
@@ -1128,24 +1150,6 @@ namespace Contable
 			this.lblCobranzaTotal.Text = "0,00";
 			this.lblCobranzaTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
-			// tabFacturaB
-			// 
-			this.tabFacturaB.Controls.Add(this.gridFactB);
-			this.tabFacturaB.Location = new System.Drawing.Point(4, 22);
-			this.tabFacturaB.Name = "tabFacturaB";
-			this.tabFacturaB.Size = new System.Drawing.Size(408, 195);
-			this.tabFacturaB.TabIndex = 2;
-			this.tabFacturaB.Text = "Factura B";
-			this.tabFacturaB.UseVisualStyleBackColor = true;
-			// 
-			// gridFactB
-			// 
-			this.gridFactB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.gridFactB.Location = new System.Drawing.Point(3, 2);
-			this.gridFactB.Name = "gridFactB";
-			this.gridFactB.Size = new System.Drawing.Size(402, 190);
-			this.gridFactB.TabIndex = 147;
-			// 
 			// frmReciboAltas
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1183,6 +1187,8 @@ namespace Contable
 			this.tabControl2.ResumeLayout(false);
 			this.tabFacturasA.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.gridFact)).EndInit();
+			this.tabFacturaB.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.gridFactB)).EndInit();
 			this.tabND.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.gridND)).EndInit();
 			this.tabControl1.ResumeLayout(false);
@@ -1199,8 +1205,6 @@ namespace Contable
 			this.tabPage2.ResumeLayout(false);
 			this.Frame2.ResumeLayout(false);
 			this.Frame2.PerformLayout();
-			this.tabFacturaB.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.gridFactB)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
