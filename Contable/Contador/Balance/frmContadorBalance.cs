@@ -91,7 +91,8 @@ namespace Contable.Contador.Balance
 		    return ConexionAccess2007.Table;
 		}
 		void Button2Click(object sender, EventArgs e)
-		{
+		{
+
 			DataTable Juancito = ConsultaPlanDeCuentas();
 			
 			gridBalance.Columns.Add("","");
