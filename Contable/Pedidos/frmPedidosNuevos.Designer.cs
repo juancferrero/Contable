@@ -73,24 +73,27 @@ namespace Contable
 			this.tbEditar = new System.Windows.Forms.ToolStripButton();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabMercaderia = new System.Windows.Forms.TabPage();
-			this.tabPedido = new System.Windows.Forms.TabPage();
-			this.tabPage3 = new System.Windows.Forms.TabPage();
-			this.richNotas = new System.Windows.Forms.RichTextBox();
-			this.Frame4 = new System.Windows.Forms.GroupBox();
-			this.MonthCalendar1 = new System.Windows.Forms.MonthCalendar();
-			this.lblFechaEntrega = new System.Windows.Forms.Label();
 			this.dgwMercaderia = new System.Windows.Forms.DataGridView();
+			this.tabPedido = new System.Windows.Forms.TabPage();
 			this.dgwPedido = new System.Windows.Forms.DataGridView();
+			this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.Frame4 = new System.Windows.Forms.GroupBox();
+			this.dtFechaEntrega = new System.Windows.Forms.MonthCalendar();
+			this.lblFechaEntrega = new System.Windows.Forms.Label();
+			this.richNotas = new System.Windows.Forms.RichTextBox();
 			this.Frame2.SuspendLayout();
 			this.Frame1.SuspendLayout();
 			this.Toolbar1.SuspendLayout();
 			this.tabControl1.SuspendLayout();
 			this.tabMercaderia.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgwMercaderia)).BeginInit();
 			this.tabPedido.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.dgwPedido)).BeginInit();
 			this.tabPage3.SuspendLayout();
 			this.Frame4.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dgwMercaderia)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.dgwPedido)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// Frame2
@@ -188,6 +191,7 @@ namespace Contable
 			this.tbGuardar.Size = new System.Drawing.Size(26, 26);
 			this.tbGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
 			this.tbGuardar.ToolTipText = "Guardar";
+			this.tbGuardar.Click += new System.EventHandler(this.TbGuardarClick);
 			// 
 			// _Toolbar1_Button4
 			// 
@@ -256,6 +260,15 @@ namespace Contable
 			this.tabMercaderia.Text = "Mercaderia";
 			this.tabMercaderia.UseVisualStyleBackColor = true;
 			// 
+			// dgwMercaderia
+			// 
+			this.dgwMercaderia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgwMercaderia.Location = new System.Drawing.Point(13, 54);
+			this.dgwMercaderia.Name = "dgwMercaderia";
+			this.dgwMercaderia.Size = new System.Drawing.Size(967, 321);
+			this.dgwMercaderia.TabIndex = 25;
+			this.dgwMercaderia.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgwMercaderiaRowHeaderMouseDoubleClick);
+			// 
 			// tabPedido
 			// 
 			this.tabPedido.Controls.Add(this.dgwPedido);
@@ -266,6 +279,33 @@ namespace Contable
 			this.tabPedido.TabIndex = 1;
 			this.tabPedido.Text = "Pedido";
 			this.tabPedido.UseVisualStyleBackColor = true;
+			// 
+			// dgwPedido
+			// 
+			this.dgwPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgwPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.colID,
+			this.colNombre,
+			this.colCantidad});
+			this.dgwPedido.Location = new System.Drawing.Point(3, 6);
+			this.dgwPedido.Name = "dgwPedido";
+			this.dgwPedido.Size = new System.Drawing.Size(977, 369);
+			this.dgwPedido.TabIndex = 26;
+			// 
+			// colID
+			// 
+			this.colID.HeaderText = "ID";
+			this.colID.Name = "colID";
+			// 
+			// colNombre
+			// 
+			this.colNombre.HeaderText = "Nombre";
+			this.colNombre.Name = "colNombre";
+			// 
+			// colCantidad
+			// 
+			this.colCantidad.HeaderText = "Cantidad";
+			this.colCantidad.Name = "colCantidad";
 			// 
 			// tabPage3
 			// 
@@ -279,35 +319,27 @@ namespace Contable
 			this.tabPage3.Text = "Varios";
 			this.tabPage3.UseVisualStyleBackColor = true;
 			// 
-			// richNotas
-			// 
-			this.richNotas.Location = new System.Drawing.Point(351, 28);
-			this.richNotas.Name = "richNotas";
-			this.richNotas.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-			this.richNotas.Size = new System.Drawing.Size(585, 185);
-			this.richNotas.TabIndex = 24;
-			this.richNotas.Text = "";
-			// 
 			// Frame4
 			// 
 			this.Frame4.BackColor = System.Drawing.SystemColors.Control;
-			this.Frame4.Controls.Add(this.MonthCalendar1);
+			this.Frame4.Controls.Add(this.dtFechaEntrega);
 			this.Frame4.Controls.Add(this.lblFechaEntrega);
+			this.Frame4.Enabled = false;
 			this.Frame4.ForeColor = System.Drawing.SystemColors.ControlText;
 			this.Frame4.Location = new System.Drawing.Point(43, 28);
 			this.Frame4.Name = "Frame4";
 			this.Frame4.Padding = new System.Windows.Forms.Padding(0);
 			this.Frame4.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.Frame4.Size = new System.Drawing.Size(201, 233);
+			this.Frame4.Size = new System.Drawing.Size(260, 233);
 			this.Frame4.TabIndex = 25;
 			this.Frame4.TabStop = false;
 			this.Frame4.Text = "Fecha de Entrega";
 			// 
-			// MonthCalendar1
+			// dtFechaEntrega
 			// 
-			this.MonthCalendar1.Location = new System.Drawing.Point(9, 50);
-			this.MonthCalendar1.Name = "MonthCalendar1";
-			this.MonthCalendar1.TabIndex = 24;
+			this.dtFechaEntrega.Location = new System.Drawing.Point(9, 50);
+			this.dtFechaEntrega.Name = "dtFechaEntrega";
+			this.dtFechaEntrega.TabIndex = 24;
 			// 
 			// lblFechaEntrega
 			// 
@@ -321,21 +353,14 @@ namespace Contable
 			this.lblFechaEntrega.Size = new System.Drawing.Size(113, 17);
 			this.lblFechaEntrega.TabIndex = 23;
 			// 
-			// dgwMercaderia
+			// richNotas
 			// 
-			this.dgwMercaderia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgwMercaderia.Location = new System.Drawing.Point(13, 54);
-			this.dgwMercaderia.Name = "dgwMercaderia";
-			this.dgwMercaderia.Size = new System.Drawing.Size(967, 321);
-			this.dgwMercaderia.TabIndex = 25;
-			// 
-			// dgwPedido
-			// 
-			this.dgwPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgwPedido.Location = new System.Drawing.Point(3, 6);
-			this.dgwPedido.Name = "dgwPedido";
-			this.dgwPedido.Size = new System.Drawing.Size(977, 369);
-			this.dgwPedido.TabIndex = 26;
+			this.richNotas.Location = new System.Drawing.Point(351, 28);
+			this.richNotas.Name = "richNotas";
+			this.richNotas.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+			this.richNotas.Size = new System.Drawing.Size(585, 185);
+			this.richNotas.TabIndex = 24;
+			this.richNotas.Text = "";
 			// 
 			// frmPedidosNuevos
 			// 
@@ -361,11 +386,11 @@ namespace Contable
 			this.Toolbar1.PerformLayout();
 			this.tabControl1.ResumeLayout(false);
 			this.tabMercaderia.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dgwMercaderia)).EndInit();
 			this.tabPedido.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.dgwPedido)).EndInit();
 			this.tabPage3.ResumeLayout(false);
 			this.Frame4.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.dgwMercaderia)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.dgwPedido)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -378,10 +403,13 @@ namespace Contable
 		internal System.Windows.Forms.DataGridView dgwMercaderia;
 		internal System.Windows.Forms.DataGridView dgwPedido;
 			#endregion
-		internal System.Windows.Forms.MonthCalendar MonthCalendar1;
+		internal System.Windows.Forms.MonthCalendar dtFechaEntrega;
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.TabPage tabMercaderia;
 		private System.Windows.Forms.TabPage tabPedido;
 		private System.Windows.Forms.TabPage tabPage3;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colID;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
 	}
 }
