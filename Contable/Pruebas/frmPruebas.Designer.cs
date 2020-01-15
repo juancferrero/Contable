@@ -49,6 +49,8 @@ namespace Contable.Pruebas
 		private System.Windows.Forms.TextBox txtNumReciboNvo;
 		private System.Windows.Forms.Label label8;
 		private System.Windows.Forms.GroupBox groupBox1;
+		private System.Windows.Forms.Button button9;
+		private System.Windows.Forms.Button button10;
 		
 		/// <summary>
 		/// Disposes resources used by the form.
@@ -73,6 +75,7 @@ namespace Contable.Pruebas
 		{
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
+			this.button9 = new System.Windows.Forms.Button();
 			this.lblSign = new System.Windows.Forms.Label();
 			this.lblToken = new System.Windows.Forms.Label();
 			this.button3 = new System.Windows.Forms.Button();
@@ -106,6 +109,7 @@ namespace Contable.Pruebas
 			this.label7 = new System.Windows.Forms.Label();
 			this.tabPage5 = new System.Windows.Forms.TabPage();
 			this.button8 = new System.Windows.Forms.Button();
+			this.button10 = new System.Windows.Forms.Button();
 			this.tabControl1.SuspendLayout();
 			this.tabPage1.SuspendLayout();
 			this.tabPage2.SuspendLayout();
@@ -131,6 +135,8 @@ namespace Contable.Pruebas
 			// 
 			// tabPage1
 			// 
+			this.tabPage1.Controls.Add(this.button10);
+			this.tabPage1.Controls.Add(this.button9);
 			this.tabPage1.Controls.Add(this.lblSign);
 			this.tabPage1.Controls.Add(this.lblToken);
 			this.tabPage1.Controls.Add(this.button3);
@@ -142,6 +148,16 @@ namespace Contable.Pruebas
 			this.tabPage1.TabIndex = 0;
 			this.tabPage1.Text = "AFIP";
 			this.tabPage1.UseVisualStyleBackColor = true;
+			// 
+			// button9
+			// 
+			this.button9.Location = new System.Drawing.Point(213, 219);
+			this.button9.Name = "button9";
+			this.button9.Size = new System.Drawing.Size(141, 48);
+			this.button9.TabIndex = 18;
+			this.button9.Text = "Agregar IDClie Interd";
+			this.button9.UseVisualStyleBackColor = true;
+			this.button9.Click += new System.EventHandler(this.Button9Click);
 			// 
 			// lblSign
 			// 
@@ -448,6 +464,16 @@ namespace Contable.Pruebas
 			this.button8.Text = "Borrar duplicados en la DB";
 			this.button8.UseVisualStyleBackColor = true;
 			this.button8.Click += new System.EventHandler(this.Button8Click);
+			// 
+			// button10
+			// 
+			this.button10.Location = new System.Drawing.Point(509, 201);
+			this.button10.Name = "button10";
+			this.button10.Size = new System.Drawing.Size(75, 23);
+			this.button10.TabIndex = 19;
+			this.button10.Text = "escribir texto";
+			this.button10.UseVisualStyleBackColor = true;
+			this.button10.Click += new System.EventHandler(this.Button10Click);
 			// 
 			// frmPruebas
 			// 

@@ -45,11 +45,21 @@ namespace Contable.Pruebas
 	               ("C:\\Users\\Juan Carlos\\Documents\\MyFile.txt");
 	            try
 	            {
-	                printFont = new Font("Arial", 10);
+	                
+	            	//Create a PrintPreviewDialog object
+					PrintPreviewDialog  previewDlg = new PrintPreviewDialog();
+	            	
+					printFont = new Font("Arial", 10);
 	                PrintDocument pd = new PrintDocument();
 	                pd.PrintPage += new PrintPageEventHandler
 	                   (this.pd_PrintPage);
-	                pd.Print();
+	                
+	                //Set Document property of PrintPreviewDialog
+					previewDlg.Document = pd;
+					//Display dialog
+					previewDlg.Show();
+	    
+					//pd.Print(); //Lo saco por ahora
 	            }
 	            finally
 	            {
@@ -66,7 +76,7 @@ namespace Contable.Pruebas
 		
 		
  // The PrintPage event is raised for each page to be printed.
-    private void pd_PrintPage(object sender, PrintPageEventArgs ev)
+    	private void pd_PrintPage(object sender, PrintPageEventArgs ev)
     {
         float linesPerPage = 0;
         float yPos = 0;
@@ -96,6 +106,8 @@ namespace Contable.Pruebas
         else
             ev.HasMorePages = false;
     }
+    
+    
 		void Button1Click(object sender, EventArgs e)
 		{
 		//Create a PrintPreviewDialog object
@@ -123,7 +135,12 @@ namespace Contable.Pruebas
         }
 		
 		
-		
+	
+
+		public void Juanito()
+		{
+			
+		}
 		
 		
 	}
