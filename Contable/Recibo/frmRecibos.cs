@@ -1,3 +1,12 @@
+/*
+ * Este Form es el encargado de que se carguen los recibos en la base de datos
+ * Debe manejar las bases de los clientes, facturas, cheques e interdepositos para poder generar el recibo
+ * Se debe relacionar todo mediante el numero de cliente para el acceso
+ * Los usuarios deben poder generar documentos para darle de baja a las facturas y ND hechas.
+ * La configuracion de este   
+ */
+
+
 
 using System;
 using System.Collections;
@@ -41,7 +50,7 @@ namespace Contable
 			
 			//Genera un datasource para pasarlo al combo
             cmbRazonSocial.DataSource = OperacionesComunes.FuenteObtenerClientes();
-            cmbRazonSocial.DisplayMember = "Nombre";
+            //cmbRazonSocial.DisplayMember = "Nombre";
 		}
 
 
@@ -51,7 +60,7 @@ namespace Contable
 			
             //Solo muestra la columna de NOMBRE
 			cmbRazonSocial.DisplayMember = "Nombre"; 
-
+			cmbRazonSocial.ValueMember = "Nombre";
             
 		}
 		
@@ -69,7 +78,7 @@ namespace Contable
 				
 				ObtenerNCPendientes(cmbRazonSocial.Text);	
 				
-				ObtenerInterdepPendientes(cmbRazonSocial.Text);	//TODO: Hacer esto por el ID del cliente
+				ObtenerInterdepPendientes(lblIDCliente.Text);	
 				
 					
 				ObtenerChequesPendientes(lblIDCliente.Text);
@@ -115,8 +124,7 @@ public void ObtenerFacturasPendientes(string NombreCliente)
 	ConexionAccess2007.Conectar(Convert.ToString (ConfigurationManager.AppSettings["BaseDeDatos"]));
 			
 	//Hace la consulta asumiendo que el cliente esta activo FC A
-	ConexionAccess2007.Consultar("Facturas", "Documento, Fecha, Saldo, ImporteFinal, ImporteFinalUSS", "Nombre ='"+ NombreCliente +"' AND Saldo <> '0'" ,"NumFact");
-			
+	ConexionAccess2007.Consultar("Facturas", "Documento, Fecha, Saldo, ImporteFinal, ImporteFinalUSS", "Nombre ='"+ NombreCliente +"' AND Saldo <> '0'" ,"NumFact");			
 	gridFact.DataSource = ConexionAccess2007.Source;
 	
 	//Cerrar la conexion
@@ -143,7 +151,7 @@ public void ObtenerNDPendientes(string NombreCliente)
 	ConexionAccess2007.Conectar(Convert.ToString (ConfigurationManager.AppSettings["BaseDeDatos"]));
 			
 	//Hace la consulta asumiendo que el cliente esta activo
-	ConexionAccess2007.Consultar("NotaDebito", "Documento, Fecha, Saldo, ImporteFinal, ImporteFinalUSS", "Nombre ='"+ NombreCliente +"' AND Saldo <> '0'" ,"NumFact");
+	ConexionAccess2007.Consultar("NotaDebito", "Documento, NumFact, Fecha, Saldo, ImporteFinal, ImporteFinalUSS", "Nombre ='"+ NombreCliente +"' AND Saldo <> '0'" ,"NumFact");
 			
 	gridND.DataSource = ConexionAccess2007.Source;
 	
@@ -174,19 +182,35 @@ public void ObtenerNCPendientes(string NombreCliente)
 }
 
 
-//TODO: La busqueda debe ser por IDCliente
+
 /// <summary>
 /// Obtiene las Notas de debito pendientes de un cliente.
 /// </summary>
-/// <param name="NombreCliente">El nombre del cliente</param>
-public void ObtenerInterdepPendientes(string NombreCliente)
+/// <param name="IDCliente">El ID del cliente</param>
+public void ObtenerInterdepPendientes(string IDCliente)
 {
 	//Conectar a la base de datos		
-	ConexionAccess2007.Conectar(Convert.ToString (ConfigurationManager.AppSettings["BaseDeDatos"]));
-			
+	ConexionAccess2007.Conectar(Convert.ToString (ConfigurationManager.AppSettings["BaseInterdepositos"]));
+	
+
+	//Condicion para ampliar la busqueda
+	if (chkTotos.Checked = true) {	
 	//Hace la consulta asumiendo que el cliente esta activo
-	ConexionAccess2007.Consultar("Interdepositos", "*", "Cliente ='"+ NombreCliente +"'" ,"FechaPago");
-			
+	ConexionAccess2007.Consultar("Interdepositos", 
+	                             "*", 
+	                             "IDCliente ='"+ IDCliente +"'",// AND IDRecibo =''" ,
+	                             "Fecha");
+	}
+	else
+	{
+	//Hace la consulta asumiendo que el cliente esta activo
+	ConexionAccess2007.Consultar("Interdepositos", 
+	                             "*", 
+	                             "IDCliente ='"+ IDCliente +"' AND IDRecibo =''" ,
+	                             "Fecha");
+	}
+
+	
 	gridInterdeposito.DataSource = ConexionAccess2007.Source;
 	
 	
@@ -206,9 +230,32 @@ public void ObtenerChequesPendientes(string IDCliente)
 	
 	//MessageBox.Show(Convert.ToString (ConfigurationManager.AppSettings["BaseCheques"]));
 	
+	//Condicion para ampliar la busqueda
+	if (chkTotos.Checked = true) {
 	//Hace la consulta asumiendo que el cliente esta activo
-	ConexionAccess2007.Consultar("Cheque", "IDCheque, FechaEmision, FechaPago, FechaIngreso, Importe, ImporteUSD", "IDCliente ='"+ IDCliente +"' AND FechaDeposito IS NULL AND IDRecibo IS NULL","FechaPago"); //AND FechaDeposito = ## 
-			
+	//Consulta General
+	ConexionAccess2007.Consultar("Cheque",
+                            	 "IDCheque, FechaEmision, FechaPago, FechaIngreso, Importe, ImporteUSD", 
+                            	 "IDCliente ='"+ IDCliente +"'",
+                            	 "FechaPago");
+	//AND FechaDeposito IS NULL AND IDRecibo IS NULL","FechaPago");
+	//AND FechaDeposito = ##
+
+	}
+	else
+	{
+	//Hace la consulta asumiendo que el cliente esta activo
+	//Consulta especifica
+	ConexionAccess2007.Consultar("Cheque", 
+	                             "IDCheque, FechaEmision, FechaPago, FechaIngreso, Importe, ImporteUSD", 
+	                             "IDCliente ='"+ IDCliente +"' AND (FechaDeposito IS NULL OR FechaDeposito = '') AND (IDRecibo IS NULL OR IDRecibo = '')",
+	                             "FechaPago"); 
+	//AND FechaDeposito  EMPTY AND IDRecibo IS NULL OR EMPTY","FechaPago");
+	//AND FechaDeposito IS NULL AND IDRecibo IS NULL","FechaPago");
+	//AND FechaDeposito = ##
+	}
+
+	
 	gridCheque.DataSource = ConexionAccess2007.Source;
 
 	
@@ -237,7 +284,7 @@ public decimal ObtenerDeuda()
 	
 	for (int i = 0; i < filafinal; i++) {
 		//Carga la deuda a la variable
-		deuda += Convert.ToDecimal(gridFact["ImporteFinal",i].Value);
+		deuda += Convert.ToDecimal(gridFact["Saldo",i].Value);
 		}
 	
 	//Para las FacturasB
@@ -245,7 +292,7 @@ public decimal ObtenerDeuda()
 	
 	for (int i = 0; i < filafinal; i++) {
 		//Carga la deuda a la variable
-		deuda += Convert.ToDecimal(gridFactB["ImporteFinal",i].Value);
+		deuda += Convert.ToDecimal(gridFactB["Saldo",i].Value);
 		}
 	
 	
@@ -259,7 +306,7 @@ public decimal ObtenerDeuda()
 	for (int i = 0; i < filafinal; i++)
 	{
 		
-	deuda += Convert.ToDecimal(gridND["ImporteFinal",i].Value);
+	deuda += Convert.ToDecimal(gridND["Saldo",i].Value);
 	}
 	
 #endregion	
@@ -423,7 +470,7 @@ public  decimal ObtenerCredito()
 				reci.Cheques[i].dblNumCheque = Convert.ToDouble(gridCheque["IdCheque", i].Value.ToString().Substring(10,8));
 				reci.Cheques[i].strBanco = OperacionesComunes.ObtenerBanco(gridCheque["IdCheque", i].Value.ToString().Substring(0,3));
 				reci.Cheques[i].dtFechaEmision = Convert.ToDateTime ( gridCheque["FechaEmision", i].Value.ToString());
-				reci.Cheques[i].dtFechaEmision = Convert.ToDateTime ( gridCheque["FechaPago", i].Value.ToString());
+				reci.Cheques[i].dtFechaPago = Convert.ToDateTime ( gridCheque["FechaPago", i].Value.ToString());
 				reci.Cheques[i].curImporte = Convert.ToDecimal (gridCheque["Importe", i].Value.ToString());
 				reci.Cheques[i].strIDCliente = lblIDCliente.Text; 
 			}
@@ -444,10 +491,11 @@ public  decimal ObtenerCredito()
 				{
 				reci.Interdepositos[i].dblIDInterdeposito = Convert.ToDouble(gridInterdeposito["ID", i].Value);
 				reci.Interdepositos[i].dblNumInterdeposito = Convert.ToDouble(gridInterdeposito["ID", i].Value);
-				reci.Interdepositos[i].strBanco = gridInterdeposito["Banco", i].Value.ToString();
+				reci.Interdepositos[i].strBanco = gridInterdeposito["BancoPagador", i].Value.ToString();
 				//reci.Interdepositos[i].dtFechaEmision = Convert.ToDateTime(gridInterdeposito["Fecha", i].Value.ToString());
-				reci.Interdepositos[i].dtFechaPago = Convert.ToDateTime(gridInterdeposito["FechaPago", i].Value.ToString());
+				reci.Interdepositos[i].dtFechaPago = Convert.ToDateTime(gridInterdeposito["Fecha", i].Value.ToString());
 				reci.Interdepositos[i].curImporte = Convert.ToDecimal(gridInterdeposito["Importe", i].Value.ToString());
+				
 				}
 			
 			
@@ -467,7 +515,9 @@ public  decimal ObtenerCredito()
 				{
 				reci.NCs[i].strComprobante = gridNC["Documento", i].Value.ToString();
 				reci.NCs[i].dtFecha = Convert.ToDateTime(gridNC["Fecha", i].Value.ToString());
-				reci.NCs[i].curTotal = Convert.ToDecimal(gridNC["ImporteFinal", i].Value.ToString());;
+				reci.NCs[i].curTotal = Convert.ToDecimal(gridNC["ImporteFinal", i].Value.ToString());
+				reci.NCs[i].curSaldo = Convert.ToDecimal(gridNC["Saldo", i].Value.ToString());
+				
 				}
 			}
 			
@@ -494,6 +544,8 @@ public  decimal ObtenerCredito()
 				reci.Facturas[i].strComprobante = gridFact["Documento", i].Value.ToString();
 				reci.Facturas[i].dtFecha = Convert.ToDateTime(gridFact["Fecha", i].Value.ToString());
 				reci.Facturas[i].curTotal = Convert.ToDecimal(gridFact["ImporteFinal", i].Value.ToString());
+				reci.Facturas[i].curSaldo = Convert.ToDecimal(gridFact["Saldo", i].Value.ToString());
+				
 				//reci.Facturas[i].curTotalUSD = Convert.ToDecimal(gridFact["ImporteFinalUSS", i].Value.ToString());
 				}
 			}
@@ -511,6 +563,7 @@ public  decimal ObtenerCredito()
 				reci.FacturasB[i].strComprobante = gridFactB["Documento", i].Value.ToString();
 				reci.FacturasB[i].dtFecha = Convert.ToDateTime(gridFactB["Fecha", i].Value.ToString());
 				reci.FacturasB[i].curTotal = Convert.ToDecimal(gridFactB["ImporteFinal", i].Value.ToString());
+				reci.FacturasB[i].curSaldo = Convert.ToDecimal(gridFactB["Saldo", i].Value.ToString());
 				//reci.FacturasB[i].curTotalUSD = Convert.ToDecimal(gridFactB["ImporteFinalUSS", i].Value.ToString());
 				}
 			}
@@ -526,10 +579,11 @@ public  decimal ObtenerCredito()
 			//Cargo cada uno de las Notas de Debitos en el Array de Notas de Debitos
 			for (int i = 0; i < gridND.Rows.Count-1; i++) 
 				{
-				//reci.Facturas[i].dblNumFact = Convert.ToDouble (gridFact["Documento", i].Value.ToString());
+				reci.NDs[i].dblNumFact = Convert.ToDouble (gridND["NumFact", i].Value.ToString());
 				reci.NDs[i].strComprobante = gridND["Documento", i].Value.ToString();
 				reci.NDs[i].dtFecha = Convert.ToDateTime(gridND["Fecha", i].Value.ToString());
 				reci.NDs[i].curTotal = Convert.ToDecimal(gridND["ImporteFinal", i].Value.ToString());
+				reci.NDs[i].curSaldo = Convert.ToDecimal(gridND["Saldo", i].Value.ToString());
 				//reci.Facturas[i].curTotalUSD = Convert.ToDecimal(gridFact["ImporteFinalUSS", i].Value.ToString());
 				}
 			}
@@ -555,6 +609,7 @@ reci.curDescuento = Convert.ToDecimal(txtDescuento.Text);
 reci.curRetenciones =  Convert.ToDecimal(txtRetenciones.Text);
 reci.curNO = Convert.ToDecimal(txtNO.Text);
 reci.curVarios = Convert.ToDecimal(txtVarios.Text);
+reci.curCobranzaNeta =  Convert.ToDecimal(txtCobranzaNeta.Text);
 
 //TODO: VER EL TEMA DE LAS RETENCIONES EN UN GRID
 //RETENCIONES
@@ -627,6 +682,10 @@ reci.curIVA = Convert.ToDecimal(txtRetenIVA.Text);
 			                       Convert.ToDecimal(txtRetenIIB.Text) +
 			                       Convert.ToDecimal(txtRetenGanancias.Text) +
 			                       Convert.ToDecimal(txtRetenCargasSoc.Text)).ToString();
+		}
+		void CheckBox1CheckedChanged(object sender, EventArgs e)
+		{
+	
 		}
 	
 #endregion

@@ -109,6 +109,7 @@ namespace Contable
 		private System.Windows.Forms.Label lblCobranzaTotal;
 		private System.Windows.Forms.TabPage tabFacturaB;
 		private System.Windows.Forms.DataGridView gridFactB;
+		private System.Windows.Forms.CheckBox chkTotos;
 		//public Microsoft.VisualBasic.Compatibility.VB6.LabelArray Lbl;
 //NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
 //Se puede modificar mediante el Diseñador de Windows Forms.
@@ -195,6 +196,7 @@ namespace Contable
 			this.label2 = new System.Windows.Forms.Label();
 			this.txtEfectivo = new System.Windows.Forms.TextBox();
 			this.lblCobranzaTotal = new System.Windows.Forms.Label();
+			this.chkTotos = new System.Windows.Forms.CheckBox();
 			this.Frame1.SuspendLayout();
 			this.frCliente.SuspendLayout();
 			this.Toolbar1.SuspendLayout();
@@ -1150,12 +1152,23 @@ namespace Contable
 			this.lblCobranzaTotal.Text = "0,00";
 			this.lblCobranzaTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
+			// chkTotos
+			// 
+			this.chkTotos.Location = new System.Drawing.Point(270, 65);
+			this.chkTotos.Name = "chkTotos";
+			this.chkTotos.Size = new System.Drawing.Size(104, 24);
+			this.chkTotos.TabIndex = 154;
+			this.chkTotos.Text = "Todos";
+			this.chkTotos.UseVisualStyleBackColor = true;
+			this.chkTotos.CheckedChanged += new System.EventHandler(this.CheckBox1CheckedChanged);
+			// 
 			// frmReciboAltas
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Control;
 			this.ClientSize = new System.Drawing.Size(1006, 667);
+			this.Controls.Add(this.chkTotos);
 			this.Controls.Add(this.lblCobranzaTotal);
 			this.Controls.Add(this.txtEfectivo);
 			this.Controls.Add(this.label2);
