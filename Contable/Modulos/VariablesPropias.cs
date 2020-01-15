@@ -153,6 +153,7 @@ namespace VariablesPropias
 			public decimal curIVA;
 			public int IdIVA;
 			public decimal curTotal;
+			public decimal curSaldo;
 			public decimal curSubTotalUSD;
 			public decimal curIVAUSD;
 			public decimal curTotalUSD;
@@ -715,6 +716,7 @@ namespace VariablesPropias
 
 			public vpProveedores Proveedor;
 			//Resto de las variables necesarias
+			public string strSucursal;
 			public string strNumFact;
 			public System.DateTime dtEntrada;
 			public System.DateTime dtFecha;
@@ -767,8 +769,12 @@ namespace VariablesPropias
 		public struct vpPedido
 		{
 			public string strid;
+			public double  NumPedido;
+			public DateTime  Fecha;
+			public vpClientes Clinete;
 			public vpProducto[] producto;
-			
+			public bool Cancelado;
+			public string HechoPor;
 		}
 
 #region SENASA

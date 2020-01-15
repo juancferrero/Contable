@@ -676,6 +676,16 @@ reci.Cheques  = OperacionesComunes.ObtenerCheque(Remito.Rows[0]["IDRecibo"].ToSt
 reci.Interdepositos   = OperacionesComunes.ObtenerInterdeposito(Remito.Rows[0]["IDRecibo"].ToString() );
 
 #endregion
+
+
+/*
+ * En esta area se tomas los datos de la base de datos de Clientes MEJORAR
+ */
+
+
+
+reci.NDs = OperacionesComunes.ObtenerNotaDebito (strNumeroRecibo);
+
 /*
 #region NOTAS DE CREDITO
 
@@ -854,9 +864,26 @@ LaSumaDe
 
 */
 
+
+#region Efectivo
+//reci.curEfectivo = Remito.Rows[0]["IDRecibo"].ToString();
+#endregion
+
+#region TotValores
+
+
+
+#endregion
+
+
+#region CobranzaNeta
+
+reci.curCobranzaNeta =Convert.ToDecimal (Remito.Rows[0]["Total"].ToString());
+#endregion
+
 /*
-Efectivo
-TotValores
+
+
 SubTotal
 Descuento
 Retenciones
@@ -866,7 +893,7 @@ RetenGanancias
 RetenCargasSoc
 NO
 Varios
-CobranzaNeta
+
 HechoPor
 
 
