@@ -965,7 +965,9 @@ try
 											
 											//"'" + vpfactura.Cliente. + ", "+
 
-//TODO Esto tambien va a un array
+//TODO Esto tambien va a un array  
+//EN la nueva FC no aparece ya que lo trae directamente de la tabla de remitos
+//Son campos innecesarios
 											
 											//"Remito1, Remito2, Remito3, Remito4, Remito5, " + 
 											vpfactura.intRemito1 + ", " +	
@@ -1536,7 +1538,7 @@ GLN
 			"Telefono1, Telefono2, Fax, " +
 			"Email, Contacto1, Contacto2, Contacto3, " +
 			"CodPos, CUIT, Desc, TranspId, ClienteDe, " +
-			"Activo, NroGIS, Calidad, Info, GLN",
+			"Activo, Calidad, Info, GLN",
 			"'" + DatosInsertar.strid.Trim() + "', " +
 			"'" + DatosInsertar.strNombre.Trim() + "', " +
 			"'" + DatosInsertar.strDireccion.Trim() + "', " +
@@ -1556,7 +1558,7 @@ GLN
 			"'" + DatosInsertar.strClienteDe.Trim() + "', " +
 			"'" + DatosInsertar.bolActivo + "', " +
 			
-			"'" + DatosInsertar..Trim() + "', " +
+			"'" + DatosInsertar.dlbCalidad.ToString().Trim() + "', " +
 			"'" + DatosInsertar.memoVarios.Trim() + "', " +
 			"'" + DatosInsertar.GLN.Trim() + "'");
 						

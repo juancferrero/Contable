@@ -109,15 +109,5 @@ namespace Contable.Actualizaciones {
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
-		
-		/// <summary>
-		///   Busca un recurso adaptado de tipo System.Drawing.Point similar a {X=17,Y=17}.
-		/// </summary>
-		internal static System.Drawing.Point Toolbar1_TrayLocation {
-			get {
-				object obj = ResourceManager.GetObject("Toolbar1.TrayLocation", resourceCulture);
-				return ((System.Drawing.Point)(obj));
-			}
-		}
 	}
 }

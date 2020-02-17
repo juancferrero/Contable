@@ -272,20 +272,20 @@ namespace Contable
 			// 
 			this.mnuRepVentas.Enabled = false;
 			this.mnuRepVentas.Name = "mnuRepVentas";
-			this.mnuRepVentas.Size = new System.Drawing.Size(169, 22);
+			this.mnuRepVentas.Size = new System.Drawing.Size(168, 22);
 			this.mnuRepVentas.Text = "Reporte de Ventas";
 			// 
 			// mnuVentasClientes
 			// 
 			this.mnuVentasClientes.Enabled = false;
 			this.mnuVentasClientes.Name = "mnuVentasClientes";
-			this.mnuVentasClientes.Size = new System.Drawing.Size(169, 22);
+			this.mnuVentasClientes.Size = new System.Drawing.Size(168, 22);
 			this.mnuVentasClientes.Text = "De Cliente";
 			// 
 			// mnuVentasAnuales
 			// 
 			this.mnuVentasAnuales.Name = "mnuVentasAnuales";
-			this.mnuVentasAnuales.Size = new System.Drawing.Size(169, 22);
+			this.mnuVentasAnuales.Size = new System.Drawing.Size(168, 22);
 			this.mnuVentasAnuales.Text = "Anuales";
 			this.mnuVentasAnuales.Click += new System.EventHandler(this.MnuVentasAnualesClick);
 			// 
@@ -331,7 +331,7 @@ namespace Contable
 			// mnuRepoFactImpagas
 			// 
 			this.mnuRepoFactImpagas.Name = "mnuRepoFactImpagas";
-			this.mnuRepoFactImpagas.Size = new System.Drawing.Size(152, 22);
+			this.mnuRepoFactImpagas.Size = new System.Drawing.Size(119, 22);
 			this.mnuRepoFactImpagas.Text = "&Impagas";
 			this.mnuRepoFactImpagas.Click += new System.EventHandler(this.MnuRepoFactImpagasClick);
 			// 
@@ -389,14 +389,14 @@ namespace Contable
 			// mnuStockIngreso
 			// 
 			this.mnuStockIngreso.Name = "mnuStockIngreso";
-			this.mnuStockIngreso.Size = new System.Drawing.Size(152, 22);
+			this.mnuStockIngreso.Size = new System.Drawing.Size(113, 22);
 			this.mnuStockIngreso.Text = "Ingreso";
 			this.mnuStockIngreso.Click += new System.EventHandler(this.MnuStockIngresoClick);
 			// 
 			// mnuStockAjustes
 			// 
 			this.mnuStockAjustes.Name = "mnuStockAjustes";
-			this.mnuStockAjustes.Size = new System.Drawing.Size(152, 22);
+			this.mnuStockAjustes.Size = new System.Drawing.Size(113, 22);
 			this.mnuStockAjustes.Text = "Ajustes";
 			// 
 			// mnuStockRevisar
@@ -405,7 +405,7 @@ namespace Contable
 			this.mnuStockRevisarGeneral,
 			this.mnuStockRevisarConsignacion});
 			this.mnuStockRevisar.Name = "mnuStockRevisar";
-			this.mnuStockRevisar.Size = new System.Drawing.Size(152, 22);
+			this.mnuStockRevisar.Size = new System.Drawing.Size(113, 22);
 			this.mnuStockRevisar.Text = "Revisar";
 			// 
 			// mnuStockRevisarGeneral
@@ -452,28 +452,28 @@ namespace Contable
 			// mnuSENASATrazaInformar
 			// 
 			this.mnuSENASATrazaInformar.Name = "mnuSENASATrazaInformar";
-			this.mnuSENASATrazaInformar.Size = new System.Drawing.Size(170, 22);
+			this.mnuSENASATrazaInformar.Size = new System.Drawing.Size(168, 22);
 			this.mnuSENASATrazaInformar.Text = "Informar";
 			this.mnuSENASATrazaInformar.Click += new System.EventHandler(this.MnuSENASATrazaInformarClick);
 			// 
 			// consultarToolStripMenuItem
 			// 
 			this.consultarToolStripMenuItem.Name = "consultarToolStripMenuItem";
-			this.consultarToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+			this.consultarToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
 			this.consultarToolStripMenuItem.Text = "Consultar";
 			this.consultarToolStripMenuItem.Click += new System.EventHandler(this.ConsultarToolStripMenuItemClick);
 			// 
 			// baseDeDatosToolStripMenuItem
 			// 
 			this.baseDeDatosToolStripMenuItem.Name = "baseDeDatosToolStripMenuItem";
-			this.baseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+			this.baseDeDatosToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
 			this.baseDeDatosToolStripMenuItem.Text = "Base de Datos";
 			this.baseDeDatosToolStripMenuItem.Click += new System.EventHandler(this.BaseDeDatosToolStripMenuItemClick);
 			// 
 			// trazabilidadIconaToolStripMenuItem
 			// 
 			this.trazabilidadIconaToolStripMenuItem.Name = "trazabilidadIconaToolStripMenuItem";
-			this.trazabilidadIconaToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+			this.trazabilidadIconaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
 			this.trazabilidadIconaToolStripMenuItem.Text = "Trazabilidad icona";
 			this.trazabilidadIconaToolStripMenuItem.Click += new System.EventHandler(this.TrazabilidadIconaToolStripMenuItemClick);
 			// 
@@ -644,14 +644,14 @@ namespace Contable
 			// 
 			this.mnuFlujoMes.Enabled = false;
 			this.mnuFlujoMes.Name = "mnuFlujoMes";
-			this.mnuFlujoMes.Size = new System.Drawing.Size(177, 22);
+			this.mnuFlujoMes.Size = new System.Drawing.Size(176, 22);
 			this.mnuFlujoMes.Text = "Mes";
 			// 
 			// mnuFlujoProduct
 			// 
 			this.mnuFlujoProduct.Enabled = false;
 			this.mnuFlujoProduct.Name = "mnuFlujoProduct";
-			this.mnuFlujoProduct.Size = new System.Drawing.Size(177, 22);
+			this.mnuFlujoProduct.Size = new System.Drawing.Size(176, 22);
 			this.mnuFlujoProduct.Text = "Venta de Productos";
 			// 
 			// mnuFlujo
@@ -669,7 +669,7 @@ namespace Contable
 			// 
 			this.mnuFlujoAno.Enabled = false;
 			this.mnuFlujoAno.Name = "mnuFlujoAno";
-			this.mnuFlujoAno.Size = new System.Drawing.Size(177, 22);
+			this.mnuFlujoAno.Size = new System.Drawing.Size(176, 22);
 			this.mnuFlujoAno.Text = "Año";
 			// 
 			// mnuEgresosBancariosDebitos
@@ -1036,14 +1036,14 @@ namespace Contable
 			// mnuContadorIVACompras
 			// 
 			this.mnuContadorIVACompras.Name = "mnuContadorIVACompras";
-			this.mnuContadorIVACompras.Size = new System.Drawing.Size(192, 22);
+			this.mnuContadorIVACompras.Size = new System.Drawing.Size(191, 22);
 			this.mnuContadorIVACompras.Text = "Planilla IVA COMPRAS";
 			this.mnuContadorIVACompras.Click += new System.EventHandler(this.MnuContadorIVAComprasClick);
 			// 
 			// mnuContadorIVAVentas
 			// 
 			this.mnuContadorIVAVentas.Name = "mnuContadorIVAVentas";
-			this.mnuContadorIVAVentas.Size = new System.Drawing.Size(192, 22);
+			this.mnuContadorIVAVentas.Size = new System.Drawing.Size(191, 22);
 			this.mnuContadorIVAVentas.Text = "Planilla IVA VENTAS";
 			this.mnuContadorIVAVentas.Click += new System.EventHandler(this.MnuContadorIVAVentasClick);
 			// 

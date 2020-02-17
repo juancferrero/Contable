@@ -90,3 +90,4 @@ C:\Users\ivi_m\Documents\Juanqui\Contable\Contable\obj\Debug\Contable.SENASA.frm
 C:\Users\ivi_m\Documents\Juanqui\Contable\Contable\obj\Debug\Contable.csproj.GenerateResource.Cache
 C:\Users\ivi_m\Documents\Juanqui\Contable\Contable\obj\Debug\Contable.exe
 C:\Users\ivi_m\Documents\Juanqui\Contable\Contable\obj\Debug\Contable.pdb
+C:\Users\ivi_m\Documents\Juanqui\Contable\Contable\obj\Debug\Contable.Contador.Impuestos.frmImpuestos.resources

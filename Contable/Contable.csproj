@@ -148,6 +148,8 @@
     <Compile Include="Contador\frmContadorDepBanc.Designer.cs">
       <DependentUpon>frmContadorDepBanc.cs</DependentUpon>
     </Compile>
+    <Compile Include="Contador\Impuestos\frmImpuestos.cs" />
+    <Compile Include="Contador\Impuestos\frmImpuestos.Designer.cs" />
     <Compile Include="Contador\IVA\frmContadorIVACompras.cs" />
     <Compile Include="Contador\IVA\frmContadorIVACompras.Designer.cs">
       <DependentUpon>frmContadorIVACompras.cs</DependentUpon>
@@ -193,7 +195,9 @@
     <Compile Include="Modulos\dtGridWtoDataTable.cs" />
     <Compile Include="Modulos\Escribir XML.cs" />
     <Compile Include="Modulos\EscribirTXT.cs" />
-    <Compile Include="Modulos\Imprimir.cs" />
+    <Compile Include="Modulos\Imprimir.cs">
+      <DependentUpon>OperacionesComunes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\InputBox.cs" />
     <Compile Include="Modulos\OperacionesComunes.cs" />
     <Compile Include="Modulos\Recibos.cs" />
@@ -402,6 +406,7 @@
     <Folder Include="Contador\Balance" />
     <Folder Include="Contador\Egresos" />
     <Folder Include="Contador\Facturas Con Iva" />
+    <Folder Include="Contador\Impuestos" />
     <Folder Include="Contador\IVA" />
     <Folder Include="Contador\ResumenSemana" />
     <Folder Include="Interdepositos" />
@@ -470,6 +475,7 @@
     <EmbeddedResource Include="Contador\frmContadorDepBanc.resx">
       <DependentUpon>frmContadorDepBanc.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Contador\Impuestos\frmImpuestos.resx" />
     <EmbeddedResource Include="Contador\IVA\frmContadorIVACompras.resx">
       <DependentUpon>frmContadorIVACompras.cs</DependentUpon>
       <Generator>ResXFileCodeGenerator</Generator>
