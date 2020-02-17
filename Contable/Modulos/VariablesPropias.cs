@@ -20,7 +20,7 @@ using System.Xml.Linq;
 namespace VariablesPropias
 	
 {
-	public class VariablesPropias
+	public static class VariablesPropias
 	{
 
 
@@ -61,12 +61,15 @@ namespace VariablesPropias
 			public double dblNumInterdeposito;
 			public System.DateTime dtFechaEmision;
 			public System.DateTime dtFechaPago;
+			public System.DateTime dtFechaIngreso;
 			public string strBanco;
 			public string strSucursal;
 			public string strBancoDestino;
 			public string strCliente;
 			public string strIDCliente;
 			public decimal curImporte;
+			public string strIDRecibo;
+			
 		}
 
 		public struct vpClientes
@@ -80,9 +83,8 @@ namespace VariablesPropias
 			public string strPosIVA;
 			public double dblDescuento;
 			public double dblCUIT;
-			public int intTranspId;
+			public int intTranspId;//como que sobra esta en el vpTransporte
 			public vpTransporte Transporte;
-			
 			public string strTelefono1;
 			public string strTelefono2;
 			public string strTelefono3;
@@ -146,10 +148,12 @@ namespace VariablesPropias
 			public vpProducto Producto3;
 			public vpProducto Producto4;
 			public vpProducto Producto5;
+			
 			public decimal curSubTotal;
 			public decimal curIVA;
 			public int IdIVA;
 			public decimal curTotal;
+			public decimal curSaldo;
 			public decimal curSubTotalUSD;
 			public decimal curIVAUSD;
 			public decimal curTotalUSD;
@@ -712,6 +716,7 @@ namespace VariablesPropias
 
 			public vpProveedores Proveedor;
 			//Resto de las variables necesarias
+			public string strSucursal;
 			public string strNumFact;
 			public System.DateTime dtEntrada;
 			public System.DateTime dtFecha;
@@ -764,8 +769,12 @@ namespace VariablesPropias
 		public struct vpPedido
 		{
 			public string strid;
+			public double  NumPedido;
+			public DateTime  Fecha;
+			public vpClientes Clinete;
 			public vpProducto[] producto;
-			
+			public bool Cancelado;
+			public string HechoPor;
 		}
 
 #region SENASA

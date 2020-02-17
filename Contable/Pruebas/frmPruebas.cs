@@ -12,7 +12,7 @@ using System.Windows.Forms;
 using Contable.MigrarDB;
 using Contable.AFIP;
 using Contable.Modulos;
-
+using Contable.MigrarDB;
 using ImprimirEjemplo;
 
 
@@ -76,7 +76,7 @@ namespace Contable.Pruebas
 	
 			VariablesPropias.VariablesPropias.vpRecibo reci = new VariablesPropias.VariablesPropias.vpRecibo();
 				
-			reci= Modulos.Recibos.CargarRecibo(Convert.ToInt32 (txtNumRecibo.Text));
+			reci= Modulos.Recibos.CargarReciboNvo(txtNumReciboNvo.Text);
 			
 			// MessageBox.Show (reci.Cliente.strDireccion);
 			Imprimir.Imprimir_Recibo(reci);
@@ -102,6 +102,20 @@ namespace Contable.Pruebas
 		void BtnImprimirReciboClick(object sender, EventArgs e)
 		{
 	
+		}
+		void Button9Click(object sender, EventArgs e)
+		{
+			
+			MigrarDB.MigrarDB.MigrarFacturasCIva();
+			
+			//MigrarDB.MigrarDB.AgregarIDClienteReciboViejos();
+			//MigrarDB.MigrarDB.AgregarIDClienteInterdepositoViejos();
+			
+			//MigrarDB.MigrarDB.AgregarIDClienteChequeViejos();
+		}
+		void Button10Click(object sender, EventArgs e)
+		{
+			Contable.Modulos.EscribirTXT.EscribirUnArray();
 		}
 	}
 }

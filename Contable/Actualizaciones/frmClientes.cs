@@ -7,32 +7,54 @@ using System.Windows.Forms;
 
 using System.Configuration;
 using ConexionDB;
+using Contable.Modulos; 
 
 
-//using 
+
+
 
 namespace Contable
 {
 	internal partial class frmClientes : System.Windows.Forms.Form
 	{
-		
+			
+		void FrmClientesLoad(object sender, EventArgs e)
+		{
+			
+			tabBusqueda.Show();
+			//_SSTab1_TabPage0.Show();
+			//_SSTab1_TabPage5.BringToFront();
+			//_SSTab1_TabPage5.Show();
+			
+			//Carga los transportes en el combo
+			CargarTransporteCombo();
+		}
+
+
+
+#region Variables Publicas
+		public VariablesPropias.VariablesPropias.vpTransporte transp;
+		public VariablesPropias.VariablesPropias.vpClientes clie;
+
+#endregion
 		
 		
 #region Barra de tareas
 		void TlbGuardarClick(object sender, EventArgs e)	
 		{
-	
+			
+			//Guarda un nuevo cliente
+			OperacionesComunes.Guardar(FormAVariable());
 		}
 		
 		void TlbEditarClick(object sender, EventArgs e)
 		{
-	
+
+			//Envia a editar un cliente
+			OperacionesComunes.Editar(FormAVariable());
 		}		
 		
-		
 #endregion
-		
-	
 	
 #region Grid
 
@@ -86,12 +108,12 @@ namespace Contable
 			//Notas
 			richNotas.Text = vpcliente.memoVarios.ToString();
 			
-			
+			//Contactos TODO VER COMO USAR EL TAMAÑO DEL ARRAY
 			for (int i = 0; i < 10 /*vpcliente.Contactos.GetLength*/ ; i++) {
 				dataContactos.Rows.Add(vpcliente.Contactos[i].strNombre);
 			}
 			
-			//dataContactos.DataSource  = vpcliente.Contactos;
+			
 			
 			//Transporte
 			txtTranspNum.Text = vpcliente.Transporte.intTranspId.ToString();
@@ -99,15 +121,21 @@ namespace Contable
 			txtTranspDireccion.Text = vpcliente.Transporte.strDireccion;
 			
 			
-			MessageBox.Show("Seguro que es este cliente??" + vpcliente.Contactos[0].strNombre );
+			//MessageBox.Show("Seguro que es este cliente??" + vpcliente.Contactos[0].strNombre );
+			
+			
+			//Activo el boton para editar
+			tlbEditar.Enabled = true;
 		}		
 #endregion
 
-	
+#region Busqueda
+
 		void TxtCriterioTextChanged(object sender, EventArgs e)
 		{
 			
 		}
+<<<<<<< HEAD
 	
 				
 		void FrmClientesLoad(object sender, EventArgs e)
@@ -121,6 +149,8 @@ namespace Contable
 		{
 	
 		}
+=======
+>>>>>>> 67a874b4dcca5ccaf1d59f4bd5e18d130ed6c570
 		
 		void TxtCriterioKeyPress(object sender, KeyPressEventArgs e)
 		{
@@ -134,7 +164,6 @@ namespace Contable
 				string strcondicion = "Nombre";
 
 #endregion
-			
 			
 			
 				/*
@@ -185,8 +214,151 @@ namespace Contable
 
 }
 
+#endregion
+	
+		
+				
+		
+		
+		
+		void _Label1_15Click(object sender, EventArgs e)
+		{
+	
+		}
+		
+		
+
+	
+#region Modulos
+
+		//Desde las cosas que estan en el form a una variable vpClientes
+		public VariablesPropias.VariablesPropias.vpClientes FormAVariable ()
+{
+			//Creo una variable propia 
+			VariablesPropias.VariablesPropias.vpClientes vpcliente = new VariablesPropias.VariablesPropias.vpClientes ();
+
+			/*
+			 Cargar los datos obtenidos en la pantalla
+			 */
+			vpcliente.strid = txtNumClie.Text; 
+			vpcliente.strNombre = txtRazonSocial.Text;
+			
+			vpcliente.strProvincia = cmbProvincia.Text;
+			vpcliente.strLocalidad = cmbLocalidad.Text;
+			vpcliente.strDireccion = txtDireccion.Text;
+			vpcliente.strCodPos = txtCodPos.Text;
+			vpcliente.dblCUIT = Convert.ToDouble (txtCUIT.Text);
+			vpcliente.strTelefono1 = txtTelefono1.Text;
+			vpcliente.strTelefono2 = txtTelefono2.Text;
+			vpcliente.strTelefono3 = txtFax.Text;
+			vpcliente.dblDescuento = Convert.ToDouble(txtDesc.Text);
+			vpcliente.stremail = txtEMail.Text;
+			 
+			//Notas
+			vpcliente.memoVarios = richNotas.Text;
+			
+			//Contactos TODO VER COMO USAR EL TAMAÑO DEL ARRAY/Y colocarlo en un array nuevamente
+			/*for (int i = 0; i < 10 /*vpcliente.Contactos.GetLength*//* ; i++) {
+				dataContactos.Rows.Add(vpcliente.Contactos[i].strNombre);
+			}*/
+			
+			
+			
+			//Transporte
+			vpcliente.Transporte.intTranspId = Convert.ToInt32(txtTranspNum.Text);
+			vpcliente.Transporte.strNombre = cmbTranspNombre.Text;
+			vpcliente.Transporte.strDireccion = txtTranspDireccion.Text;	
+
+			
+			//TRAZABILIDAD
+			vpcliente.GLN = txtGLN.Text;
+			
+			//Cliente de (revisar y sacar esto)
+			vpcliente.strClienteDe= cmbClienteDe.Text;
+			
+			
+			//ACTIVO
+			if (OptAct.Checked) {
+				vpcliente.bolActivo = true;
+			}
+				else
+			{
+				vpcliente.bolActivo = false;
+			}
+			
+				
+			
+			//vpcliente.dlbCalidad;
+
+			
+			
+			return vpcliente;
+}
+		
+		
+/// <summary>
+/// Carga los datos del Cliente en el ComboBox
+/// </summary>
+		void CargarClientesCombo()
+		{
+		//Esto conecta con la base de datos
+			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseDeDatos"].ToString());
+            
+			//Hace la consulta asumiendo que el cliente esta activo
+			ConexionAccess2007.Consultar("Clientes", "Nombre", "Nombre","Activo = TRUE");
+			            
+            
+            //Genera un datasource para pasarlo al combo
+            //cmbRazonSocial.DataSource = ConexionAccess2007.Source;
+			
+            //Cerrar la conexion
+            ConexionAccess2007.Desconectar();
+		}
+
+/// <summary>
+/// Carga los datos del Cliente en el ComboBox
+/// </summary>
+		void CargarTransporteCombo()
+		{
+		//Esto conecta con la base de datos
+			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseDeDatos"].ToString());
+            
+			//Hace la consulta asumiendo que el cliente esta activo
+			ConexionAccess2007.Consultar("Transporte", "TranspNombre", "TranspNombre");
+			            
+            
+            //Genera un datasource para pasarlo al combo
+            cmbTranspNombre.DataSource = ConexionAccess2007.Source;
+			
+            //Cerrar la conexion
+            ConexionAccess2007.Desconectar();
+		}
+
+#endregion
 
 		
+#region Transporte
+		void CmbTranspNombreDropDown(object sender, EventArgs e)
+		{
+//Solo muestra la columna de NOMBRE
+			cmbTranspNombre.DisplayMember = "TranspNombre";
+		}
+		void CmbTranspNombreSelectedIndexChanged(object sender, EventArgs e)
+		{
+			
+			//Carga los transportes en el combo
+			CargarTransporteCombo();
+		}
+		
+
+#endregion
+		
+		void BtnVerificarActivosClick(object sender, EventArgs e)
+			{
+		for (int i = 0; i < gridData.Rows.Count -1; i++) {
+			
+		}
+			}
 		
 	}
 }

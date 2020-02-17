@@ -25,22 +25,12 @@ namespace Contable
 {
 	internal partial class frmRemitos : System.Windows.Forms.Form
 	{
+		
 		public VariablesPropias.VariablesPropias.vpClientes clie;
 		public VariablesPropias.VariablesPropias.vpTransporte transp;
-		
-		
-		
-		void FrClienteEnter(object sender, EventArgs e)
-		{
-			
-		}
-		
-		void CmbRazonSocialDropDown(object sender, EventArgs e)
-		{
-           //Solo muestra la columna de NOMBRE
-			cmbRazonSocial.DisplayMember = "Nombre"; 
-		}
 
+		
+		
 		void FrmRemitosLoad(object sender, EventArgs e)
 		{
 		//Carga el numero de remito 				
@@ -67,75 +57,49 @@ namespace Contable
     	pictureBox1.Image = CodigoDeBarras.CodigoBarras.Print2of5Interleaved (CAIRemito.strCodigoACargar);
         
 		}
+
 		
+		
+		
+		
+#region Combo Cliente
+
+/// <summary>
+/// Muestra los clientes al operador 
+/// </summary>
+/// <param name="sender"></param>
+/// <param name="e"></param>
+		void CmbRazonSocialDropDown(object sender, EventArgs e)
+		{
+           //Solo muestra la columna de NOMBRE
+			cmbRazonSocial.DisplayMember = "Nombre"; 
+		}
+
+/// <summary>
+/// Cuando cambia el Combo
+/// </summary>
+/// <param name="sender"></param>
+/// <param name="e"></param>
 		void CmbRazonSocialSelectedIndexChanged(object sender, EventArgs e)
 		{
-			
+			//Carga los datos del Cliente
 			CargarClientesRemito();
 			
 			
 		}
-		
-		void TlbImprimirClick(object sender, EventArgs e)
-		{
-			Imprimir.Imprimir_Remito(CargarRemito());
-		}
-		
-		void TlbAnularClick(object sender, EventArgs e)
-		{
-			
-			
-			
-		}
-		
-		void PictureBox1Click(object sender, EventArgs e)
-		{
-			
-		}
-		
-		void TlbGuardarClick(object sender, EventArgs e)
-		{
-					
-						
-			VariablesPropias.VariablesPropias.vpRemito vpRemi = new VariablesPropias.VariablesPropias.vpRemito();
-			
-			vpRemi = CargarRemito();
-			
-			OperacionesComunes.Guardar(vpRemi);
-			
-			//Permite imprimir.
-				tlbImprimir.Enabled = true;
-				tlbGuardar.Enabled = false;
-				cmbRazonSocial.Enabled = false;
-                        
-		}
-		
-		void GridDatosCellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-			
-		}
-		
-		void GridDatosCellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-		{
-		if (gridDatos.CurrentCell.EditType == typeof(DataGridViewComboBoxEditingControl))
-            {
-			//gridDatos.CurrentCell.			
 
-			MessageBox.Show ("Caca");
-			}	
-		}
+#endregion		
 		
-		void LblValDecDoubleClick(object sender, EventArgs e)
+		void FrClienteEnter(object sender, EventArgs e)
 		{
-			// This test that the InputBox can handle more newline than one.
-    	InputBox.InputBoxResult test = InputBox.InputBox.Show("Cargar el Valor"); 
-
-    		if( test.ReturnCode == DialogResult.OK )
-        			lblValDec.Text = test.Text;
-			
 			
 		}
 		
+
+
+
+		
+#region Controles de la barra superior
 	
 ///<summary>
 /// Esta funcion limpia todo el formulario y agrega un numero al valor de los remitos
@@ -153,7 +117,79 @@ namespace Contable
 				tlbImprimir.Enabled = false;
 				tlbGuardar.Enabled = true;
 				cmbRazonSocial.Enabled = true;
+		}	
+	
+		void TlbGuardarClick(object sender, EventArgs e)
+		{
+					
+						
+			VariablesPropias.VariablesPropias.vpRemito vpRemi = new VariablesPropias.VariablesPropias.vpRemito();
+			
+			vpRemi = CargarRemito();
+			
+			OperacionesComunes.Guardar(vpRemi);
+			
+			//Permite imprimir.
+				tlbImprimir.Enabled = true;
+				tlbGuardar.Enabled = false;
+				cmbRazonSocial.Enabled = false;
+                        
+		}	
+		
+		void TlbImprimirClick(object sender, EventArgs e)
+		{
+			Imprimir.Imprimir_Remito(CargarRemito());
 		}
+		
+		void TlbAnularClick(object sender, EventArgs e)
+		{
+			
+			
+			
+		}
+		
+
+#endregion
+		
+		
+		void PictureBox1Click(object sender, EventArgs e)
+		{
+			
+		}
+		
+
+		
+		void GridDatosCellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			
+		}
+		
+		void GridDatosCellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+		{
+		if (gridDatos.CurrentCell.EditType == typeof(DataGridViewComboBoxEditingControl))
+            {
+			//gridDatos.CurrentCell.			
+
+			MessageBox.Show ("Caca");
+			}	
+		}
+
+
+#region Valor Declarado
+
+		void LblValDecDoubleClick(object sender, EventArgs e)
+		{
+			// This test that the InputBox can handle more newline than one.
+    	InputBox.InputBoxResult test = InputBox.InputBox.Show("Cargar el Valor"); 
+
+    		if( test.ReturnCode == DialogResult.OK )
+        			lblValDec.Text = test.Text;
+			
+			
+		}
+#endregion		
+	
+
 
 /// <summary>
 /// Esta funcion espera que se presione la tecla "Enter" para hacer las cosas
@@ -197,9 +233,6 @@ namespace Contable
 					tlbImprimir.Enabled = true;
 			}
 		}
-		
-
-
 		
 /// <summary>
 /// Carga los datos del Cliente en el ComboBox
@@ -546,6 +579,12 @@ namespace Contable
 			
 			 */
 		}
+		
+/// <summary>
+/// 
+/// </summary>
+/// <param name="sender"></param>
+/// <param name="e"></param>
 		void TlbFacturarClick(object sender, EventArgs e)
 		{
 

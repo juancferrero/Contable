@@ -22,7 +22,8 @@ using Contable.Pruebas;
 using Contable.Facturas;
 using Contable.Interdepositos;
 using Contable.SENASA;
-
+using Contable.Contador.Impuestos;
+using Contable.Contador.ModuloComprasYVentas;
 
 namespace Contable
 {
@@ -394,8 +395,36 @@ namespace Contable
 	
 		}
 		
+#endregion		
+#region Actualizaciones
+
+		void ImpuestosToolStripMenuItemClick(object sender, EventArgs e)
+		{
+			frmImpuestos frm = new frmImpuestos();
+			frm.MdiParent = this;
+			frm.Show();
+		}
+		void PruebaDeImpresionToolStripMenuItemClick(object sender, EventArgs e)
+		{
+	frmPruebaDeImpresion   frm = new frmPruebaDeImpresion();
+			frm.MdiParent = this;
+			frm.Show();
+		}
+		void ModuloComprasYVentasToolStripMenuItemClick(object sender, EventArgs e)
+		{
+	
+	
+	 frmModuloComprasYVentas   frm = new frmModuloComprasYVentas();
+			frm.MdiParent = this;
+			frm.Show();
+		}	
+
 
 #endregion
+
+		
+
+
 		
 		
 	}

@@ -26,6 +26,10 @@ namespace Contable.Modulos
 		public EscribirTXT()
 		{			
 		}
+
+#region Muestras
+
+
 		
 		/// <summary>
 		/// ESP: Crea un array de tres lineas
@@ -37,7 +41,7 @@ namespace Contable.Modulos
 			
 	        // WriteAllLines creates a file, writes a collection of strings to the file,
 	        // and then closes the file.  You do NOT need to call Flush() or Close().
-	        System.IO.File.WriteAllLines(@"C:\Users\Public\TestFolder\WriteLines.txt", lines);
+	        System.IO.File.WriteAllLines(@"C:\Users\Public\Documents\WriteLines.txt", lines);
 		}
 		
 		
@@ -98,6 +102,33 @@ namespace Contable.Modulos
             file.WriteLine("Fourth line");
         }
 		}
+		
+#endregion		
+		
+		
+		
+		
+		
+		/// <summary>
+		/// ESP: Crea un archivo para subir al sistema de AFIP del Modulo de Compras y Ventas
+		/// </summary>
+		/// <param name="informacion">El array con los datos a pasar</param>
+		/// <param name="NombreArchivo">El nombre del archivo que se escribirá</param> 
+		public static void EscribirElArchivoModuloComprasYVentas( string[] informacion, string NombreArchivo)
+		{
+			
+	        
+			
+			// WriteAllLines creates a file, writes a collection of strings to the file,
+	        // and then closes the file.  You do NOT need to call Flush() or Close().
+	        System.IO.File.WriteAllLines(@"C:\Users\Public\Documents\" + NombreArchivo,  informacion);
+		}
+		
+			
+		
+		
+		
+		
 	}
 }
 

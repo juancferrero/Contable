@@ -79,15 +79,5 @@ namespace Contable.Facturas {
 				return ((System.Drawing.Bitmap)(obj));
 			}
 		}
-		
-		/// <summary>
-		///   Busca un recurso adaptado de tipo System.Drawing.Point similar a {X=17,Y=17}.
-		/// </summary>
-		internal static System.Drawing.Point toolStrip1_TrayLocation {
-			get {
-				object obj = ResourceManager.GetObject("toolStrip1.TrayLocation", resourceCulture);
-				return ((System.Drawing.Point)(obj));
-			}
-		}
 	}
 }

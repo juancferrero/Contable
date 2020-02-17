@@ -21,6 +21,8 @@ namespace Contable
 		void TlActualizarClick(object sender, EventArgs e)
 		{
 		
+		//TODO ESTO ES UN HORROR
+
 				decimal FactImp90Peso = 0 ;
 				decimal FactImp60Peso= 0 ;
 				decimal FactImp30Peso= 0 ;
@@ -148,6 +150,10 @@ namespace Contable
 			lblNumv90.Text = cantFact90.ToString();
 			lblNumv60.Text = cantFact60.ToString();
 			lblNumv30.Text = cantFact30.ToString(); 
+		}
+		void TlImprimirClick(object sender, EventArgs e)
+		{
+	
 		}
 	}
 }

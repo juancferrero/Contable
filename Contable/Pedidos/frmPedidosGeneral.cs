@@ -105,12 +105,22 @@ namespace Contable
 			
 				
 		}
-		
+
+/// <summary>
+/// Actualiza los grids 
+/// </summary>
+/// <param name="sender"></param>
+/// <param name="e"></param>
 		void TbActualizarClick(object sender, EventArgs e)
 		{
 			RefrescarGrid();
 		}
-		
+
+/// <summary>
+/// Crea un nuevo pedido
+/// </summary>
+/// <param name="sender"></param>
+/// <param name="e"></param>
 		void TbNuevoClick(object sender, EventArgs e)
 		{
 			frmPedidosNuevos frm = new frmPedidosNuevos();
@@ -134,6 +144,44 @@ namespace Contable
 				gridDatos.Columns[i].Resizable = DataGridViewTriState.True  ;
 				gridDatos.Columns[i].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
 			}
+		}
+
+		
+/// <summary>
+/// Borra una fila
+/// </summary>
+/// <param name="sender"></param>
+/// <param name="e"></param>
+		void TbAnularClick(object sender, EventArgs e)
+		{			VariablesPropias.VariablesPropias.vpPedido Pedido = new VariablesPropias.VariablesPropias.vpPedido();
+			
+			//Cargar los datos del pedido
+			Pedido.NumPedido = Convert.ToInt32 ( gridDatos[0, gridDatos.CurrentRow.Index].Value.ToString());
+			Pedido.Clinete.strNombre = gridDatos[2, gridDatos.CurrentRow.Index].Value.ToString();
+			Pedido.Fecha = Convert.ToDateTime ( gridDatos[1, gridDatos.CurrentRow.Index].Value.ToString());
+			
+			Pedido.producto = new  VariablesPropias.VariablesPropias.vpProducto [6];
+			
+			//Cargar todos los productos
+			for (int j = 0; j < 5; j++)
+			
+			{
+				
+				Pedido.producto[j].intCantidad = Convert.ToInt16 (gridDatosPedido[0+(j*3), 0].Value.ToString());
+				Pedido.producto[j].strid = gridDatosPedido[1+(j*3), 0].Value.ToString();
+				Pedido.producto[j].strDescripcion = gridDatosPedido[2+(j*3), 0].Value.ToString();
+			}
+			
+			Pedido.Cancelado = true; 
+			Pedido.HechoPor= "SU";
+			
+			
+			//Borra la fila	
+			gridDatos.Rows.RemoveAt(gridDatos.CurrentRow.Index);
+			
+			
+			//Edita la Base de datos 
+			OperacionesComunes.Editar(Pedido);
 		}
 
 #endregion

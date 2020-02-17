@@ -147,9 +147,9 @@ namespace Contable.Facturas
 			this.cmbRemito2 = new System.Windows.Forms.ComboBox();
 			this.cmbRemito1 = new System.Windows.Forms.ComboBox();
 			this.frCliente = new System.Windows.Forms.GroupBox();
+			this.cmbRazonSocial = new System.Windows.Forms.ComboBox();
 			this.cmbPosIVA = new System.Windows.Forms.ComboBox();
 			this.cmdClienteNuevo = new System.Windows.Forms.Button();
-			this.cmbRazonSocial = new System.Windows.Forms.ComboBox();
 			this.Frame1 = new System.Windows.Forms.GroupBox();
 			this._Lbl_7 = new System.Windows.Forms.Label();
 			this.lblIDCliente = new System.Windows.Forms.Label();
@@ -393,9 +393,9 @@ namespace Contable.Facturas
 			// frCliente
 			// 
 			this.frCliente.BackColor = System.Drawing.SystemColors.Control;
+			this.frCliente.Controls.Add(this.cmbRazonSocial);
 			this.frCliente.Controls.Add(this.cmbPosIVA);
 			this.frCliente.Controls.Add(this.cmdClienteNuevo);
-			this.frCliente.Controls.Add(this.cmbRazonSocial);
 			this.frCliente.Controls.Add(this.Frame1);
 			this.frCliente.Controls.Add(this._Lbl_7);
 			this.frCliente.Controls.Add(this.lblIDCliente);
@@ -417,6 +417,20 @@ namespace Contable.Facturas
 			this.frCliente.Size = new System.Drawing.Size(625, 177);
 			this.frCliente.TabIndex = 146;
 			this.frCliente.TabStop = false;
+			// 
+			// cmbRazonSocial
+			// 
+			this.cmbRazonSocial.BackColor = System.Drawing.SystemColors.Window;
+			this.cmbRazonSocial.Cursor = System.Windows.Forms.Cursors.Default;
+			this.cmbRazonSocial.ForeColor = System.Drawing.SystemColors.WindowText;
+			this.cmbRazonSocial.Location = new System.Drawing.Point(24, 16);
+			this.cmbRazonSocial.Name = "cmbRazonSocial";
+			this.cmbRazonSocial.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.cmbRazonSocial.Size = new System.Drawing.Size(557, 21);
+			this.cmbRazonSocial.Sorted = true;
+			this.cmbRazonSocial.TabIndex = 57;
+			this.cmbRazonSocial.DropDown += new System.EventHandler(this.CmbRazonSocialDropDown);
+			this.cmbRazonSocial.SelectedIndexChanged += new System.EventHandler(this.CmbRazonSocialSelectedIndexChanged);
 			// 
 			// cmbPosIVA
 			// 
@@ -442,20 +456,6 @@ namespace Contable.Facturas
 			this.cmdClienteNuevo.TabIndex = 4;
 			this.cmdClienteNuevo.Text = "...";
 			this.cmdClienteNuevo.UseVisualStyleBackColor = false;
-			// 
-			// cmbRazonSocial
-			// 
-			this.cmbRazonSocial.BackColor = System.Drawing.SystemColors.ControlLightLight;
-			this.cmbRazonSocial.Cursor = System.Windows.Forms.Cursors.Default;
-			this.cmbRazonSocial.ForeColor = System.Drawing.SystemColors.WindowText;
-			this.cmbRazonSocial.Location = new System.Drawing.Point(8, 16);
-			this.cmbRazonSocial.Name = "cmbRazonSocial";
-			this.cmbRazonSocial.RightToLeft = System.Windows.Forms.RightToLeft.No;
-			this.cmbRazonSocial.Size = new System.Drawing.Size(577, 21);
-			this.cmbRazonSocial.Sorted = true;
-			this.cmbRazonSocial.TabIndex = 55;
-			this.cmbRazonSocial.SelectedIndexChanged += new System.EventHandler(this.CmbRazonSocialSelectedIndexChanged);
-			this.cmbRazonSocial.Leave += new System.EventHandler(this.CmbRazonSocialLeave);
 			// 
 			// Frame1
 			// 

@@ -117,6 +117,7 @@ namespace Contable
 			this.ToolTip1 = new System.Windows.Forms.ToolTip(this.components);
 			this.SSTab1 = new System.Windows.Forms.TabControl();
 			this.tabBusqueda = new System.Windows.Forms.TabPage();
+			this.btnVerificarActivos = new System.Windows.Forms.Button();
 			this.txtCriterio = new System.Windows.Forms.TextBox();
 			this.Label2 = new System.Windows.Forms.Label();
 			this.gridData = new System.Windows.Forms.DataGridView();
@@ -167,8 +168,6 @@ namespace Contable
 			this.richNotas = new System.Windows.Forms.RichTextBox();
 			this._SSTab1_TabPage4 = new System.Windows.Forms.TabPage();
 			this._SSTab1_TabPage5 = new System.Windows.Forms.TabPage();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.label1 = new System.Windows.Forms.Label();
 			this.Frame7 = new System.Windows.Forms.GroupBox();
 			this.OptAct = new System.Windows.Forms.RadioButton();
 			this.OptInact = new System.Windows.Forms.RadioButton();
@@ -189,6 +188,9 @@ namespace Contable
 			this.tlbAnular = new System.Windows.Forms.ToolStripButton();
 			this._Toolbar1_Button8 = new System.Windows.Forms.ToolStripSeparator();
 			this.tlbEditar = new System.Windows.Forms.ToolStripButton();
+			this.grSENASA = new System.Windows.Forms.GroupBox();
+			this.txtGLN = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.SSTab1.SuspendLayout();
 			this.tabBusqueda.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.gridData)).BeginInit();
@@ -206,6 +208,7 @@ namespace Contable
 			this.Frame2.SuspendLayout();
 			this.Frame5.SuspendLayout();
 			this.Toolbar1.SuspendLayout();
+			this.grSENASA.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// SSTab1
@@ -226,6 +229,7 @@ namespace Contable
 			// 
 			// tabBusqueda
 			// 
+			this.tabBusqueda.Controls.Add(this.btnVerificarActivos);
 			this.tabBusqueda.Controls.Add(this.txtCriterio);
 			this.tabBusqueda.Controls.Add(this.Label2);
 			this.tabBusqueda.Controls.Add(this.gridData);
@@ -236,6 +240,17 @@ namespace Contable
 			this.tabBusqueda.TabIndex = 6;
 			this.tabBusqueda.Text = "Busqueda";
 			this.tabBusqueda.UseVisualStyleBackColor = true;
+			// 
+			// btnVerificarActivos
+			// 
+			this.btnVerificarActivos.Enabled = false;
+			this.btnVerificarActivos.Location = new System.Drawing.Point(511, 43);
+			this.btnVerificarActivos.Name = "btnVerificarActivos";
+			this.btnVerificarActivos.Size = new System.Drawing.Size(141, 23);
+			this.btnVerificarActivos.TabIndex = 61;
+			this.btnVerificarActivos.Text = "Verificar Activos";
+			this.btnVerificarActivos.UseVisualStyleBackColor = true;
+			this.btnVerificarActivos.Click += new System.EventHandler(this.BtnVerificarActivosClick);
 			// 
 			// txtCriterio
 			// 
@@ -359,7 +374,7 @@ namespace Contable
 			this._SSTab1_TabPage0.Controls.Add(this.Frame1);
 			this._SSTab1_TabPage0.Location = new System.Drawing.Point(4, 22);
 			this._SSTab1_TabPage0.Name = "_SSTab1_TabPage0";
-			this._SSTab1_TabPage0.Size = new System.Drawing.Size(1213, 550);
+			this._SSTab1_TabPage0.Size = new System.Drawing.Size(1334, 608);
 			this._SSTab1_TabPage0.TabIndex = 0;
 			this._SSTab1_TabPage0.Text = "Generales";
 			// 
@@ -730,7 +745,7 @@ namespace Contable
 			this._SSTab1_TabPage1.Controls.Add(this.dataContactos);
 			this._SSTab1_TabPage1.Location = new System.Drawing.Point(4, 22);
 			this._SSTab1_TabPage1.Name = "_SSTab1_TabPage1";
-			this._SSTab1_TabPage1.Size = new System.Drawing.Size(1213, 550);
+			this._SSTab1_TabPage1.Size = new System.Drawing.Size(1334, 608);
 			this._SSTab1_TabPage1.TabIndex = 1;
 			this._SSTab1_TabPage1.Text = "Contactos";
 			// 
@@ -760,7 +775,7 @@ namespace Contable
 			this._SSTab1_TabPage2.Controls.Add(this.Frame3);
 			this._SSTab1_TabPage2.Location = new System.Drawing.Point(4, 22);
 			this._SSTab1_TabPage2.Name = "_SSTab1_TabPage2";
-			this._SSTab1_TabPage2.Size = new System.Drawing.Size(1213, 550);
+			this._SSTab1_TabPage2.Size = new System.Drawing.Size(1334, 608);
 			this._SSTab1_TabPage2.TabIndex = 2;
 			this._SSTab1_TabPage2.Text = "Transporte";
 			// 
@@ -820,6 +835,8 @@ namespace Contable
 			this.cmbTranspNombre.RightToLeft = System.Windows.Forms.RightToLeft.No;
 			this.cmbTranspNombre.Size = new System.Drawing.Size(193, 21);
 			this.cmbTranspNombre.TabIndex = 34;
+			this.cmbTranspNombre.DropDown += new System.EventHandler(this.CmbTranspNombreDropDown);
+			this.cmbTranspNombre.SelectedIndexChanged += new System.EventHandler(this.CmbTranspNombreSelectedIndexChanged);
 			// 
 			// _Label1_12
 			// 
@@ -868,7 +885,7 @@ namespace Contable
 			this._SSTab1_TabPage3.Controls.Add(this.richNotas);
 			this._SSTab1_TabPage3.Location = new System.Drawing.Point(4, 22);
 			this._SSTab1_TabPage3.Name = "_SSTab1_TabPage3";
-			this._SSTab1_TabPage3.Size = new System.Drawing.Size(1213, 550);
+			this._SSTab1_TabPage3.Size = new System.Drawing.Size(1334, 608);
 			this._SSTab1_TabPage3.TabIndex = 3;
 			this._SSTab1_TabPage3.Text = "Notas";
 			// 
@@ -884,38 +901,22 @@ namespace Contable
 			// 
 			this._SSTab1_TabPage4.Location = new System.Drawing.Point(4, 22);
 			this._SSTab1_TabPage4.Name = "_SSTab1_TabPage4";
-			this._SSTab1_TabPage4.Size = new System.Drawing.Size(1213, 550);
+			this._SSTab1_TabPage4.Size = new System.Drawing.Size(1334, 608);
 			this._SSTab1_TabPage4.TabIndex = 4;
 			this._SSTab1_TabPage4.Text = "Contables";
 			// 
 			// _SSTab1_TabPage5
 			// 
-			this._SSTab1_TabPage5.Controls.Add(this.textBox1);
-			this._SSTab1_TabPage5.Controls.Add(this.label1);
+			this._SSTab1_TabPage5.Controls.Add(this.grSENASA);
 			this._SSTab1_TabPage5.Controls.Add(this.Frame7);
 			this._SSTab1_TabPage5.Controls.Add(this.Frame6);
 			this._SSTab1_TabPage5.Controls.Add(this.Frame2);
 			this._SSTab1_TabPage5.Controls.Add(this.Frame5);
 			this._SSTab1_TabPage5.Location = new System.Drawing.Point(4, 22);
 			this._SSTab1_TabPage5.Name = "_SSTab1_TabPage5";
-			this._SSTab1_TabPage5.Size = new System.Drawing.Size(1213, 550);
+			this._SSTab1_TabPage5.Size = new System.Drawing.Size(1334, 608);
 			this._SSTab1_TabPage5.TabIndex = 5;
 			this._SSTab1_TabPage5.Text = "Otros Datos";
-			// 
-			// textBox1
-			// 
-			this.textBox1.Location = new System.Drawing.Point(262, 180);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(123, 20);
-			this.textBox1.TabIndex = 45;
-			// 
-			// label1
-			// 
-			this.label1.Location = new System.Drawing.Point(226, 183);
-			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(39, 19);
-			this.label1.TabIndex = 44;
-			this.label1.Text = "GLN";
 			// 
 			// Frame7
 			// 
@@ -969,8 +970,9 @@ namespace Contable
 			// 
 			this.Frame6.BackColor = System.Drawing.SystemColors.Control;
 			this.Frame6.Controls.Add(this.ProgressBar1);
+			this.Frame6.Enabled = false;
 			this.Frame6.ForeColor = System.Drawing.SystemColors.ControlText;
-			this.Frame6.Location = new System.Drawing.Point(192, 48);
+			this.Frame6.Location = new System.Drawing.Point(757, 40);
 			this.Frame6.Name = "Frame6";
 			this.Frame6.Padding = new System.Windows.Forms.Padding(0);
 			this.Frame6.RightToLeft = System.Windows.Forms.RightToLeft.No;
@@ -1150,6 +1152,32 @@ namespace Contable
 			this.tlbEditar.ToolTipText = "Editar";
 			this.tlbEditar.Click += new System.EventHandler(this.TlbEditarClick);
 			// 
+			// grSENASA
+			// 
+			this.grSENASA.Controls.Add(this.txtGLN);
+			this.grSENASA.Controls.Add(this.label1);
+			this.grSENASA.Location = new System.Drawing.Point(413, 40);
+			this.grSENASA.Name = "grSENASA";
+			this.grSENASA.Size = new System.Drawing.Size(204, 102);
+			this.grSENASA.TabIndex = 46;
+			this.grSENASA.TabStop = false;
+			this.grSENASA.Text = "SENASA";
+			// 
+			// txtGLN
+			// 
+			this.txtGLN.Location = new System.Drawing.Point(59, 40);
+			this.txtGLN.Name = "txtGLN";
+			this.txtGLN.Size = new System.Drawing.Size(123, 20);
+			this.txtGLN.TabIndex = 47;
+			// 
+			// label1
+			// 
+			this.label1.Location = new System.Drawing.Point(23, 43);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(39, 19);
+			this.label1.TabIndex = 46;
+			this.label1.Text = "GLN";
+			// 
 			// frmClientes
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1181,25 +1209,28 @@ namespace Contable
 			this.Frame3.PerformLayout();
 			this._SSTab1_TabPage3.ResumeLayout(false);
 			this._SSTab1_TabPage5.ResumeLayout(false);
-			this._SSTab1_TabPage5.PerformLayout();
 			this.Frame7.ResumeLayout(false);
 			this.Frame6.ResumeLayout(false);
 			this.Frame2.ResumeLayout(false);
 			this.Frame5.ResumeLayout(false);
 			this.Toolbar1.ResumeLayout(false);
 			this.Toolbar1.PerformLayout();
+			this.grSENASA.ResumeLayout(false);
+			this.grSENASA.PerformLayout();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
 		}
 		internal System.Windows.Forms.DataGridView gridData;
 		public System.Windows.Forms.TextBox txtCriterio;
-		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TabPage tabBusqueda;
 		private System.Windows.Forms.DataGridView dataContactos;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colContactoNombre;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colContactoDireccion;
+		private System.Windows.Forms.TextBox txtGLN;
+		private System.Windows.Forms.Button btnVerificarActivos;
+		private System.Windows.Forms.GroupBox grSENASA;
 			#endregion
 	}
 }

@@ -6,33 +6,48 @@
  * 
  * Para cambiar esta plantilla use Herramientas | Opciones | Codificación | Editar Encabezados Estándar
  */
+
 using System;
+using System.Collections;
+using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Globalization;
+using System.Text.RegularExpressions;
+	
+using System.Configuration;
+using ImprimirEjemplo;
+
+using ConexionDB;
+using VariablesPropias;
+using CodigoDeBarras;
 
 using Contable.Modulos;
-using ImprimirEjemplo;
-using Contable.InputBox;
-using Contable.AFIP;
-using ConexionDB;
 
-using System.Configuration; 
+using Contable.InputBox;
+using Contable.Facturas;
+
+
+
+
 
 namespace Contable.Facturas
 {
 	/// <summary>
 	/// Description of frmDocumentoFiscal.
 	/// </summary>
-	public partial class frmDocumentoFiscal : Form
+	internal partial class frmDocumentoFiscal : System.Windows.Forms.Form // La teneia como public
 	{
 		
-		internal VariablesPropias.VariablesPropias.vpFactura miFactura;
+		public VariablesPropias.VariablesPropias.vpFactura miFactura;
 		//internal VariablesPropias.VariablesPropias.vpMargenesFact miMargenes;
 
 		//internal VariablesPropias.VariablesPropias.vpRemito miRemito;
-		internal  VariablesPropias.VariablesPropias.vpClientes clie;
+		public  VariablesPropias.VariablesPropias.vpClientes clie;
 		
-		internal  AFIP.AFIP.vpAFIPTicket miTicket;
+		//internal  AFIP.AFIP.vpAFIPTicket miTicket;
+		public  AFIP.AFIP.vpAFIPTicket miTicket;
 		
 		
 /// <summary>
@@ -52,21 +67,28 @@ namespace Contable.Facturas
 			
 		}
 		
+
+		
 		void FrmDocumentoFiscalLoad(object sender, EventArgs e)
 		{
 			//Coloca la Fecha
 			dtFecha.Value = DateTime.Today;
 				
-								
-			if (cmbRazonSocial.Text == "") {
+			
+			//Carga los clientes
+			CargarClientesCombo();
+
+			
+			/*if (cmbRazonSocial.Text == "") {
 			//Genera un datasource para pasarlo al combo
             cmbRazonSocial.DataSource = OperacionesComunes.FuenteObtenerClientes();
-            cmbRazonSocial.DisplayMember = "Nombre";
+            //cmbRazonSocial.DisplayMember = "Nombre";
 				
-			}
+			}*/
 			
 			
-			//CONEXION A LA AFIP
+#region CONEXION A LA AFIP
+			
 			//Si esta habilitado para facturar a la AFIP busca el ticket
 			if (Convert.ToBoolean (ConfigurationManager.AppSettings["FacturarAFIP"]))
 			{
@@ -86,7 +108,11 @@ namespace Contable.Facturas
 			{
 				txtNumFact.Text = Convert.ToString (OperacionesComunes.ObtenerUltimaFactura(3, Convert.ToInt32 (lblCod_cbe.Text)));
 			}
-			/*
+			
+#endregion
+			
+
+/*
 			//Carga los datos de mercaderia en la columna de productos
 			DataGridViewComboBoxColumn comboboxColumn =new  DataGridViewComboBoxColumn();
 			comboboxColumn = gridDatos.Columns["Producto"];
@@ -96,27 +122,56 @@ namespace Contable.Facturas
 			*/
 			
 			
+#region DOLAR
+
+			//Obtiene el valor del dolar
 			lblDolar.Text = OperacionesComunes.ObtenerDolar();
+#endregion		
 			
 			
 			
 			
 			
-			
-		}
+		}		
+		
+		
+	
+#region Combo de Razon Social
+
 		
 		void CmbRazonSocialDropDown(object sender, EventArgs e)
 		{
 			//Solo muestra la columna de NOMBRE
 			cmbRazonSocial.DisplayMember = "Nombre"; 
 		}
-
+		
 		void CmbRazonSocialSelectedIndexChanged(object sender, EventArgs e)
 		{
 			//Carga los clientes
 			CargarClientes();
 			
+		}		
+		
+		void CmbRazonSocialLeave(object sender, EventArgs e)
+		{
+
+
+		//Carga los remitos activos
+		//cmbRemito1.DataSource = OperacionesComunes.ObtenerRemitosActivos(lblIDCliente.Text);
+		cmbRemito1.Text = "0";
+		cmbRemito2.DataSource = OperacionesComunes.ObtenerRemitosActivos(lblIDCliente.Text);
+		cmbRemito2.Text = "0";
+		cmbRemito3.DataSource = OperacionesComunes.ObtenerRemitosActivos(lblIDCliente.Text);
+		cmbRemito3.Text = "0";
+		cmbRemito4.DataSource = OperacionesComunes.ObtenerRemitosActivos(lblIDCliente.Text);
+		cmbRemito4.Text = "0";
 		}
+
+#endregion
+		
+		
+		
+
 
 		void TlbGuardarClick(object sender, EventArgs e)
 		{
@@ -199,8 +254,9 @@ namespace Contable.Facturas
 /// </summary>		
 		public void CargarClientes()
 		{
-		
-		
+			
+			
+			
 			//Cargo el cliente a la variable publica
 			clie =  OperacionesComunes.ObtenerCliente(cmbRazonSocial.Text);
 		
@@ -209,8 +265,36 @@ namespace Contable.Facturas
 			lblDireccion.Text  = clie.strDireccion;
 			lblLocalidad.Text = clie.strLocalidad;				
 			lblProvincia.Text = clie.strProvincia; 
-		
+			
 		}
+
+
+
+/// <summary>
+/// Carga los datos del Cliente en el ComboBox
+/// </summary>
+		void CargarClientesCombo()
+		{
+		//Esto conecta con la base de datos
+			ConexionAccess2007.Conectar(ConfigurationManager.AppSettings["BaseDeDatos"].ToString());
+            
+			//Hace la consulta asumiendo que el cliente esta activo
+			ConexionAccess2007.Consultar("Clientes", "Nombre", "Nombre","Activo = TRUE");
+			            
+            
+            //Genera un datasource para pasarlo al combo
+            cmbRazonSocial.DataSource = ConexionAccess2007.Source;
+			
+            //Cerrar la conexion
+            ConexionAccess2007.Desconectar();
+		}
+		
+
+
+
+
+
+
 		
 /// <summary>
 /// Carga una Factura desde el formulario actual
@@ -447,22 +531,7 @@ return Fact;
 			
 		
 		}
-		
-		void CmbRazonSocialLeave(object sender, EventArgs e)
-		{
-
-
-		//Carga los remitos activos
-		//cmbRemito1.DataSource = OperacionesComunes.ObtenerRemitosActivos(lblIDCliente.Text);
-		cmbRemito1.Text = "0";
-		cmbRemito2.DataSource = OperacionesComunes.ObtenerRemitosActivos(lblIDCliente.Text);
-		cmbRemito2.Text = "0";
-		cmbRemito3.DataSource = OperacionesComunes.ObtenerRemitosActivos(lblIDCliente.Text);
-		cmbRemito3.Text = "0";
-		cmbRemito4.DataSource = OperacionesComunes.ObtenerRemitosActivos(lblIDCliente.Text);
-		cmbRemito4.Text = "0";
-		}
-		
+				
 		
 		void CmbRemito1DropDown(object sender, EventArgs e)
 			

@@ -475,7 +475,7 @@ namespace ImprimirEjemplo
 			//Este método contiene dos componentes muy importantes los cuales son:
 			//PrintDocument y printDialog estos métodos definen las propiedades de impresión
 			//como son: numero de copias, numero de paginas y seleccionar tipo de impresora
-			//estas son las variables donde almacenaremos los datos del cliente
+			//estas son las variables donde almacenaremos los datos del Recibo
 	
 			
 			
@@ -1142,7 +1142,7 @@ ev.Graphics.DrawString("--------------------------------------------------------
 					ev.Graphics.DrawString("Nro de Cheque", Arial10, Brushes.Black,
 					                       vpMargRecibo.sngNumCheqX , vpMargRecibo.sngNumCheqY +(y*5) );
 					//Banco
-					ev.Graphics.DrawString("Banco", Arial10, Brushes.Black, 
+					ev.Graphics.DrawString("Banco", Arial04, Brushes.Black, 
 					                       vpMargRecibo.sngBancoX, vpMargRecibo.sngNumCheqY +(y*5) );
 					//Fecha de Emision
 					ev.Graphics.DrawString("Fecha Emision", Arial10, Brushes.Black, 
@@ -1389,7 +1389,8 @@ ev.Graphics.DrawString("--------------------------------------------------------
 					                       	vpMargRecibo.sngFactFechaX,vpMargRecibo.sngNumCheqY +(y*5)); // vpMargRecibo.sngFactY +(n*5) );
 					
 					//Importe
-					ev.Graphics.DrawString("$" + vpRecibo.Facturas[n].curTotal.ToString(), Arial10, Brushes.Black, 
+					//Uso el saldo para poder imprimir solo lo que se paga..
+					ev.Graphics.DrawString("$" + vpRecibo.Facturas[n].curSaldo.ToString(), Arial10, Brushes.Black, 
 				                      	 	vpMargRecibo.sngFactImpoteX, vpMargRecibo.sngNumCheqY +(y*5)); // vpMargRecibo.sngFactY +(n*5) );
 				
 					}
@@ -1397,7 +1398,7 @@ ev.Graphics.DrawString("--------------------------------------------------------
 				}
 			}
 			
-			//Facturas
+			//FacturasB
 			if (vpRecibo.FacturasB  != null ) //Corrobora que no sea null 
 			{
 				if (vpRecibo.FacturasB[0].dblNumFact.ToString() != "0") {
@@ -2191,11 +2192,11 @@ static DataTable   ObtenerListadoDeCheques = new DataTable();
 ///</summary>
 		public static  void Imprimir_ListadoDeCheques(DataTable ListadoDeCheques)
 		{
-			//Este método contiene dos componentes muy importantes los cuales son:
-			//PrintDocument y printDialog estos métodos definen las propiedades de impresión
-			//como son: numero de copias, numero de paginas y seleccionar tipo de impresora
-			//estas son las variables donde almacenaremos los datos del cliente
-	
+			/*Este método contiene dos componentes muy importantes los cuales son:
+			* PrintDocument y printDialog estos métodos definen las propiedades de impresión
+			* como son: numero de copias, numero de paginas y seleccionar tipo de impresora
+			* estas son las variables donde almacenaremos los datos del cliente
+			*/
 			
 			
 			
@@ -2206,12 +2207,18 @@ static DataTable   ObtenerListadoDeCheques = new DataTable();
 			
 			
 			
+			
+			
+			//Create a PrintPreviewDialog object
+			PrintPreviewDialog  previewDlg = new PrintPreviewDialog();
+			
+			//Create a PrintDocument object
 			PrintDocument formulario = new PrintDocument();
 					
-			
+			//Add print-page event handler
 			formulario.PrintPage += new PrintPageEventHandler(Datos_ListadoDeCheques);// Datos Cliente es el lienzo
 			
-			
+			/*
 			//Este es el Print Dialog -- El formulario de impresion ;)
 			PrintDialog printDialog1 = new PrintDialog();
 			printDialog1.Document = formulario;
@@ -2222,7 +2229,13 @@ static DataTable   ObtenerListadoDeCheques = new DataTable();
 			if (result == DialogResult.OK)
 			{
 			formulario.Print();
-			}
+			}*/
+			
+			//Set Document property of PrintPreviewDialog
+			previewDlg.Document = formulario;
+		
+			//Display dialog
+			previewDlg.Show();
 		}
 
 		
@@ -2449,7 +2462,8 @@ ev.HasMorePages = false;
   
       }*/
 
-		
+
+
 	}
 
 
